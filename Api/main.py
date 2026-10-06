@@ -1,3 +1,5 @@
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -12,22 +14,41 @@ app = FastAPI(
 )
 
 
+# ==========================================================
+# CORS
+# ==========================================================
+
+frontend_url = os.getenv(
+    "FRONTEND_URL",
+    "http://localhost:3000",
+)
+
+allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    frontend_url,
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:3001",
-    ],
+    allow_origins=list(set(allowed_origins)),
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-# Routers
+# ==========================================================
+# ROUTERS
+# ==========================================================
+
 app.include_router(auth_router)
 app.include_router(datasets_router)
 
+
+# ==========================================================
+# HEALTH CHECK
+# ==========================================================
 
 @app.get("/")
 def root():
