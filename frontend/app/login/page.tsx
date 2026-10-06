@@ -32,10 +32,16 @@ export default function LoginPage() {
     setSuccess("");
 
     try {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+      if (!API_URL) {
+        throw new Error("API URL is not configured.");
+      }
+
       const endpoint =
         mode === "login"
-          ? "http://127.0.0.1:8000/auth/login"
-          : "http://127.0.0.1:8000/auth/signup";
+          ? `${API_URL}/auth/login`
+          : `${API_URL}/auth/signup`;
 
       const body =
         mode === "login"
@@ -71,8 +77,7 @@ export default function LoginPage() {
       if (mode === "login") {
         localStorage.setItem("access_token", data.access_token);
         router.push("/dashboard");
-      }
-      else {
+      } else {
         setSuccess("Account created successfully. You can now sign in.");
 
         setName("");
