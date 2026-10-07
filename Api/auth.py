@@ -2,18 +2,19 @@
 # DATAFLOW AI - AUTHENTICATION & ACCOUNT SECURITY
 # ============================================================
 
-import os
-import json
-import uuid
-import secrets
 import hashlib
 import hmac
+import json
+import os
+import secrets
 import urllib.error
 import urllib.request
+import uuid
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import APIRouter, Depends, HTTPException, Header
+from fastapi import APIRouter, Depends, Header, HTTPException
 from pydantic import BaseModel, EmailStr
 from sqlalchemy import text
 
@@ -24,6 +25,8 @@ from SRC.database import get_connection
 # LOAD ENVIRONMENT
 # ============================================================
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
 load_dotenv()
 
 
@@ -35,46 +38,32 @@ JWT_SECRET = os.getenv("JWT_SECRET")
 
 if not JWT_SECRET:
     raise RuntimeError(
-        "JWT_SECRET is not configured. "
-        "Add JWT_SECRET to your .env file."
+        "JWT_SECRET is not configured. Add JWT_SECRET to your .env file."
     )
-
 
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_HOURS = 24
 
-
-# ============================================================
-# PASSWORD RESET CONFIGURATION
-# ============================================================
-
 RESET_OTP_EXPIRATION_MINUTES = 10
 RESET_OTP_MAX_ATTEMPTS = 5
 
-
-# ============================================================
-# RESEND EMAIL CONFIGURATION
-# ============================================================
-
-RESEND_API_KEY = os.getenv("RESEND_API_KEY")
-
-RESEND_FROM_EMAIL = os.getenv(
-    "RESEND_FROM_EMAIL",
-    "onboarding@resend.dev",
-)
+RESEND_API_KEY = (os.getenv("RESEND_API_KEY") or "").strip()
+RESEND_FROM_EMAIL = (
+    os.getenv("RESEND_FROM_EMAIL") or "onboarding@resend.dev"
+).strip()
 
 
 # ============================================================
-# JWT IMPORT
+# JWT
 # ============================================================
 
 try:
     from jose import jwt
-except ImportError:
+except ImportError as error:
     raise RuntimeError(
-        "python-jose is required. "
-        "Install it with: pip install python-jose[cryptography]"
-    )
+        "python-jose is required. Install it with: "
+        "pip install python-jose[cryptography]"
+    ) from error
 
 
 # ============================================================
@@ -83,11 +72,10 @@ except ImportError:
 
 try:
     from passlib.context import CryptContext
-except ImportError:
+except ImportError as error:
     raise RuntimeError(
-        "passlib is required. "
-        "Install it with: pip install passlib[bcrypt]"
-    )
+        "passlib is required. Install it with: pip install passlib[bcrypt]"
+    ) from error
 
 
 pwd_context = CryptContext(
@@ -107,18 +95,11 @@ router = APIRouter(
 
 
 # ============================================================
-# DATABASE SETUP
+# DATABASE SETUP / MIGRATION
 # ============================================================
 
 def create_users_table():
-    """
-    Create the users table if it does not exist.
-
-    Also performs safe migrations for existing databases.
-    """
-
     with get_connection() as connection:
-
         connection.execute(
             text(
                 """
@@ -130,106 +111,61 @@ def create_users_table():
                     created_at TEXT NOT NULL,
 
                     plan TEXT NOT NULL DEFAULT 'free',
-
-                    ai_questions_used INTEGER
-                        NOT NULL DEFAULT 0,
-
-                    subscription_status TEXT
-                        NOT NULL DEFAULT 'inactive',
-
+                    ai_questions_used INTEGER NOT NULL DEFAULT 0,
+                    subscription_status TEXT NOT NULL DEFAULT 'inactive',
                     razorpay_subscription_id TEXT,
 
                     reset_otp_hash TEXT,
-
                     reset_otp_expires_at TEXT,
-
-                    reset_otp_attempts INTEGER
-                        NOT NULL DEFAULT 0
+                    reset_otp_attempts INTEGER NOT NULL DEFAULT 0
                 )
                 """
             )
         )
 
-        # ----------------------------------------------------
-        # Safe migrations for existing users table
-        # ----------------------------------------------------
+        migrations = [
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS plan
+            TEXT NOT NULL DEFAULT 'free'
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS ai_questions_used
+            INTEGER NOT NULL DEFAULT 0
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS subscription_status
+            TEXT NOT NULL DEFAULT 'inactive'
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS razorpay_subscription_id
+            TEXT
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS reset_otp_hash
+            TEXT
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS reset_otp_expires_at
+            TEXT
+            """,
+            """
+            ALTER TABLE users
+            ADD COLUMN IF NOT EXISTS reset_otp_attempts
+            INTEGER NOT NULL DEFAULT 0
+            """,
+        ]
 
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS plan
-                TEXT NOT NULL DEFAULT 'free'
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS ai_questions_used
-                INTEGER NOT NULL DEFAULT 0
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS subscription_status
-                TEXT NOT NULL DEFAULT 'inactive'
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS razorpay_subscription_id
-                TEXT
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS reset_otp_hash
-                TEXT
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS reset_otp_expires_at
-                TEXT
-                """
-            )
-        )
-
-        connection.execute(
-            text(
-                """
-                ALTER TABLE users
-                ADD COLUMN IF NOT EXISTS reset_otp_attempts
-                INTEGER NOT NULL DEFAULT 0
-                """
-            )
-        )
+        for migration in migrations:
+            connection.execute(text(migration))
 
         connection.commit()
 
-
-# ============================================================
-# INITIALIZE DATABASE
-# ============================================================
 
 create_users_table()
 
@@ -239,27 +175,17 @@ create_users_table()
 # ============================================================
 
 def hash_password(password: str) -> str:
-    """
-    Hash a password using bcrypt.
-    """
-
     return pwd_context.hash(password)
 
 
-def verify_password(
-    plain_password: str,
-    hashed_password: str,
-) -> bool:
-    """
-    Verify a password against its bcrypt hash.
-    """
-
+def verify_password(plain_password: str, hashed_password: str) -> bool:
     try:
-        return pwd_context.verify(
-            plain_password,
-            hashed_password,
+        return pwd_context.verify(plain_password, hashed_password)
+    except Exception as error:
+        print(
+            f"[PASSWORD VERIFY ERROR] {type(error).__name__}: {error}",
+            flush=True,
         )
-    except Exception:
         return False
 
 
@@ -268,10 +194,6 @@ def verify_password(
 # ============================================================
 
 def create_access_token(user_id: str) -> str:
-    """
-    Create a JWT access token.
-    """
-
     expire = datetime.now(timezone.utc) + timedelta(
         hours=JWT_EXPIRATION_HOURS
     )
@@ -289,76 +211,54 @@ def create_access_token(user_id: str) -> str:
 
 
 # ============================================================
-# USER LOOKUP
+# USER LOOKUPS
 # ============================================================
 
+USER_SELECT = """
+    SELECT
+        user_id,
+        name,
+        email,
+        password_hash,
+        created_at,
+        plan,
+        ai_questions_used,
+        subscription_status,
+        razorpay_subscription_id,
+        reset_otp_hash,
+        reset_otp_expires_at,
+        reset_otp_attempts
+    FROM users
+"""
+
+
 def get_user_by_email(email: str):
-    """
-    Get user by email.
-    """
-
     with get_connection() as connection:
-
         result = connection.execute(
             text(
-                """
-                SELECT
-                    user_id,
-                    name,
-                    email,
-                    password_hash,
-                    created_at,
-                    plan,
-                    ai_questions_used,
-                    subscription_status,
-                    razorpay_subscription_id,
-                    reset_otp_hash,
-                    reset_otp_expires_at,
-                    reset_otp_attempts
-                FROM users
+                USER_SELECT
+                + """
                 WHERE LOWER(email) = LOWER(:email)
                 LIMIT 1
                 """
             ),
-            {
-                "email": email.strip(),
-            },
+            {"email": email.strip()},
         ).fetchone()
 
     return result
 
 
 def get_user_by_id(user_id: str):
-    """
-    Get user by ID.
-    """
-
     with get_connection() as connection:
-
         result = connection.execute(
             text(
-                """
-                SELECT
-                    user_id,
-                    name,
-                    email,
-                    password_hash,
-                    created_at,
-                    plan,
-                    ai_questions_used,
-                    subscription_status,
-                    razorpay_subscription_id,
-                    reset_otp_hash,
-                    reset_otp_expires_at,
-                    reset_otp_attempts
-                FROM users
+                USER_SELECT
+                + """
                 WHERE user_id = :user_id
                 LIMIT 1
                 """
             ),
-            {
-                "user_id": user_id,
-            },
+            {"user_id": user_id},
         ).fetchone()
 
     return result
@@ -371,10 +271,6 @@ def get_user_by_id(user_id: str):
 def get_current_user(
     authorization: str = Header(default=None),
 ):
-    """
-    Authenticate the current request using Bearer JWT.
-    """
-
     if not authorization:
         raise HTTPException(
             status_code=401,
@@ -387,11 +283,7 @@ def get_current_user(
             detail="Invalid authentication format.",
         )
 
-    token = authorization.replace(
-        "Bearer ",
-        "",
-        1,
-    ).strip()
+    token = authorization.replace("Bearer ", "", 1).strip()
 
     if not token:
         raise HTTPException(
@@ -400,7 +292,6 @@ def get_current_user(
         )
 
     try:
-
         payload = jwt.decode(
             token,
             JWT_SECRET,
@@ -475,24 +366,20 @@ class VerifyResetOTPRequest(BaseModel):
 
 
 # ============================================================
-# VALIDATION HELPERS
+# VALIDATION
 # ============================================================
 
 def validate_password(password: str):
-    """
-    Basic password security validation.
-    """
-
     if len(password) < 8:
         raise HTTPException(
             status_code=400,
             detail="Password must be at least 8 characters long.",
         )
 
-    if len(password) > 128:
+    if len(password) > 72:
         raise HTTPException(
             status_code=400,
-            detail="Password must be 128 characters or fewer.",
+            detail="Password must be 72 characters or fewer.",
         )
 
 
@@ -502,7 +389,6 @@ def validate_password(password: str):
 
 @router.post("/signup")
 def signup(request: SignupRequest):
-
     name = request.name.strip()
     email = request.email.strip().lower()
     password = request.password
@@ -524,15 +410,10 @@ def signup(request: SignupRequest):
         )
 
     user_id = str(uuid.uuid4())
-
     password_hash = hash_password(password)
-
-    created_at = datetime.now(
-        timezone.utc
-    ).isoformat()
+    created_at = datetime.now(timezone.utc).isoformat()
 
     with get_connection() as connection:
-
         connection.execute(
             text(
                 """
@@ -566,7 +447,6 @@ def signup(request: SignupRequest):
                 "created_at": created_at,
             },
         )
-
         connection.commit()
 
     token = create_access_token(user_id)
@@ -593,9 +473,7 @@ def signup(request: SignupRequest):
 
 @router.post("/login")
 def login(request: LoginRequest):
-
     email = request.email.strip().lower()
-
     user = get_user_by_email(email)
 
     if not user:
@@ -604,12 +482,7 @@ def login(request: LoginRequest):
             detail="Invalid email or password.",
         )
 
-    password_hash = user[3]
-
-    if not verify_password(
-        request.password,
-        password_hash,
-    ):
+    if not verify_password(request.password, user[3]):
         raise HTTPException(
             status_code=401,
             detail="Invalid email or password.",
@@ -643,7 +516,6 @@ def login(request: LoginRequest):
 def get_me(
     current_user: dict = Depends(get_current_user),
 ):
-
     return {
         "success": True,
         "user": current_user,
@@ -659,7 +531,6 @@ def change_password(
     request: ChangePasswordRequest,
     current_user: dict = Depends(get_current_user),
 ):
-
     validate_password(request.new_password)
 
     if request.current_password == request.new_password:
@@ -668,9 +539,7 @@ def change_password(
             detail="New password must be different from your current password.",
         )
 
-    user = get_user_by_id(
-        current_user["user_id"]
-    )
+    user = get_user_by_id(current_user["user_id"])
 
     if not user:
         raise HTTPException(
@@ -678,21 +547,15 @@ def change_password(
             detail="User account not found.",
         )
 
-    if not verify_password(
-        request.current_password,
-        user[3],
-    ):
+    if not verify_password(request.current_password, user[3]):
         raise HTTPException(
             status_code=400,
             detail="Current password is incorrect.",
         )
 
-    new_password_hash = hash_password(
-        request.new_password
-    )
+    new_password_hash = hash_password(request.new_password)
 
     with get_connection() as connection:
-
         connection.execute(
             text(
                 """
@@ -706,7 +569,6 @@ def change_password(
                 "user_id": current_user["user_id"],
             },
         )
-
         connection.commit()
 
     return {
@@ -720,27 +582,33 @@ def change_password(
 # ============================================================
 
 def generate_reset_otp() -> str:
-    """
-    Generate a secure 6-digit OTP.
-    """
-
     return f"{secrets.randbelow(1_000_000):06d}"
 
 
-def hash_reset_otp(
-    otp: str,
-) -> str:
-    """
-    Hash reset OTP using HMAC-SHA256.
-
-    The JWT secret is used as the server-side secret.
-    """
-
+def hash_reset_otp(otp: str) -> str:
     return hmac.new(
         JWT_SECRET.encode("utf-8"),
         otp.encode("utf-8"),
         hashlib.sha256,
     ).hexdigest()
+
+
+def clear_reset_otp(user_id: str):
+    with get_connection() as connection:
+        connection.execute(
+            text(
+                """
+                UPDATE users
+                SET
+                    reset_otp_hash = NULL,
+                    reset_otp_expires_at = NULL,
+                    reset_otp_attempts = 0
+                WHERE user_id = :user_id
+                """
+            ),
+            {"user_id": user_id},
+        )
+        connection.commit()
 
 
 # ============================================================
@@ -751,15 +619,20 @@ def send_password_reset_otp(
     recipient_email: str,
     otp: str,
 ) -> None:
-    """
-    Send password-reset OTP using Resend HTTPS API.
-
-    No SMTP connection is used.
-    """
 
     if not RESEND_API_KEY:
         raise RuntimeError(
             "RESEND_API_KEY is not configured."
+        )
+
+    if not RESEND_API_KEY.startswith("re_"):
+        raise RuntimeError(
+            "RESEND_API_KEY does not appear to be a valid Resend API key."
+        )
+
+    if not RESEND_FROM_EMAIL:
+        raise RuntimeError(
+            "RESEND_FROM_EMAIL is not configured."
         )
 
     html = f"""
@@ -769,7 +642,6 @@ def send_password_reset_otp(
         <meta charset="UTF-8">
         <title>DataFlow AI Password Reset</title>
     </head>
-
     <body style="
         margin:0;
         padding:40px 20px;
@@ -777,7 +649,6 @@ def send_password_reset_otp(
         font-family:Arial,Helvetica,sans-serif;
         color:#ffffff;
     ">
-
         <div style="
             max-width:520px;
             margin:0 auto;
@@ -786,7 +657,6 @@ def send_password_reset_otp(
             border-radius:20px;
             padding:32px;
         ">
-
             <div style="
                 width:48px;
                 height:48px;
@@ -798,21 +668,13 @@ def send_password_reset_otp(
                 font-size:22px;
                 font-weight:bold;
                 margin-bottom:24px;
-            ">
-                D
-            </div>
+            ">D</div>
 
-            <h2 style="
-                margin:0 0 12px 0;
-                color:#ffffff;
-            ">
+            <h2 style="margin:0 0 12px 0;color:#ffffff;">
                 Reset your DataFlow AI password
             </h2>
 
-            <p style="
-                color:#b8b3c7;
-                line-height:1.6;
-            ">
+            <p style="color:#b8b3c7;line-height:1.6;">
                 We received a request to reset your DataFlow AI password.
                 Use the verification code below.
             </p>
@@ -828,26 +690,14 @@ def send_password_reset_otp(
                 font-size:32px;
                 font-weight:bold;
                 letter-spacing:8px;
-            ">
-                {otp}
-            </div>
+            ">{otp}</div>
 
-            <p style="
-                color:#8f899d;
-                font-size:14px;
-                line-height:1.6;
-            ">
+            <p style="color:#8f899d;font-size:14px;line-height:1.6;">
                 This verification code expires in
-                <strong style="color:#ffffff;">
-                    10 minutes
-                </strong>.
+                <strong style="color:#ffffff;">10 minutes</strong>.
             </p>
 
-            <p style="
-                color:#8f899d;
-                font-size:14px;
-                line-height:1.6;
-            ">
+            <p style="color:#8f899d;font-size:14px;line-height:1.6;">
                 If you did not request this password reset,
                 you can safely ignore this email.
             </p>
@@ -858,16 +708,10 @@ def send_password_reset_otp(
                 margin:28px 0;
             ">
 
-            <p style="
-                margin:0;
-                color:#6f6979;
-                font-size:12px;
-            ">
+            <p style="margin:0;color:#6f6979;font-size:12px;">
                 DataFlow AI
             </p>
-
         </div>
-
     </body>
     </html>
     """
@@ -885,72 +729,74 @@ def send_password_reset_otp(
         headers={
             "Authorization": f"Bearer {RESEND_API_KEY}",
             "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "DataFlow-AI/1.0",
         },
         method="POST",
     )
 
     try:
+        with urllib.request.urlopen(request, timeout=20) as response:
+            response_body = response.read().decode("utf-8")
 
-        with urllib.request.urlopen(
-            request,
-            timeout=20,
-        ) as response:
-
-            response_body = (
-                response
-                .read()
-                .decode("utf-8")
-            )
-
-            if not (
-                200
-                <= response.status
-                < 300
-            ):
+            if not 200 <= response.status < 300:
                 raise RuntimeError(
-                    f"Email service returned HTTP {response.status}."
+                    f"Resend returned HTTP {response.status}: "
+                    f"{response_body[:1000]}"
                 )
 
             try:
-                response_data = json.loads(
-                    response_body
-                )
+                response_data = json.loads(response_body)
             except json.JSONDecodeError:
                 response_data = {}
 
             if not response_data.get("id"):
                 raise RuntimeError(
-                    "Email service did not return an email ID."
+                    "Resend did not return an email ID. "
+                    f"Response: {response_body[:1000]}"
                 )
 
-    except urllib.error.HTTPError as error:
-
-        try:
-            error_body = (
-                error
-                .read()
-                .decode("utf-8")
+            print(
+                f"[RESEND] Password reset email accepted. "
+                f"Email ID: {response_data.get('id')}",
+                flush=True,
             )
+
+    except urllib.error.HTTPError as error:
+        try:
+            error_body = error.read().decode("utf-8")
         except Exception:
             error_body = ""
 
+        safe_body = error_body[:1000]
+
+        print(
+            f"[RESEND ERROR] HTTP {error.code}: {safe_body}",
+            flush=True,
+        )
+
         raise RuntimeError(
-            f"Email sending failed with HTTP "
-            f"{error.code}. "
-            f"{error_body[:500]}"
+            f"Resend HTTP {error.code}: {safe_body}"
         ) from error
 
     except urllib.error.URLError as error:
+        print(
+            f"[RESEND NETWORK ERROR] {error.reason}",
+            flush=True,
+        )
 
         raise RuntimeError(
-            f"Unable to reach email service: "
-            f"{error.reason}"
+            f"Unable to reach Resend: {error.reason}"
         ) from error
 
     except TimeoutError as error:
+        print(
+            "[RESEND TIMEOUT] Resend request timed out.",
+            flush=True,
+        )
 
         raise RuntimeError(
-            "Email service request timed out."
+            "Resend request timed out."
         ) from error
 
 
@@ -962,15 +808,8 @@ def send_password_reset_otp(
 def forgot_password(
     request: ForgotPasswordRequest,
 ):
-
     email = request.email.strip().lower()
-
     user = get_user_by_email(email)
-
-    # --------------------------------------------------------
-    # Always return the same response for unknown emails.
-    # This prevents account enumeration.
-    # --------------------------------------------------------
 
     if not user:
         return {
@@ -987,13 +826,10 @@ def forgot_password(
 
     expires_at = (
         datetime.now(timezone.utc)
-        + timedelta(
-            minutes=RESET_OTP_EXPIRATION_MINUTES
-        )
+        + timedelta(minutes=RESET_OTP_EXPIRATION_MINUTES)
     ).isoformat()
 
     with get_connection() as connection:
-
         connection.execute(
             text(
                 """
@@ -1011,48 +847,26 @@ def forgot_password(
                 "user_id": user[0],
             },
         )
-
         connection.commit()
 
     try:
-
         send_password_reset_otp(
             recipient_email=email,
             otp=otp,
         )
 
     except Exception as error:
+        print(
+            f"[PASSWORD RESET EMAIL ERROR] "
+            f"{type(error).__name__}: {error}",
+            flush=True,
+        )
 
-        # ----------------------------------------------------
-        # If email delivery fails, invalidate the OTP.
-        # ----------------------------------------------------
-
-        with get_connection() as connection:
-
-            connection.execute(
-                text(
-                    """
-                    UPDATE users
-                    SET
-                        reset_otp_hash = NULL,
-                        reset_otp_expires_at = NULL,
-                        reset_otp_attempts = 0
-                    WHERE user_id = :user_id
-                    """
-                ),
-                {
-                    "user_id": user[0],
-                },
-            )
-
-            connection.commit()
+        clear_reset_otp(user[0])
 
         raise HTTPException(
             status_code=500,
-            detail=(
-                "Unable to send the password reset email. "
-                "Please try again later."
-            ),
+            detail="Unable to send the password reset email. Please try again later.",
         ) from error
 
     return {
@@ -1072,7 +886,6 @@ def forgot_password(
 def verify_reset_otp(
     request: VerifyResetOTPRequest,
 ):
-
     email = request.email.strip().lower()
     otp = request.otp.strip()
 
@@ -1082,9 +895,7 @@ def verify_reset_otp(
             detail="Invalid verification code.",
         )
 
-    validate_password(
-        request.new_password
-    )
+    validate_password(request.new_password)
 
     user = get_user_by_email(email)
 
@@ -1104,32 +915,8 @@ def verify_reset_otp(
             detail="Invalid or expired verification code.",
         )
 
-    # --------------------------------------------------------
-    # Attempt limit
-    # --------------------------------------------------------
-
     if attempts >= RESET_OTP_MAX_ATTEMPTS:
-
-        with get_connection() as connection:
-
-            connection.execute(
-                text(
-                    """
-                    UPDATE users
-                    SET
-                        reset_otp_hash = NULL,
-                        reset_otp_expires_at = NULL,
-                        reset_otp_attempts = 0
-                    WHERE user_id = :user_id
-                    """
-                ),
-                {
-                    "user_id": user[0],
-                },
-            )
-
-            connection.commit()
-
+        clear_reset_otp(user[0])
         raise HTTPException(
             status_code=400,
             detail=(
@@ -1138,50 +925,21 @@ def verify_reset_otp(
             ),
         )
 
-    # --------------------------------------------------------
-    # Expiration check
-    # --------------------------------------------------------
-
     try:
-
-        expires_at = datetime.fromisoformat(
-            expires_at_raw
-        )
+        expires_at = datetime.fromisoformat(expires_at_raw)
 
         if expires_at.tzinfo is None:
-            expires_at = expires_at.replace(
-                tzinfo=timezone.utc
-            )
+            expires_at = expires_at.replace(tzinfo=timezone.utc)
 
     except Exception:
-
+        clear_reset_otp(user[0])
         raise HTTPException(
             status_code=400,
             detail="Invalid or expired verification code.",
         )
 
     if datetime.now(timezone.utc) > expires_at:
-
-        with get_connection() as connection:
-
-            connection.execute(
-                text(
-                    """
-                    UPDATE users
-                    SET
-                        reset_otp_hash = NULL,
-                        reset_otp_expires_at = NULL,
-                        reset_otp_attempts = 0
-                    WHERE user_id = :user_id
-                    """
-                ),
-                {
-                    "user_id": user[0],
-                },
-            )
-
-            connection.commit()
-
+        clear_reset_otp(user[0])
         raise HTTPException(
             status_code=400,
             detail=(
@@ -1190,21 +948,12 @@ def verify_reset_otp(
             ),
         )
 
-    # --------------------------------------------------------
-    # Verify OTP
-    # --------------------------------------------------------
-
     provided_hash = hash_reset_otp(otp)
 
-    if not hmac.compare_digest(
-        provided_hash,
-        stored_hash,
-    ):
-
+    if not hmac.compare_digest(provided_hash, stored_hash):
         new_attempt_count = attempts + 1
 
         with get_connection() as connection:
-
             connection.execute(
                 text(
                     """
@@ -1218,37 +967,15 @@ def verify_reset_otp(
                     "user_id": user[0],
                 },
             )
-
             connection.commit()
 
         remaining = max(
             0,
-            RESET_OTP_MAX_ATTEMPTS
-            - new_attempt_count,
+            RESET_OTP_MAX_ATTEMPTS - new_attempt_count,
         )
 
         if remaining == 0:
-
-            with get_connection() as connection:
-
-                connection.execute(
-                    text(
-                        """
-                        UPDATE users
-                        SET
-                            reset_otp_hash = NULL,
-                            reset_otp_expires_at = NULL,
-                            reset_otp_attempts = 0
-                        WHERE user_id = :user_id
-                        """
-                    ),
-                    {
-                        "user_id": user[0],
-                    },
-                )
-
-                connection.commit()
-
+            clear_reset_otp(user[0])
             raise HTTPException(
                 status_code=400,
                 detail=(
@@ -1265,16 +992,9 @@ def verify_reset_otp(
             ),
         )
 
-    # --------------------------------------------------------
-    # OTP is valid -> update password
-    # --------------------------------------------------------
-
-    new_password_hash = hash_password(
-        request.new_password
-    )
+    new_password_hash = hash_password(request.new_password)
 
     with get_connection() as connection:
-
         connection.execute(
             text(
                 """
@@ -1292,7 +1012,6 @@ def verify_reset_otp(
                 "user_id": user[0],
             },
         )
-
         connection.commit()
 
     return {
@@ -1302,8 +1021,3 @@ def verify_reset_otp(
             "Please log in with your new password."
         ),
     }
-
-
-# ============================================================
-# END OF AUTHENTICATION MODULE
-# ============================================================
