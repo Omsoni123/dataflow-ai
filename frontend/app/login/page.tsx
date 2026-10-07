@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-type AuthMode = "login" | "signup";
+type AuthMode = "login" | "signup" | "forgot";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -13,6 +13,9 @@ export default function LoginPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [otp, setOtp] = useState("");
+
+  const [resetStep, setResetStep] = useState<"email" | "otp">("email");
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -22,9 +25,14 @@ export default function LoginPage() {
     setMode(newMode);
     setError("");
     setSuccess("");
+
+    if (newMode !== "forgot") {
+      setResetStep("email");
+      setOtp("");
+    }
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleAuthSubmit(e: React.FormEvent) {
     e.preventDefault();
 
     setLoading(true);
@@ -98,6 +106,84 @@ export default function LoginPage() {
     }
   }
 
+  async function handleForgotPassword(e: React.FormEvent) {
+    e.preventDefault();
+
+    setLoading(true);
+    setError("");
+    setSuccess("");
+
+    try {
+      const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+      if (!API_URL) {
+        throw new Error("API URL is not configured.");
+      }
+
+      if (resetStep === "email") {
+        const response = await fetch(`${API_URL}/auth/forgot-password`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Unable to send reset code.");
+        }
+
+        setResetStep("otp");
+        setSuccess(
+          "If an account exists with this email, a password reset OTP has been sent."
+        );
+      } else {
+        const response = await fetch(`${API_URL}/auth/verify-reset-otp`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            otp,
+            new_password: password,
+          }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Password reset failed.");
+        }
+
+        setSuccess(
+          "Password reset successfully. You can now sign in with your new password."
+        );
+
+        setPassword("");
+        setOtp("");
+        setResetStep("email");
+
+        setTimeout(() => {
+          setMode("login");
+          setSuccess("");
+        }, 1800);
+      }
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Password reset failed."
+      );
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return (
     <main className="flex min-h-screen items-center justify-center bg-[#07050d] px-6 text-white">
       <div className="w-full max-w-md">
@@ -109,128 +195,241 @@ export default function LoginPage() {
           </div>
 
           <h1 className="text-3xl font-semibold">
-            {mode === "login" ? "Welcome back" : "Create your account"}
+            {mode === "login"
+              ? "Welcome back"
+              : mode === "signup"
+              ? "Create your account"
+              : "Reset your password"}
           </h1>
 
           <p className="mt-2 text-sm text-white/40">
             {mode === "login"
               ? "Sign in to your DataFlow AI workspace"
-              : "Start analyzing your data with DataFlow AI"}
+              : mode === "signup"
+              ? "Start analyzing your data with DataFlow AI"
+              : resetStep === "email"
+              ? "Enter your email to receive a reset code"
+              : "Enter the OTP and your new password"}
           </p>
         </div>
 
         {/* Auth Card */}
         <div className="rounded-3xl border border-white/[0.08] bg-white/[0.03] p-7 shadow-2xl">
 
-          {/* Tabs */}
-          <div className="mb-7 grid grid-cols-2 rounded-xl bg-black/30 p-1">
-            <button
-              type="button"
-              onClick={() => switchMode("login")}
-              className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
-                mode === "login"
-                  ? "bg-white text-black shadow"
-                  : "text-white/40 hover:text-white"
-              }`}
-            >
-              Sign In
-            </button>
+          {/* Login / Signup Tabs */}
+          {mode !== "forgot" && (
+            <div className="mb-7 grid grid-cols-2 rounded-xl bg-black/30 p-1">
+              <button
+                type="button"
+                onClick={() => switchMode("login")}
+                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
+                  mode === "login"
+                    ? "bg-white text-black shadow"
+                    : "text-white/40 hover:text-white"
+                }`}
+              >
+                Sign In
+              </button>
 
-            <button
-              type="button"
-              onClick={() => switchMode("signup")}
-              className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
-                mode === "signup"
-                  ? "bg-white text-black shadow"
-                  : "text-white/40 hover:text-white"
-              }`}
-            >
-              Create Account
-            </button>
-          </div>
+              <button
+                type="button"
+                onClick={() => switchMode("signup")}
+                className={`rounded-lg px-4 py-2.5 text-sm font-medium transition ${
+                  mode === "signup"
+                    ? "bg-white text-black shadow"
+                    : "text-white/40 hover:text-white"
+                }`}
+              >
+                Create Account
+              </button>
+            </div>
+          )}
 
-          <form onSubmit={handleSubmit}>
+          {/* LOGIN / SIGNUP */}
+          {mode !== "forgot" && (
+            <form onSubmit={handleAuthSubmit}>
 
-            {/* Name - Signup only */}
-            {mode === "signup" && (
-              <>
-                <label className="text-sm text-white/70">
-                  Name
-                </label>
+              {/* Name - Signup only */}
+              {mode === "signup" && (
+                <>
+                  <label className="text-sm text-white/70">
+                    Name
+                  </label>
 
-                <input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Your name"
-                  required
-                  className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
-                />
-              </>
-            )}
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder="Your name"
+                    required
+                    className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
+                  />
+                </>
+              )}
 
-            {/* Email */}
-            <label className="text-sm text-white/70">
-              Email
-            </label>
+              {/* Email */}
+              <label className="text-sm text-white/70">
+                Email
+              </label>
 
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@example.com"
-              required
-              className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
-            />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                required
+                className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
+              />
 
-            {/* Password */}
-            <label className="text-sm text-white/70">
-              Password
-            </label>
+              {/* Password */}
+              <label className="text-sm text-white/70">
+                Password
+              </label>
 
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="••••••••"
-              required
-              minLength={8}
-              className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
-            />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                required
+                minLength={8}
+                className="mt-2 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
+              />
 
-            {/* Error */}
-            {error && (
-              <div className="mb-4 rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
-                {error}
-              </div>
-            )}
+              {/* Forgot Password */}
+              {mode === "login" && (
+                <div className="mt-2 mb-5 text-right">
+                  <button
+                    type="button"
+                    onClick={() => switchMode("forgot")}
+                    className="text-sm text-purple-400 transition hover:text-purple-300"
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+              )}
 
-            {/* Success */}
-            {success && (
-              <div className="mb-4 rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
-                {success}
-              </div>
-            )}
+              {/* Error */}
+              {error && (
+                <div className="mb-4 rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                  {error}
+                </div>
+              )}
 
-            {/* Submit */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
-            >
-              {loading
-                ? mode === "login"
-                  ? "Signing in..."
-                  : "Creating account..."
-                : mode === "login"
-                ? "Sign in"
-                : "Create account"}
-            </button>
-          </form>
+              {/* Success */}
+              {success && (
+                <div className="mb-4 rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+                  {success}
+                </div>
+              )}
 
-          {/* Switch text */}
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading
+                  ? mode === "login"
+                    ? "Signing in..."
+                    : "Creating account..."
+                  : mode === "login"
+                  ? "Sign in"
+                  : "Create account"}
+              </button>
+            </form>
+          )}
+
+          {/* FORGOT PASSWORD */}
+          {mode === "forgot" && (
+            <form onSubmit={handleForgotPassword}>
+
+              {/* Email */}
+              <label className="text-sm text-white/70">
+                Email
+              </label>
+
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="you@example.com"
+                required
+                disabled={resetStep === "otp"}
+                className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40 disabled:opacity-50"
+              />
+
+              {/* OTP + New Password */}
+              {resetStep === "otp" && (
+                <>
+                  <label className="text-sm text-white/70">
+                    OTP
+                  </label>
+
+                  <input
+                    type="text"
+                    value={otp}
+                    onChange={(e) =>
+                      setOtp(e.target.value.replace(/\D/g, "").slice(0, 6))
+                    }
+                    placeholder="Enter 6-digit OTP"
+                    inputMode="numeric"
+                    maxLength={6}
+                    required
+                    className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm tracking-[0.3em] text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
+                  />
+
+                  <label className="text-sm text-white/70">
+                    New Password
+                  </label>
+
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="••••••••"
+                    required
+                    minLength={8}
+                    className="mt-2 mb-5 w-full rounded-xl border border-white/[0.08] bg-black/30 px-4 py-3 text-sm text-white outline-none placeholder:text-white/20 focus:border-purple-400/40"
+                  />
+                </>
+              )}
+
+              {/* Error */}
+              {error && (
+                <div className="mb-4 rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                  {error}
+                </div>
+              )}
+
+              {/* Success */}
+              {success && (
+                <div className="mb-4 rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+                  {success}
+                </div>
+              )}
+
+              {/* Submit */}
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {loading
+                  ? resetStep === "email"
+                    ? "Sending OTP..."
+                    : "Resetting password..."
+                  : resetStep === "email"
+                  ? "Send OTP"
+                  : "Reset password"}
+              </button>
+            </form>
+          )}
+
+          {/* Bottom Navigation */}
           <div className="mt-6 text-center text-sm text-white/40">
-            {mode === "login" ? (
+
+            {mode === "login" && (
               <>
                 Don't have an account?{" "}
                 <button
@@ -241,7 +440,9 @@ export default function LoginPage() {
                   Create one
                 </button>
               </>
-            ) : (
+            )}
+
+            {mode === "signup" && (
               <>
                 Already have an account?{" "}
                 <button
@@ -250,6 +451,19 @@ export default function LoginPage() {
                   className="font-medium text-purple-400 hover:text-purple-300"
                 >
                   Sign in
+                </button>
+              </>
+            )}
+
+            {mode === "forgot" && (
+              <>
+                Remember your password?{" "}
+                <button
+                  type="button"
+                  onClick={() => switchMode("login")}
+                  className="font-medium text-purple-400 hover:text-purple-300"
+                >
+                  Back to sign in
                 </button>
               </>
             )}
