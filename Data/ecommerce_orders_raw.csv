@@ -1,0 +1,677 @@
+order_id,order_date,customer_id,customer_name,product,category,quantity,unit_price,discount,revenue,order_status,payment_method,city,pincode,email
+ORD-100129,31.03.26,CUST1125,Neha Chen,Headphones,Electronics,5,2999,0.1,"14,995.00",Pending,Wallet,Jaipur,110784,neha46@mail
+ORD-100110,"Aug 24, 2025",CUST1044,Anjali Garcia,Coffee Maker,Appliances,1,"3,149.10",15,"$3,149",Processing,UPI,Delhi,560737,anjali87@mail
+ORD-100521,14-Nov-2025,CUST1031,Karan Singh,Smart Watch,Electronics,5,5999,0,29995.00 USD,Shipped,Credit Card,Delhi,560941,karan16@gmail.com
+ord-100555,,CUST1060,Emma Verma,Smart Watch,Electronics,NULL,5399.1,15,$ 5399,Pending  ,Wallet,?,,emma68@mail
+ORD-100063,05-Apr-2025,CUST1101,Emily Gupta,SMART WATCH,Electronics,1,6598.9,5,6598.9,Processing,Net Banking,Ahmedabad,600819,emily79@gmail.com
+ORD-100518,27-Jan-2026,CUST1152,Amit Joshi,Phone Case,Accessories,5,$ 329,0,1644.5,Shipped,COD,Hyderabad,110828,amit10@gmail.com
+ORD-100305,11-26-2024,CUST1134,Emma Smith,Air Fryer,Appliances,2,$ 5849,10,11698.20 USD,Shipped,COD,Pune,400565,
+ORD-100510,20-Dec-2025,CUST1047,Neha Smith,Wter Bottle,Home,2,$449,20 %,898.0,Returned,UPI,Kolkata,400631,neha37@outlook.com
+ORD-100054,2025-07-30,CUST1052,Rohan Nair,Laptop Backpack,Accessories,1,1619.1,0,1619.1,Cancelled,Wallet,Bengaluru,400737,rohan24@gmail.com
+ORD-100408,18-Nov-2024,CUST1097,Emma Chen,Smart Watch,Electronics,1,"5,999.00",0,5999.0,Cancelled,Net Banking,N/A,600944,emma48@gmail.com
+ORD-100436,26/06/2025,CUST1022, Divya Johnson,Laptop Backpack,Accessories,1,1978.9,10,1978.9,Delivered,Upi,Jaipur,110790,divya82@yahoo.com
+ORD-100630,31/02/2025,CUST1203,Karan Joshi,Desk Lamp,Home,1,1199,15,1199.00 USD,n/a,Credit Card, Hyderabad,400618,karan92@yahoo.com
+ORD-100590,31/02/2025,CUST1143,Sneha Patel,null,Electronics,3,5999.00 USD,0,17997.0,Shipped,Debit Card  ,Kolkata,560407,sneha3@mail
+ORD-100278,2026/05/19,CUST1076,carlos joshi,SMART WATCH,Electronics,2,5399.1,0.1,10798.2,Pending,Credit Card, Delhi,560704,carlos49@outlook.com
+ORD-100459,2026/06/08,CUST1043,Emily Reddy,Coffee_Maker,Appliances,1,3848.9,5,3848.9, Cancelled,Wallet,Mumbai,600915,emily74@gmail.com
+ORD-100288,"Thursday, 12 June 2025",CUST1172,Michael Das,Coffee_Maker,Appliances  ,1,"3,499.00",5,3499.0,Delivered,Credit Card,Ahmedabad,560414,michael24@yahoo.com
+ORD-100028,11-26-2024,CUST1194,Sarah D'Souza,Coffee Maker,Appliances  ,2,3848.9,20 %,"$7,697.80",Pending,Debit Card,Mumbai,600192,sarah61@yahoo.com
+ORD-100306,N/A,CUST1138,Manish Iyer,Air Fryer,Appliances,2,6499.00 USD,0,12998.0,Delivered,Wallet,Delhi,110334,manish43@outlook.com
+ORD-100307,2026/07/02,CUST1131,Emma Patel,T-Shirt,Apparel,2,599,15,"1,198.00",Returned,COD,Jaipur, ,emma79@yahoo.com
+ORD-100158,"Wednesday, 11 June 2025",CUST1084,David Kulkarni,?,Apparel,4,658.9,0,2635.6,Processing,COD,Delhi,560663,david71@gmail.com
+ORD-100209,"Friday, 04 July 2025",CUST1095,Neha Verma,Running Shoes,Footwear  ,2,3299,5,6598.0,Processing,UPI,Hyderabad,400742,neha36@mail
+ORD-100085,21/09/2024,CUST1111,Rohan Smith,Headphones,Electronics,1,2999,20 %,2999.0,Shipped,Credit Card,Delhi,560898,rohan50@mail
+ORD-100456,2025-04-13,CUST1088,Carlos Gupta,Water Bottle,Home,1,493.9,10%,493.9,Delivered,Wallet,Surat,400877,carlos56@mail
+ORD-100483,20.06.26,CUST1178,Karan Smith,Desk Lamp,Home,1,"$1,318.90",0,1318.9,Processing,Debit Card,Pune,400486,karan1@outlook.com
+ORD-100597,"Tuesday, 25 February 2025",CUST1198,Sneha Mehta,Water Bottle,Home,1,449,15,449.0,Processing,UPI,Bengaluru,110855,sneha48@mail
+ORD-100013,2024/02/07,CUST1126,Mei Lee,T-Shit,Apparel,1,539.1,10%,539.1,Shipped,COD,Delhi,400726,mei71@gmail.com
+ORD-100064,17.01.25,CUST1030,Divya Verma,Laptop Backpack,Accessories,1,1799,0,1799.00 USD, Pending,Net Banking  ,Jaipur,411425,divya57@mail
+ORD-100422,17/05/2024,CUST1001,Aarav Joshi,Notebook Set,Stationery,10,$314,0,3141.0,CANCELLED,COD,Hyderabad,560348,null
+ORD-100591,2025/12/07,CUST1174,Rohan Lee,HEADPHONES,Electronics,1,"$2,699.10",20 %,$ 2699,Delivered,Wallet,Bengaluru,600711,rohan69@yahoo.com
+ORD-100312,07.09.24,CUST1071,Sarah Garcia,Desk Lamp,Home,1,$ 1319,10%,1318.9,Processing,UPI  ,Delhi,500740,?
+ORD-100503,02-27-2025,CUST1065, Rohan Patel,Coffee_Maker,Appliances,1,3149.1,0,3149.1,Processing  ,UPI,Chennai,400345,rohan20@mail
+ORD-100411,2026/04/11,CUST1172,Michael Das,Running Shoes,Footwear,1,3299,0.1,3299.0,Pending,Debit Card,Mumbai,500307,NaN
+ORD-100552,01-Jul-2026,CUST1078,Sneha Kulkarni,Yoga Mat  ,Sports,2,988.9,20 %,"$1,978",Returned,COD  ,Kolkata,500800,sneha40@mail
+ORD-100502,2024-11-18,CUST1118,Priya Smith  ,Notebook Set,Stationery  ,4,349.00 USD,0,"$1,396.00",Pending,Wallet,Bengaluru,411607,priya28@mail
+ORD-100185,02-May-2026,CUST1060,EMMA VERMA,Bluetooth Speaker,Electronics,2,2499,15,4998.0,Returned,COD,Chennai,560021,emma78@gmail.com
+ORD-100090,06-03-2025,CUST1056,Vikram Joshi,T-Shirt,Apparel,2,539.10,15,1078.2,Cancelled,COD,Delhi,500594,vikram10@mail
+ORD-100425,07-16-2024,CUST1015,Carlos Gupta,Yoga Mat,Sports  ,1,$988.90,20,988.9,Shipped,Debit_Card,PUNE,,carlos88@mail
+ORD-100352,10-12-2025,CUST1042,Sarah Gupta,DESK LAMP,Home,1,1199,0,1199.0,Shipped,Credit Card,Hyderabad,110060,sarah18@yahoo.com
+ORD-100478,02-24-2025,CUST1154,Pooja Lee,Smart Watch, Electronics,2,5999,0,11998.0,Pending,Credit Card, Mumbai,411868,?
+ORD-100539,27-Feb-2024,CUST1014,Arjun Sharma,T-Shirt,Apparel,1,$ 599,5,599.0,Pending,Credit_Card,Bengaluru,110902,arjun57@mail
+ORD-100621,yesterday,CUST1008,Karan Reddy,Desk Lamp,Home,2,1199,5,2398.0,Pending,CREDIT CARD,Hyderabad,400305,karan48@yahoo.com
+ORD-100239,05-07-2026,CUST1218,Emily_Iyer,Des Lamp,Home,1,1199,10,1199.0,Shipped, Net Banking,Pune,400717,emily23@mail
+ORD-100396,,CUST1107,Amit Johnson,Bluetooth Speaker,Electronics,1,2499,20,2499.0,Returned,Debit Card,Bengaluru,110237,amit39@yahoo.com
+ORD-100434,27-Apr-2026,CUST1066,Sneha Iyer,bluetooth speaker,Electronics,1,2748.9,0,$ 2749,CANCELLED,Wallet,mumbai,n/a,sneha62@gmail.com
+ORD-100368,18/10/2024,CUST1177,Rahul Joshi,T-Shirt  ,Apparel  ,1,658.9,10,$658.90,Shipped,Wallet,Jaipur,400742,rahul73@gmail.com
+ORD-100317,03-21-2024,CUST1079,Sana Gupta,Laptop Backpack,Accessories,3,1799,10%,5397.0,Delivered,Wallet,Surat,400391,sana96@gmail.com
+ORD-100551,"Friday, 27 February 2026",CUST1025,Emma Garcia,Desk Lamp,Home,3,1199,5,3597.0,Processing,Wallet  ,Kolkata,500890,emma13@yahoo.com
+ORD-100138,20.05.24,CUST1047, Neha Smith,Laptop_Backpack,Accessories  ,3,1619.1,0.1,4857.3,Shipped,Debit Card,Chennai,500608,neha83@gmail.com
+ord-100291,16-Feb-2024,CUST1089,Emily_D'Souza,Coffee Maker,Appliances,2,3149.10 USD,0,6298.2,Returned,COD,Chennai,400328,emily58@mail
+ORD-100145,"Sep 12, 2025",CUST1160,-,smart watch,Electronics,2,5999,20 %,"11,998.00",?, Debit Card,Jaipur,110841,emma67@yahoo.com
+ORD-100084,2025-02-27,CUST1024,Mei Patel,Headphones,Electronics,1,2999,10%,2999.0,Pending,Debit Card,Delhi,400995,
+ORD-100009,2025/04/29,CUST1062,Amit Johnson,T-Shirt,Apparel,1,658.90 USD,15,$659,Pending,UPI,Hyderabad,null,amit90@yahoo.com
+ORD-100030,2024/11/13,CUST1169,Olivia Reddy,T-Shirt,Apparel,1,658.9,0,658.90,Cancelled,UPI,Hyderabad,500855,olivia68@gmail.com
+ORD-100415,"Apr 06, 2026",CUST1075,Olivia Khan  ,WATER BOTTLE,Home  ,2,404.1,20,808.2,Cancelled,Net Banking,Jaipur,600214,olivia84@gmail.com
+ORD-100602,2025/01/01,CUST1052,Rohan Nair,Yoga Mat, Sports,1,899,5,899.00 USD,Pending,Debit Card,surat,400301,rohan51@yahoo.com
+ORD-100613,"Mar 20, 2024",CUST1148,Isha Chen,wireless mouse,Electronics,3,719.1,10%,2157.3,Pending,COD,Kolkata,411773,isha71@gmail.com
+ORD-100200,"Sunday, 09 June 2024",CUST1161,Priya_Smith,Running Shoes,Footwear,?,3299,15,3299.0,Delivered,Net Banking,Bengaluru,400141,priya53@mail
+ORD-100128,05-Nov-2025,CUST1198,Sneha Mehta,Laptop Backpack,Accessories,2,1799,0,"$3,598.00",shipped,Debit Card,Ahmedabad,560050,n/a
+ORD-100474,"May 06, 2025",CUST1215,LIAM IYER,Smart Watch,ELECTRONICS,1,5999,10,5999.00 USD,Returned,Net Banking,Mumbai,600375,liam19@gmail.com
+ORD-100102,08-Jun-2026,CUST1003,Vikram Mehta,Wireless Mouse,Electronics,2,$799.00,20 %,"1,598.00",Processing,Net Banking,Bengaluru,560477,vikram20@gmail.com
+ORD-100355,"Aug 22, 2025",CUST1003,Vikram Mehta,Bluetooth Speaker,Electronics,1,2249.1,5,2249.1,Processing,Credit Card,Surat,411834,vikram96@gmail.com
+ORD-100522,"Nov 21, 2024",CUST1114,Michael Reddy,Desk Lamp,Home,1,1318.9,10,"$1,318.90",Processing,Wallet,Ahmedabad,411409,michael53@yahoo.com
+ORD-100387,yesterday,CUST1007,Aarav Singh,Phone Case,Accessories,1,328.9,20,328.9,Processing,COD,Pune,400511,aarav50@outlook.com
+ORD-100351,03-12-2025,CUST1195,Aarav Khan,Laptop_Backpack,Accessories,2,"$1,799",15,"$3,598",Shipped,Credit_Card,Surat, ,aarav47@yahoo.com
+ORD-100133,"Thursday, 19 February 2026",CUST1021,Amit Mehta,Water Bottle,Home,1,404.1,0,404.10 USD,Returned,null,Bengaluru,411638,amit6@yahoo.com
+ORD-100043,"Jun 03, 2025",CUST1189, Vikram Johnson,Coffee Maker,Appliances,?,3848.9,15,11546.7,Pending,Debit Card,Surat,,vikram25@gmail.com
+ORD-100127,2026/01/20,CUST1081,?,Yoga Mat,Sports,-1,899,0.1,-899.0,Pending,Credit Card,Hyderabad,600518,emma24@gmail.com
+ORD-100452,"Nov 26, 2024",CUST1012,Sana Reddy,Coffee Maker, Appliances,2,3499,20 %,6998.0,Returned,debit card,Bengaluru,500549,sana14@yahoo.com
+ORD-100529,2026/01/08,CUST1004,Olivia Khan,N/A,Home,NaN,449,20 %,898.0,Shipped,cod,Kolkata,411544, 
+ORD-100397,2024-04-25,CUST1002,Neha Reddy,Smart Watch  ,Electronics,1,6598.9,0,6598.9,Pending,Wallet,Delhi,110579,neha81@mail
+ORD-100496,2025-10-18,CUST1141,Neha Singh,Air Fryer,Appliances,1,6499,5,6499.0,delivered,Credit Card, Bengaluru,600602,
+ORD-100395,09-07-2025,CUST1075,Olivia Khan  ,Phone_Case,Accessories,3,299,10,897.0,Returned  ,credit card,Surat,560813,olivia3@outlook.com
+ORD-100005,01.11.24,CUST1147,Anjali Lee,Jeans,Apparel,1,1799,15,1799.0,Returned,Debit Card  ,Mumbai  ,-,anjali42@yahoo.com
+ORD-100135,04.06.26,CUST1017,Rahul Joshi, Wireless Mouse,electronics,1,799,15,799.00,Pending, Wallet,Chennai,500282,rahul81@outlook.com
+ORD-100580,"Jun 02, 2024",CUST1128,Sneha Lee,laptop backpack,Accessories,1,1978.9,10,$ 1979,Returned,Credit Card,Mumbai, ,sneha20@yahoo.com
+ORD-100304,26.01.26,CUST1155,Liam Khan,Coffee Maker,Appliances,2,3499,0,"$6,998.00",Pending,Net Banking,Jaipur,110237,liam44@gmail.com
+ORD-100326,13.06.24,CUST1175,Olivia_Verma,Laptop Backpack,Accessories,2,1619.1,0,3238.2,Cancelled,Debit Card,Bengaluru,411891,olivia20@gmail.com
+ORD-100320,"Monday, 07 October 2024",CUST1129,Divya Lee,T-Shirt,Apparel,1,599,10,599.0, Delivered,Wallet,Pune,560054,divya37@yahoo.com
+ORD-100095,2026-01-26,N/A,Olivia Mehta,Notebook Set,Stationery,1,349.00 USD,20,349.0,Returned,Net Banking,Bengaluru,400106,olivia76@mail
+ORD-100513,05-May-2025,CUST1181,Olivia Kulkarni,Wireless Mouse,Electronics,1,799,5,799.0,Pending,upi,Surat,400138,olivia20@gmail.com
+ORD-100020,"Sunday, 26 July 2026",CUST1006,Sana Patel,PHONE CASE,Accessories,2,328.9,15,657.8,Pending,UPI,Ahmedabad,560033,sana28@mail
+ORD-100176,13-Jun-2024,CUST1071,Sarah Garcia,T-Shirt,,5,599,15,2995.0,Returned,Net Banking,Chennai,500233,sarah98@outlook.com
+ORD-100248,2024/06/28,CUST1172,Michael Das,Running Shoes,Footwear,5,3628.9,5,18144.5,Cancelled, Net Banking,?,500868,michael46@gmail.com
+ORD-100381,"Sep 06, 2026",CUST1205,Arjun Patel, Phone Case,Accessories,1,269.1,0,$ 269, Returned,COD,Ahmedabad,500812,arjun25@yahoo.com
+ORD-100125,N/A,CUST1068,Mei Lee,Water Bottle,Home,1,404.10 USD,0,404.10 USD, Shipped,Credit_Card,AHMEDABAD,n/a,mei61@mail
+ORD-100468,08-26-2026,, Carlos Iyer,T-Shirt,APPAREL,1,658.9,10%,658.9,Returned,Debit Card,Chennai,400652,carlos8@gmail.com
+ORD-100093,2025-05-31,CUST1033,Carlos Kulkarni,T-Shirt,APPAREL,1,599,20 %,$ 599,Returned,Wallet,Delhi,500717,carlos14@gmail.com
+ORD-100289,05-06-2024,CUST1066,Sneha Iyer,Desk Lamp,Home,3,1079.1,20 %,3237.3,Cancelled,Credit Card,Bengaluru  ,411011,NULL
+ORD-100517,02-Dec-2025,CUST1112,Aarav Verma,Wireless Mouse,Electronics,10,719.1,5,"7,191.00",Cancelled  ,Wallet,Chennai,600527,aarav82@gmail.com
+ORD-100074,N/A,CUST1119,Rohan D'Souza, Bluetooth Speaker,Electronics,3,2499,15,"$7,497.00",Returned,Wallet,Mumbai,600744,rohan27@yahoo.com
+ORD-100313,07.02.24,CUST1105,Carlos Nair,Water Bottle,Home,1,449,0,449.0,Processing,Credit Card,Bengaluru,600124,-
+ORD-100467,01-24-2026,CUST1068,Mei Lee,Water Bottle,Home,1,404.1,0.1,404.10 USD,Pending,Net Banking, Delhi,500479,mei64@gmail.com
+ORD-100538,07-22-2024,CUST1046,NULL,Laptop Backpack,Accessories,1,1799,0,1799.0,Delivered,Net Banking,Mumbai,411624,david97@outlook.com
+ORD-100343,"Jan 05, 2025",CUST1047,,Yoga Mat,Sports,1,899,0.1,899.0,Pending,Debit Card,Jaipur,600068,neha73@gmail.com
+ORD-100476,"Sunday, 16 February 2025",CUST1205,Arjun Patel,Headphones,electronics,3,2999,20 %,$ 8997,Returned,,Delhi,411127,arjun5@gmail.com
+ORD-100062,2024/04/28,CUST1123,Vikram Verma,Wireless Mouse,Electronics,1,719.1,0,$ 719,processing,wallet,Chennai,400816,vikram24@yahoo.com
+ORD-100524,17-Jun-2024,CUST1206,Rohan Lee,Desk Lamp,Home,2,1199,0.1,2398.0, Cancelled,COD,Pune,400655,rohan57@yahoo.com
+ORD-100049,17/06/2024,CUST1129,Divya Lee,Air Fryer,Appliances  ,1,7148.9,0,7148.9, Processing,WALLET,Chennai,110957,divya61@gmail.com
+ORD-100208,03/07/2026,CUST1099,Carlos Iyer,Water Bottle,HOME,1,$449.00,20,449.0, ,Debit Card,Jaipur,500416,carlos82@yahoo.com
+ORD-100203,null,CUST1090,Aarav Das,Desk Lamp,Home,1,1199,0.1,1199.0,Processing,Net Banking,Chennai,-,-
+ORD-100193,02/09/2024,n/a,Emma Chen  ,Coffee Maker,Appliances,1,3499,0,3499.0,Shipped,COD,Kolkata,411092,emma48@yahoo.com
+ORD-100460,22-Jul-2024,CUST1123, Vikram Verma,Bluetooth Speaker,Electronics,2,2499,0,4998.0,Shipped,Debit Card  ,Chennai,400713,vikram14@outlook.com
+ORD-100276,2025/01/01,CUST1046,David Khan,Bluetoth Speaker,Electronics,3,$ 2249,0,6747.3,Pending,Debit Card,Delhi,600774,david41@yahoo.com
+ORD-100356,08.02.24,CUST1112,Aarav Verma,Jeans,?,3,1978.9,10%,5936.7,Cancelled,COD,Ahmedabad,400214,aarav71@outlook.com
+ORD-100497,31/02/2025,CUST1110,Neha Reddy,Smart Watch,Electronics,?,5399.1,20,"$53,991",Pending, ,Pune,560567,neha69@mail
+ORD-100270,27.02.25,CUST1209,Carlos Iyer,Desk Lamp  ,Home  ,3,1079.1,0.1,3237.3,Cancelled,Credit Card,DELHI,411106,carlos97@gmail.com
+ORD-100465,"Sunday, 30 June 2024",CUST1120,Neha Joshi,Jeans,Apparel,1,1799,0.1,1799.0,Processing,Wallet,kolkata,110660,neha9@mail
+ORD-100315,"Friday, 19 December 2025",CUST1038,Anjali Johnson  ,Running_Shoes,Footwear,1,3299,10,3299.0,Pending,Net Banking,pune,400286,anjali73@gmail.com
+ORD-100212,21-Jun-2026,CUST1016,Liam_Lee,T-Shirt,Apparel  ,1,$ 659,5,658.9,Returned,Net Banking,Mumbai,560940,n/a
+ORD-100148,2026/07/23,CUST1036,Arjun Garcia,Yoga Mat  ,Sports,3,988.9,10,2966.7,Returned,COD,Hyderabad,411244,arjun71@yahoo.com
+ORD-100608,07-12-2024,CUST1076,carlos joshi, Air Fryer,APPLIANCES,1,7148.9,20,7148.9,Processing, Net Banking,Mumbai,null,n/a
+ORD-100109,05-18-2026,CUST1101,emily gupta,Bluetooth Speaker,Electronics,1,2499.00 USD,5,$ 2499,Cancelled,COD,Mumbai,600991,emily36@outlook.com
+ORD-100252,2024/04/22,CUST1015,CARLOS GUPTA,Phone_Case,Accessories,1,299.00 USD,10,299.0, ,UPI,Chennai,500380,carlos36@yahoo.com
+ord-100592,13/08/2024,CUST1138,Manish Iyer,Water Bottle, Home,3,493.9,0,1481.7,Processing,COD,Pune,560238,
+ORD-100324,04-Nov-2024,CUST1000,David Mehta,N/A,Accessories,2,299,0,598.0,Processing,UPI,Bengaluru,411791,david37@mail
+ORD-100240,"Tuesday, 15 July 2025",CUST1208,Aarav Smith,Water Bottle,Home,2,449,0,898.0,Delivered,Net Banking,Ahmedabad,400214,aarav96@yahoo.com
+ORD-100383,11-May-2025,CUST1123,Vikram Verma,Coffee Maker,Appliances,2,3499,15,6998.0,Returned,COD,Mumbai,110377,vikram19@mail
+ORD-100325,15-Aug-2024,CUST1018,Vikram Nair,Desk Lamp,Home,1,1318.90 USD,0,1318.90 USD,processing,Net Banking,Hyderabad,400407,vikram14@mail
+ORD-100037,"Jun 14, 2025",CUST1029,David Das,Yoga Mat,sports,1,899,0.1,899.0,Delivered,COD,Jaipur,400728,david90@yahoo.com
+ORD-100123,08.10.25,CUST1138,Manish Iyer,T-Shirt,Apparel,1,658.9,0.1,658.90,Cancelled,Wallet,Ahmedabad,560611,manish1@outlook.com
+ORD-100015,2026/02/20,CUST1137,Karan Khan,Phone Case,Accessories,1,299,10%,299.0,Processing,Credit Card,Delhi,500932,karan93@yahoo.com
+ORD-100254,05-Sep-2026,CUST1178,Karan Smith,Water Bottle,Home,10,449,0,"4,490.00",delivered,Credit Card,Ahmedabad,560310,karan38@outlook.com
+ORD-100104,2024/09/19,CUST1097,Emma Chen,Laptop Backpack,ACCESSORIES,4,1799,20,"$7,196.00",Shipped,Wallet,Jaipur,600793,NULL
+ORD-100337,2025-05-25,CUST1186,Sneha Singh,Jeans,Apparel,3,1799,15,"$5,397",Pending,Credit Card,Surat,600187,sneha84@yahoo.com
+ORD-100179,11/09/2025,CUST1173,Priya Das,Phone Case,Accessories,1,299,20,299.0,Delivered,Net Banking,Ahmedabad, ,priya85@outlook.com
+ORD-100081,05-Jul-2024,CUST1100,Vikram Chen  ,Coffee Maker,APPLIANCES,3,3848.9,0,11546.7,Delivered,Credit Card,Mumbai  ,400905,vikram49@outlook.com
+ORD-100234,21/12/2025,CUST1110,Neha Reddy,t-shirt,Apparel,1,599,0,599.00,Delivered,COD,Ahmedabad,110062, 
+ORD-100325,15-Aug-2024,CUST1018,Vikram Nair,Desk Lamp,Home,1,1318.90 USD,0,1318.90 USD,processing,Net Banking,Hyderabad,400407,vikram14@mail
+ORD-100367,28-Dec-2025,CUST1159,Priya Verma,YogaMat,Sports,2,809.1,20 %,1618.20 USD,Delivered,Wallet,Delhi  ,500335,priya95@outlook.com
+ORD-100164,04-23-2024,CUST1177, Rahul Joshi,Wireless Mouse,Electronics,2,799,0,1598.0,Shipped,COD  ,Pune  ,500968,rahul74@gmail.com
+ORD-100501,2025/05/30,CUST1211,Anjali Garcia,Yoga Mat  ,Sports,1,809.1,0,809.10,Returned,COD,Chennai,110093,anjali48@gmail.com
+ORD-100263,17.06.24,CUST1122,KARAN KHAN,Phone Case,ACCESSORIES,1,269.1,20,269.1,PENDING,Credit Card,Surat,null,karan2@outlook.com
+ORD-100004,04-30-2026,CUST1113,Emily Reddy,Air_Fryer,Appliances,2,7148.9,20,$ 14298,Cancelled,UPI,Pune  ,-,emily50@gmail.com
+ORD-100406,07/04/2026,CUST1108,manish d'souza,Phone Case,Accessories,4,299.00,0,1196.0,Pending,Credit Card,ahmedabad,500854,manish36@mail
+ORD-100586,"Sunday, 13 July 2025",CUST1171,Michael Reddy,Bluetooth Speaker,Electronics,2,"$2,249.10",5,4498.2,Cancelled,Credit Card,Mumbai,110044,michael21@outlook.com
+ORD-100358,"Jul 25, 2026",CUST1019,Carlos Smith,T-Shirt  ,Apparel,1,599,20 %,599.00,Returned,UPI,Ahmedabad,400896,carlos83@yahoo.com
+ORD-100219,2025-04-30,CUST1095,Neha Verma,t-shirt,Apparel,2,539.1,0.1,"$1,078.20",Cancelled,Debit Card,Kolkata,560823,?
+ORD-100499,TBD,CUST1218,Emily Iyer,Desk Lamp  ,Home,1,1318.9,15,1318.9,Delivered,Wallet,Surat,400446,emily21@yahoo.com
+ORD-100441,2025-07-16,CUST1150,Priya Gupta,Wireless Mouse,Electronics,1,719.1,0,$719, Processing,COD,SURAT,600790,priya14@outlook.com
+ORD-100285,11-28-2025,CUST1127,Karan Mehta,WIRELESS MOUSE,Electronics  ,5,799,0.1,$ 3995,Shipped,Debit Card,Bengaluru,400750,karan75@gmail.com
+ORD-100217,2024/07/18,CUST1142,manish khan, Wireless Mouse,Electronics,null,799,0.1,799.00,Returned,COD,Pune,400963,manish80@mail
+ORD-100010,10-18-2024,CUST1125,Neha Chen,JEANS,Apparel,1,1799,20 %,1799.0,Shipped  ,Debit Card,Ahmedabad,411312,neha8@gmail.com
+ORD-100243,09-15-2026,?,Karan Khan,coffee maker,Appliances,2,$ 3499,5,6998.0,null,Credit Card,Hyderabad,500502,karan67@outlook.com
+ORD-100236,2025/11/07,NULL,Sarah Singh,Headphones,Electronics,3,3298.9,20,9896.7,Returned,Credit Card,Pune,500803,sarah65@gmail.com
+ORD-100546,yesterday,CUST1111,Rohan Smith,Notebook Set,Stationery,2,383.90 USD,0.1,$768,Returned,UPI,Kolkata,411766,rohan96@gmail.com
+ORD-100386,06.06.25,CUST1099,n/a,Laptop Backpck,Accessories,2,1619.1,0,"$3,238.20",Processing,Debit Card,Pune,400334,carlos51@gmail.com
+ORD-100515,null,CUST1198,SNEHA MEHTA,Wireless Mouse,Electronics,2,$879,0,"$1,757.80",processing,Credit Card,Delhi,500041,
+ord-100034,2026/02/04,CUST1011,Karan Khan,Phone Case,Accessories,2,299,10,598.0,Processing,n/a,Mumbai,560955,karan51@mail
+ORD-100507,"Saturday, 05 September 2026",CUST1086,Sarah Nair,Coffee Maker,Appliances,n/a,3499,0,3499.0,Delivered  ,Wallet,Mumbai,560356,sarah5@yahoo.com
+ORD-100044,2025-05-28,CUST1038,Anjali Johnson,Smart Watch,Electronics,1,5999,20,5999.0,Processing,COD,Pune,560789,anjali27@mail
+ORD-100071,0000-00-00,CUST1107,,Coffee Maker,Appliances,1,3499,0.1,3499.0,Pending,cod,Bengaluru,600781,amit88@gmail.com
+ORD-100572,"Sunday, 28 July 2024",CUST1065,Rohan Patel,Smart_Watch,Electronics,3,"6,598.90",20,19796.7,Pending,UPI,Kolkata,110956,rohan5@gmail.com
+ORD-100100,13-May-2026,CUST1105,Carlos Nair,Running Shoes,Footwear,2,3628.9,10,7257.8,Delivered,Debit Card,Kolkata,500292,carlos55@gmail.com
+ORD-100080,2025/12/22,CUST1082,John Gupta,Notebook Set,stationery,1,349,20 %,349.0,Cancelled,Debit Card,Surat,600705,john23@gmail.com
+ORD-100472,2024-05-11,CUST1183,Carlos Singh  ,Yoga Mat,Sports,2,988.9,15,"$1,977.80",Cancelled,UPI  ,Kolkata,400570,carlos8@yahoo.com
+ORD-100229,04-Jun-2024,CUST1035,Sneha Brown,Wireless Mouse,Electronics,1,799,5,799.0,Cancelled,Wallet,Jaipur,600712,sneha78@mail
+ORD-100639,"Wednesday, 28 August 2024",CUST1084,David Kulkarni,Smart Wach,electronics,1,5999,10%,5999.0,Delivered,Credit Card,Bengaluru,411247,david19@mail
+ORD-100585,"Nov 06, 2024",CUST1003, Vikram Mehta,Laptop Backpack,Accessories,1,"$1,799.00",10%,$ 1799,Processing,Wallet,Hyderabad,411675,vikram37@gmail.com
+ORD-100105,"Jul 25, 2025",CUST1022,Divya Johnson,Wireless Mouse,Electronics,1,799,10,799.0,Delivered,COD,Delhi,411404,divya4@mail
+ORD-100640,09-22-2024,CUST1034,Rohan Reddy,Headphones,Electronics,1,2699.10 USD,10,2699.1,Pending,Wallet,bengaluru,,rohan9@mail
+ORD-100403,16-Sep-2025,CUST1216,Emily_Patel,Yoga Mat,SPORTS,1,899,0.1,899.00 USD,null,UPI, ,500397,emily78@yahoo.com
+ORD-100258,,CUST1039,Divya Nair,Phone Case,Accessories  ,1,328.9,10,328.9,Processing,Credit Card, Pune,500341,divya11@gmail.com
+ORD-100398,09.02.26,NULL,Vikram Reddy,Laptop Backpack,Accessories,3,1619.1,0,4857.3,Shipped,,jaipur,110378,vikram36@mail
+ORD-100117,26-Jan-2025,CUST1007,Aarav Singh,Notebook Set,Stationery,1,349,0,349.0,Shipped,Debit Card,Pune,600247,aarav27@yahoo.com
+ORD-100410,02.06.25,CUST1009,John Das,Desk Lamp,Home,2,$ 1319,20 %,"2,637.80",Shipped,UPI,PUNE,110271,john9@yahoo.com
+ord-100096,09-18-2025,CUST1112,Aarav Verma,Headphones,Electronics,1,2699.1,15,$ 2699,Pending,Credit Card,Ahmedabad,411152,N/A
+ORD-100296,12/09/2025,CUST1167,Anjali Singh,Coffee Maker,Appliances,4,3499,0,13996.0, Processing,Debit Card,Kolkata,560080,anjali18@yahoo.com
+ORD-100048,"Nov 10, 2024",CUST1177,Rahul Joshi,Laptop Backpack,Accessories,1,1799,0.1,1799.0,Returned,UPI,Surat,411540, 
+ORD-100142,2026/03/17,CUST1169, Olivia Reddy,Coffee Maker,Appliances,2,$ 3849,20 %,7697.8,Returned,Debit Card,Jaipur,600619,olivia91@outlook.com
+ORD-100554,12.02.25,CUST1213,Emily Sharma,Bluetooth Speaker,Electronics,4,"$2,499",0,9996.0,Shipped,COD,Jaipur,600485,emily96@gmail.com
+ORD-100375,"Jun 22, 2024",CUST1126,NULL,Jeans,Apparel,1,1978.90 USD,20,1978.9,Cancelled,-,Pune,110711,mei90@mail
+ORD-100342,"Thursday, 16 October 2025",CUST1150,priya gupta,Coffee_Maker, Appliances,1,3499,0,3499.0,Pending,Debit Card,Bengaluru,600728,priya47@mail
+ORD-100257,26.05.24,CUST1100,Vikram Chen,Notebook Set,STATIONERY,2,349.00,0,698.0,Cancelled,Credit Card,Chennai,400491,vikram57@yahoo.com
+ORD-100334,06.06.26,CUST1017,Rahul Joshi,T-Shirt,Apparel,?,599,20,599.00 USD,Processing,Wallet,Ahmedabad,400867,rahul75@gmail.com
+ORD-100563,18/04/2025,CUST1045,Amit Joshi,Wireless Mouse,ELECTRONICS,1,719.1,20 %,719.1,Cancelled,COD,Ahmedabad,411535,amit24@yahoo.com
+ORD-100202,15.12.25,CUST1139,Sana Gupta,Yoga Mat,Sports,2,$989,0.1,1977.8,Pending,Credit Card,Pune,411517,sana8@outlook.com
+ORD-100272,23.09.25,CUST1110,Neha Reddy, Coffee Maker,appliances,1,3149.1,5,3149.1,Processing,UPI,DELHI, ,N/A
+ORD-100382,"Tuesday, 16 September 2025",CUST1161,Priya Smith,Jeans,Apparel,2,1799,20 %,3598.0,Processing,UPI,Bengaluru,411252,priya1@outlook.com
+ORD-100421,14.12.24,CUST1136,Neha Nair,t-shirt,Apparel,1,599,0,599.0,Returned,COD,NULL,110680,neha84@outlook.com
+ORD-100506,18/11/2024,CUST1103,Sarah Lee,Wireless Mouse,Electronics,2,799,5,1598.00 USD,Processing,Credit Card,Bengaluru,600702,sarah34@mail
+ORD-100007,31/02/2025,CUST1173,Priya_Das,Coffee Maker,Appliances,4,3149.1,20,12596.4,-, Net Banking,Ahmedabad,600534,priya35@mail
+ORD-100451,09-04-2026,CUST1051,Amit Joshi,Yoga Mat,sports,1,899.00 USD,0,899.00 USD,Shipped,COD  ,Chennai,411076,amit70@outlook.com
+ORD-100061,14.02.25,CUST1114,Michael Reddy,Bluetooth Speaker,electronics,0,2249.1,20 %,0.00 USD,Cancelled,credit card,Jaipur,400456,michael60@yahoo.com
+ORD-100443,2026-02-03,CUST1190,Rohan Reddy,jeans,Apparel,1,1799,0,1799.0,Delivered,Credit Card,Hyderabad,411521,rohan56@gmail.com
+ORD-100622,0000-00-00,CUST1149,Karan Brown,Wireless Mouse,Electronics,null,$ 799,5,$ 799,Delivered,Net Banking,Jaipur,n/a,karan52@outlook.com
+ORD-100194,11-23-2025,CUST1023,Sarah Joshi,Smart Watch  ,Electronics,1,5999,0.1,5999.0,Pending,DEBIT CARD,Jaipur,600737,sarah33@outlook.com
+ORD-100220,28/10/2024,CUST1067,David Gupta,YOGA MAT,Sports,2,899,0,1798.0,Shipped,Wallet,Mumbai,560801,david52@gmail.com
+ORD-100137,08-29-2026,CUST1040,Olivia Joshi,Coffee Maker,Appliances,1,3848.9,10%,3848.9,DELIVERED,Debit Card,surat,?,olivia18@mail
+ORD-100191,2024-07-12,CUST1168,Sarah Singh  ,Air Fryer,Appliances,2,5849.1,0,11698.2,SHIPPED,cod,Hyderabad,400597,sarah1@yahoo.com
+ORD-100184,2025-05-12,CUST1062,null,Wireless Mouse,Electronics,,799,0.1,"$2,397.00",Returned,Credit Card,Bengaluru,110534,amit75@outlook.com
+ORD-100409,"Thursday, 04 September 2025",CUST1098,Rohan Khan, Air Fryer,APPLIANCES,4,5849.1,0,"23,396.40",-,COD,Surat,500599,rohan57@mail
+ORD-100354,"Friday, 08 May 2026",CUST1069,Sarah_Singh,Air Fryer,Appliances,5,6499,20,32495.0,Processing,Net Banking,Hyderabad,560655,sarah54@outlook.com
+ORD-100277,2024/05/02,CUST1126,MEI LEE,Jeans,Apparel,1,1799,20,1799.0,?,Credit Card,Hyderabad,411081,mei41@mail
+ORD-100607,"Wednesday, 23 September 2026",CUST1049, ,Desk Lamp,Home,3,1318.9,0,3956.7,Cancelled,Debit Card,,500187,neha85@mail
+ORD-100595,"Sunday, 10 May 2026",CUST1047,Neha Smith, Jeans,Apparel,4,"$1,799",0,7196.0,Delivered,UPI,PUNE,600211,neha27@mail
+ORD-100617,03-23-2024,CUST1148,Isha Chen,Jeans,Apparel,2,1978.9,20 %,3957.80 USD,Cancelled,NaN,Jaipur,110690,isha42@outlook.com
+ORD-100237,"Friday, 21 June 2024",CUST1022,divya johnson,Jeans,NULL,1,1978.9,0.1,$ 1979,Processing,Credit Card,Ahmedabad,400954,divya77@gmail.com
+ORD-100266,yesterday,CUST1195,Aarav Khan,Water Bottle,Home,4,449,0,1796.0,Processing,UPI,Bengaluru,400583,aarav10@yahoo.com
+ORD-100349,07-19-2024,CUST1183,CARLOS SINGH,Headphones,Electronics,1,2699.1,20 %,2699.1,Pending,COD,Kolkata,600957,carlos96@mail
+ORD-100418,29-Apr-2026,CUST1104,Karan Khan,Wireless Mouse,Electronics,2,799,0.1,"1,598.00",Delivered  ,Credit Card,Hyderabad,411016,karan94@outlook.com
+ORD-100253,12-Feb-2024,CUST1027,Amit Singh,Bluetooth Speaker,Electronics,1,"2,748.90",0,"$2,749",Processing,Debit Card,Ahmedabad,411069,amit68@gmail.com
+ORD-100151,2025/05/01,CUST1097,Emma_Chen,Smart_Wach,Electronics,1,5999,0,5999.0,Processing,UPI,Ahmedabad,?,emma94@yahoo.com
+ORD-100180,"Wednesday, 14 May 2025",CUST1125,Neha Chen,Running Shoes,Footwear,1,3299,20,3299.0,,UPI,Surat,110438,neha46@mail
+ORD-100489,2025-06-30, ,Sarah Joshi  ,Bluetooth Speaker,Electronics,1,2748.9,10,2748.9,Cancelled,Credit Card,Bengaluru,560873,sarah55@gmail.com
+ORD-100178,07.01.25,CUST1189,Vikram Johnson,Bluetooth Speaker,Electronics,5,2499,0,12495.0,Pending,Debit Card,Delhi  ,600965,vikram13@gmail.com
+ORD-100645,2026-08-13,CUST1026,Emily Mehta  ,Air Fryer,Appliances,1,6499,10%,6499.0,Returned,Wallet  ,Jaipur,500792,emily19@yahoo.com
+ORD-100122,"Wednesday, 19 June 2024",CUST1064,John Chen  ,Headphones,Electronics  ,5,2999,5,14995.0,Shipped,Credit Card,Chennai,500957,john57@yahoo.com
+ORD-100222,08-04-2025,CUST1137,Karan Khan,T-Shirt,Apparel,1,658.90 USD,0,$658.90,Cancelled,COD,Bengaluru,110191,karan50@outlook.com
+ORD-100070,21/03/2026,CUST1186,Sneha Singh,Coffee Maker,Appliances,1,3149.1,15,3149.10 USD,Cancelled,UPI,Ahmedabad,110369,sneha17@mail
+ORD-100076,"Wednesday, 02 July 2025",CUST1115,Aarav Singh,Running_Shoes,Footwear,1,"2,969.10",0,2969.1,Returned,COD,Kolkata,,n/a
+ORD-100398,09.02.26,NULL,Vikram Reddy,Laptop Backpack,Accessories,3,1619.1,0,4857.3,Shipped,,jaipur,110378,vikram36@mail
+ORD-100469,2026/04/14,CUST1077,carlos smith,Water Bottle,home,1,404.1,0,404.1,null,UPI,Jaipur,110590,carlos61@gmail.com
+ORD-100426,2025-10-29,CUST1070,Amit Brown,Yoga_Mat,Sports,10,988.9,0,9889.0,Shipped,Net Banking,Pune,411050,amit56@mail
+ORD-100344,10-Aug-2025,CUST1028,Emily Kulkarni,Jeans,Apparel,2,1978.9,0,3957.8,Pending,Net Banking,n/a,560437,emily29@outlook.com
+ORD-100019,"May 28, 2025",CUST1201,Pooja Das,Running Shoes,Footwear,2,3299.00 USD,10%,6598.0,Pending,Credit Card,Chennai,500390,pooja48@gmail.com
+ORD-100213,28-Sep-2026,CUST1020,Sneha Singh,Laptop ackpack,Accessories,4,1799,5,"7,196.00",Cancelled,Debit Card,Surat,600457,sneha11@gmail.com
+ORD-100574,03-22-2026,CUST1080,Manish Sharma,Water Bottle,Home,3,$ 449,20,"1,347.00",Shipped, Net Banking,Surat,600935,manish94@gmail.com
+ORD-100448,TBD,CUST1146,Carlos_Reddy,Smart Watch,Electronics,1,5399.1,0,5399.1,Returned,COD,Mumbai,400489,carlos1@gmail.com
+ORD-100141,"Sunday, 22 February 2026",CUST1033,Carlos Kulkarni  ,Bluetooth Speaker, ,10,2499,20 %,24990.0,shipped,COD,Surat,110111,carlos23@yahoo.com
+ORD-100144,2026/05/02,CUST1101,Emily Gupta,laptop backpack,Accessories,2,1978.9,0,3957.8,Processing,Wallet,Mumbai,560067,emily36@gmail.com
+ORD-100103,17/05/2025,CUST1152,Amit Joshi,LAPTOP BACKPACK,Accessories,1,1978.9,10,1978.9,Cancelled,Debit Card, Mumbai,600628,amit32@gmail.com
+ORD-100445,TBD,CUST1181,Olivia Kulkarni,Coffee Maker,Appliances,1,3499,10,3499.0,Cancelled,Debit Card,Ahmedabad,500802,olivia50@yahoo.com
+ORD-100486,05-07-2024,CUST1066,Sneha Iyer,Coffee Maker,Appliances,-1,"$3,499.00",0,"$-3,499",Pending, Net Banking,Bengaluru,?,NaN
+ORD-100131,06-07-2025,CUST1197,Vikram Joshi,Wireless Mouse,Electronics,3,799,10%,"$2,397.00",Processing,Net Banking,Surat,NaN,vikram49@gmail.com
+ORD-100281,07/12/2024,CUST1038,Anjali Johnson,yoga mat,Sports,1,809.1,10%,809.1,DELIVERED,Debit Card,Delhi,600733,anjali51@gmail.com
+ORD-100042,18.07.24,CUST1011,Karan Khan,Laptop Backpack,Accessories,1,1978.9,10%,1978.9,Shipped,credit card,Ahmedabad,500143,karan79@outlook.com
+ORD-100647,2024-07-25,CUST1158,POOJA NAIR,NOTEBOOK SET,Stationery,3,314.1,0,942.3,Processing,COD,Ahmedabad,400260,-
+ORD-100539,27-Feb-2024,CUST1014,Arjun Sharma,T-Shirt,Apparel,1,$ 599,5,599.0,Pending,Credit_Card,Bengaluru,110902,arjun57@mail
+ORD-100086,2025-09-25,CUST1009,John Das,Phone Case  , Accessories,1,269.1,0,269.1,Shipped,COD,delhi,411758,john67@outlook.com
+ORD-100000,2024/08/03,CUST1078,Sneha Kulkarni,Wireless Mouse,Electronics,1,799,15,$ 799,Returned,UPI,?,400204,sneha59@outlook.com
+ORD-100605,2024/03/05,CUST1069,Sarah Singh,Running Shoes,footwear,1,3299,0,3299.0,Pending,Net Banking,Hyderabad,110513,sarah91@outlook.com
+ORD-100379,25/08/2025,CUST1183,Carlos Singh,Air Fryer,Appliances,1,6499,15,"6,499.00",Delivered,Net Banking,Kolkata,411156,carlos97@mail
+ORD-100475,19/07/2024,CUST1087,Vikram Johnson,BLUETOOTH SPEAKER,Electronics,2,2249.10 USD,0,"4,498.20",Delivered  ,Debit Card,Ahmedabad,,vikram72@gmail.com
+ORD-100029,31/02/2025,CUST1026,Emily Mehta, Phone Case,Accessories,3,299,0,897.0,Cancelled,COD,Surat,500679,emily45@outlook.com
+ORD-100567,09/07/2024,CUST1096,Rohan Singh,Notbook Set,Stationery,1,314.10,20 %,314.1,Returned,net banking, Jaipur,600699,rohan5@gmail.com
+ORD-100189,2025-03-04,CUST1153,Mei Garcia,Yoga Mat,N/A,1,899,5,899.0,Shipped,Wallet, Jaipur,411930, 
+ORD-100437,2024-09-15,CUST1068,Mei Lee,Wireless Mouse,Electronics,3,799,20,"$2,397.00",Returned,Credit Card  ,Hyderabad,600685,mei40@mail
+ORD-100419,30/06/2025,CUST1013,Manish Verma,Headphones,Electronics  ,1,3298.9,5,"3,298.90",Processing,COD,kolkata,560316,N/A
+ORD-100160,09-05-2024,CUST1167,Anjali Singh,Phone Case,Accessories,1,328.9,0,328.90,Returned,Wallet,Surat,N/A,anjali43@gmail.com
+ORD-100589,"Wednesday, 24 January 2024",CUST1057,vikram reddy,Laptop Backpack,Accessories  , ,"$1,799",0,1799.0,shipped,Debit Card,Ahmedabad,400496,vikram30@gmail.com
+ORD-100384,"Monday, 17 August 2026",CUST1040,Olivia Joshi,DESK LAMP,Home,2,1199,0,2398.0,Processing,null,Chennai,500057,olivia92@yahoo.com
+ORD-100571,01-11-2026,null,EMILY JOSHI,Notebook Set,stationery,4,383.9,0,1535.6,Processing,Debit Card, Bengaluru,411028,emily95@mail
+ORD-100603,31-Jul-2025,CUST1001,Aarav Joshi,Running Shoes, Footwear,3,3299,15,9897.0,PENDING,UPI,Delhi,560284,aarav2@mail
+ORD-100139,2025-06-15,CUST1116,Liam Patel, Phone Case,Accessories,3,299,5,897.0,Processing,Wallet,Delhi,600559,liam53@outlook.com
+ORD-100091,11-01-2024,CUST1030,Divya Verma  ,Desk Lamp,Home,3,1079.1,10%,3237.3,null,UPI,Bengaluru,110132,divya82@mail
+ORD-100146,yesterday,CUST1117,Neha Singh  ,Wireless_Mouse,Electronics,1,$ 879,0,$ 879,Returned,NaN,Jaipur,560562,neha19@outlook.com
+ORD-100559,"Sep 05, 2025",CUST1218, Emily Iyer,Desk Lamp,Home,2,1199.00 USD,10,"$2,398",Cancelled, Net Banking, Surat,n/a,emily16@yahoo.com
+ORD-100634,21-Feb-2025,CUST1069,Sarah Singh,coffee maker,Appliances,1,3149.10 USD,20,3149.1,Returned  ,Credit Card,Kolkata  ,,sarah17@gmail.com
+ORD-100586,"Sunday, 13 July 2025",CUST1171,Michael Reddy,Bluetooth Speaker,Electronics,2,"$2,249.10",5,4498.2,Cancelled,Credit Card,Mumbai,110044,michael21@outlook.com
+ORD-100606,2025-08-27,CUST1082,John Gupta,Headphones,electronics,2,3298.9,0,6597.8,Returned,Debit Card,Ahmedabad, ,john43@outlook.com
+ORD-100588,22.04.26,CUST1176,Michael D'Souza,Jeans,Apparel,1,1799,20 %,1799.0,Processing,Wallet,Ahmedabad,,michael10@yahoo.com
+ORD-100480,08-08-2026,CUST1007, Aarav Singh,Desk Lamp,Home,3,1199,10%,"$3,597.00",Cancelled,COD,Bengaluru,110306,aarav12@gmail.com
+ORD-100099,03-01-2026,CUST1162,Priya_Patel,Wireless Mouse,Electronics,3,878.9,0,2636.7,Shipped,COD,Surat,560407,priya38@mail
+ORD-100570,08/11/2024,CUST1213,Emily Sharma  ,Notebook Set,Stationery  ,3,$ 349,5,"$1,047.00",PENDING,COD,mumbai,560270,N/A
+ORD-100293,13/03/2025,CUST1218,Emily Iyer,Desk Lamp, Home,1,1199,0.1,"1,199.00",Cancelled,Debit Card,Kolkata,110596,-
+ORD-100566,"Thursday, 13 August 2026",CUST1118,Priya Smith,T-Shirt,Apparel,1,599,15,599.0,Delivered,Debit Card,Kolkata,411681,priya84@outlook.com
+ORD-100196,,CUST1157,Vikram Nair,Notebook Set  ,Stationery,1,$ 314,10,314.1,N/A,UPI,Ahmedabad,500248,
+ORD-100583,"Jan 25, 2025",CUST1192,Anjali Garcia,Smart Watch,Electronics,1,"5,999.00",10,5999.00 USD,Processing,UPI,Bengaluru,411085,anjali53@yahoo.com
+ORD-100271,04.08.24,CUST1148,Isha Chen,Desk Lamp,Home,3,1199,20,3597.0,Shipped,Wallet,-,NULL,isha67@outlook.com
+ORD-100282,"Mar 15, 2026",CUST1177,Rahul Joshi,Notebook Set,Stationery,1,$ 349,0,349.0,Shipped,Net Banking,Hyderabad,110608,rahul61@gmail.com
+ORD-100503,02-27-2025,CUST1065, Rohan Patel,Coffee_Maker,Appliances,1,3149.1,0,3149.1,Processing  ,UPI,Chennai,400345,rohan20@mail
+ORD-100432,21/04/2024,CUST1095,neha verma,Running_Shoes,Footwear,1,3299,20,3299.0,Cancelled,Debit Card,Ahmedabad,411285,neha78@yahoo.com
+ORD-100199,06-Apr-2026,CUST1173, Priya Das,Laptop Backpack,Accessories,1,1978.9,0,1978.9,Delivered,Net Banking,Delhi,500800,priya14@gmail.com
+ORD-100500,"Feb 24, 2024",CUST1085,David D'Souza,Phone Case,Accessories,1,299,0.1,$299, Shipped,,Delhi,600920,david36@gmail.com
+ORD-100126,"Jun 17, 2025",CUST1082,John Gupta,WATER BOTTLE, Home,1,$449.00,10%,449.0,Processing,COD,Ahmedabad,N/A,john90@gmail.com
+ORD-100130,"Saturday, 15 February 2025",CUST1026,Emily Mehta,Smart Watch,Electronics,1,"$5,999",10%,"$5,999",Processing,,Hyderabad,560006,emily29@yahoo.com
+ORD-100177,"Thursday, 24 July 2025",CUST1133,Priya Brown,Bluetooth Speaker,Electronics,1,"$2,499.00",10,2499.0,Returned,Credit Card,Delhi,600087,priya51@mail
+ORD-100035,2026/06/05,CUST1165,Anjali Patel,Jeans,Apparel,1,1799,0,1799.00 USD,Delivered,UPI,Delhi,411617,anjali22@mail
+ORD-100190,05-15-2024,CUST1097,Emma Chen,Coffee Maker,Appliances,1,"3,149.10",15,3149.1,Cancelled,COD,Hyderabad,400323,emma63@yahoo.com
+ORD-100192,27/01/2024,CUST1063,Neha Iyer,Bluetooth Speaker,Electronics,2,2499,15,4998.0,Delivered,Debit Card,SURAT,560330,neha96@gmail.com
+ORD-100586,"Sunday, 13 July 2025",CUST1171,Michael Reddy,Bluetooth Speaker,Electronics,2,"$2,249.10",5,4498.2,Cancelled,Credit Card,Mumbai,110044,michael21@outlook.com
+ORD-100578,"Jul 15, 2025",CUST1055,Amit Garcia, ,Apparel,1,"$1,799.00",0,1799.0,DELIVERED,Wallet,Bengaluru,411759,amit87@mail
+ORD-100089,2024/03/06,CUST1155,Liam Khan,Coffee Maker,Appliances,1,3499,0.1,3499.0,Processing,Credit Card,Hyderabad,600036,liam74@yahoo.com
+ord-100537,2026/05/01,CUST1148,Isha Chen,T-Shirt,Apparel,1,539.1,10%,539.1,Delivered,Credit Card,Mumbai,N/A,isha72@outlook.com
+ORD-100347,"Jun 15, 2026",CUST1076,Carlos Joshi, ,Electronics,1,2999,20,$ 2999,Cancelled,Net Banking,Bengaluru,400030,carlos40@mail
+ORD-100083,"Feb 25, 2024",CUST1100,Vikram Chen,wireless mouse,ELECTRONICS,2,719.1,0,1438.2,Delivered,COD,Ahmedabad  ,400857,vikram8@yahoo.com
+ORD-100209,"Friday, 04 July 2025",CUST1095,Neha Verma,Running Shoes,Footwear  ,2,3299,5,6598.0,Processing,UPI,Hyderabad,400742,neha36@mail
+ORD-100428,01.06.26,NaN,Priya Brown,Laptop Backpack,Accessories,1,1799,10,1799.0,Shipped,CREDIT CARD,Jaipur,411198,priya94@outlook.com
+ord-100601,10.01.26,CUST1160,Emma_Khan,T-Shirt,,2,599,0.1,"$1,198.00",SHIPPED,COD,Mumbai,110598,emma21@outlook.com
+ORD-100484,2025-06-07,CUST1011,Karan Khan,Yoga Mat,Sports,4,899,10%,3596.0,Cancelled,Credit Card,Delhi,560608,karan97@gmail.com
+ORD-100069,04-16-2026,CUST1174,ROHAN LEE, Desk Lamp,Home,1,1199,15,1199.0,N/A,Net Banking,Bengaluru,411880,rohan13@yahoo.com
+ORD-100547,09-17-2025,CUST1033,CARLOS KULKARNI, T-Shirt,APPAREL,1,599,0,599.0,Processing,Debit Card,Kolkata,500284,carlos68@gmail.com
+ORD-100295,05-08-2025,CUST1097,Emma Chen,Notebook Set,Stationery,2,349.00,10%,$698.00,Shipped,Debit Card,Mumbai,?,NULL
+ORD-100391,"Feb 21, 2025",CUST1208,Aarav Smith,Running Shoes,FOOTWEAR,2,2969.1,10%,$ 5938,Pending,debit card,Kolkata  ,,aarav74@gmail.com
+ORD-100360,21-Aug-2024,CUST1121,Olivia Chen,T-Shirt,Apparel,2,599,20 %,$ 1198,Returned,Wallet,Hyderabad,600028,olivia63@mail
+ORD-100357,27-May-2026,CUST1089,Emily D'Souza,Jeans  ,Apparel  ,3,1799,0.1,5397.0,Returned,UPI,Surat,600573,emily72@yahoo.com
+ORD-100119,"Apr 13, 2024",CUST1003,Vikram Mehta,Wireless Mouse,Electronics,2,719.1,20 %,1438.2,returned,WALLET,Pune,400149,vikram95@yahoo.com
+ORD-100376,"Dec 25, 2025",CUST1131,Emma Patel,Jeans,Apparel,3,"1,619.10",20,4857.3,delivered,UPI,,600826,emma80@gmail.com
+ORD-100550,07-Jun-2024,CUST1198,Sneha Mehta,Water Bottle,home,1,449,5,449.0,Cancelled,Wallet  ,Delhi,600740, 
+ORD-100082,2024-06-15,CUST1212,Emily Lee,bluetooth speaker,ELECTRONICS,1,2748.9,5,2748.9,Returned,NET BANKING,Pune,600553,emily37@outlook.com
+ORD-100231,"May 24, 2026",CUST1203,Karan_Joshi,Notebook Set,Stationery,1,314.1,20,314.10,Delivered,COD,Kolkata,411315,karan76@gmail.com
+ORD-100187,2026-01-25,CUST1016,Liam Lee  ,Desk Lamp  ,Home,1,1318.9,10%,1318.9,Processing,Wallet,Ahmedabad,560177,liam42@outlook.com
+ORD-100297,"Monday, 28 September 2026",CUST1053,MICHAEL SMITH,Desk Lamp,Home,-,1199,0,"1,199.00",Returned  ,Wallet,Chennai,560944,michael34@yahoo.com
+ORD-100344,10-Aug-2025,CUST1028,Emily Kulkarni,Jeans,Apparel,2,1978.9,0,3957.8,Pending,Net Banking,n/a,560437,emily29@outlook.com
+ORD-100446,06-Aug-2025,CUST1026,Emily Mehta,Coffee Maker,Appliances,1,3848.9,10,3848.9,Delivered,Debit Card,Delhi,110657,emily96@yahoo.com
+ORD-100106,2026/09/10,CUST1034,Rohan Reddy,Yoga Mat,Sports,2,988.9,10,1977.8,Returned,upi,hyderabad, ,rohan60@gmail.com
+ORD-100259,"Nov 26, 2025",CUST1109,Manish Mehta,Running Shoes,Footwear,2,3628.9,0,7257.8,Shipped,UPI,Ahmedabad,411982,manish19@gmail.com
+ORD-100255,"Feb 10, 2024",CUST1057,Vikram Reddy,Running Shoes,NULL,1,3299,10,3299.0,Processing,UPI,Chennai,110843,vikram94@outlook.com
+ORD-100302,"Jun 16, 2025",CUST1204,John Chen,Desk Lamp,Home,1,1079.1,10%,1079.1,Delivered,COD,Ahmedabad,400947,john53@yahoo.com
+ORD-100523,08-05-2026,CUST1028,Emily Kulkarni,Wireless Mouse,Electronics,N/A,799,0,799.0, Processing,Net Banking,Delhi,400990,emily16@yahoo.com
+ORD-100163,"Wednesday, 11 June 2025",CUST1137,Karan Khan,Air Fryer,Appliances,1,6499,0.1,6499.0,Shipped,Net Banking,Kolkata,400647,karan35@yahoo.com
+ORD-100462,"Dec 24, 2025",CUST1076,Carlos Joshi,Water Bottle,Home,3,$449,0.1,1347.0,Delivered,COD, Mumbai,400600,carlos30@gmail.com
+ORD-100466,2025-11-02,CUST1113,Emily Reddy,Yoga Mat,SPORTS,3,899,20 %,2697.0,Processing,upi,Chennai,500876,emily27@outlook.com
+ORD-100221,20-Aug-2024,CUST1194,Sarah D'Souza,Desk Lamp,Home,5,1079.1,5,5395.50 USD,pending,UPI,Ahmedabad,560230,sarah88@mail
+ORD-100033,19.09.24,CUST1114,Michael Reddy,Phone Case  ,Accessories  , ,299,0,598.0,Cancelled,UPI,Delhi,500557,michael65@gmail.com
+ORD-100011,,CUST1160,Emma Khan, Yoga Mat,Sports,1,899,0,899.0,Processing,Credit Card,Hyderabad,400811,emma96@outlook.com
+ORD-100152,2024/02/04,CUST1105,Carlos Nair,Water_Bottle,Home,5,493.9,15,2469.5,Shipped,Wallet,NULL,?,carlos66@mail
+ORD-100318,"Dec 02, 2024",CUST1134,null,Laptop Backpack,Accessories,1,1978.9,10,1978.90 USD,Pending,Net Banking,,500915,emma91@yahoo.com
+ORD-100216,2025/12/12,CUST1201,Pooja Das,Yoga Mat,Sports,1,899,0.1,899.0,Processing,Net Banking,Chennai,411188,NULL
+ORD-100322,08-02-2026,CUST1066,Sneha Iyer,Yoga Mat,Sports,1,899,0,899.00 USD,Cancelled,UPI,Ahmedabad,411828,sneha76@mail
+ORD-100012,2025-05-27,CUST1176,Michael D'Souza,phone case,Accessories,1,269.1,10,$269.10,Shipped,Cod,Ahmedabad,411341,michael14@yahoo.com
+ORD-100576,"Wednesday, 01 April 2026",CUST1103,Sarah Lee,Desk Lamp,Home, ,1199,20 %,0.0,Delivered,Wallet,SURAT,500866,sarah11@mail
+ORD-100294,2024-07-28,CUST1051,Amit Joshi,Water Bottle,Home,1,449,0,$449,Returned,Credit Card  ,Chennai,400021,amit4@yahoo.com
+ord-100242,11/01/2025,CUST1209,Carlos Iyer,Notebook Set,Stationery,2,349,0.1,698.0,Processing,Credit Card, ,500802,carlos63@gmail.com
+ORD-100579,03/11/2024,CUST1011,Karan Khan,Coffee Maker,Appliances,1,3848.9,15,3848.9,Shipped,Wallet,Delhi,NaN,karan72@outlook.com
+ORD-100364,13/03/2026,CUST1086,Sarah Nair,Coffee Maker,Appliances,5,3848.9,20,19244.5,Processing,Debit_Card,Jaipur,500403,sarah83@yahoo.com
+ORD-100149,2026/03/14,CUST1016,Liam_Lee,Smart Watch,Electronics,1,6598.9,20,6598.90 USD,Delivered,Debit Card,Ahmedabad,400836,liam75@gmail.com
+ORD-100262,2024-04-23,CUST1113,-,Laptop Backpack,Accessories,3,1799,10,5397.0,Shipped,Net Banking,-,400842,emily72@gmail.com
+ord-100587,2026-06-02,CUST1191,Divya Kulkarni,headphones,Electronics,1,2999,5,"$2,999.00",Processing,Debit Card,,400304,divya61@gmail.com
+ORD-100182,0000-00-00,CUST1127,Karan_Mehta,Yoga Mat,Sports,2,899,10%,1798.0,Delivered,COD,Pune,500464,karan71@yahoo.com
+ORD-100565,31/02/2025,CUST1191,Divya Kulkarni,phone case,Accessories,1,299,5,299.0,Delivered  ,Credit Card,Jaipur,NULL,divya8@yahoo.com
+ORD-100154,,CUST1200,Vikram Joshi,Water Bottle,Home,2,$404,0,808.2, Cancelled,Credit Card  ,Hyderabad,500239,vikram91@mail
+ORD-100431,08-15-2026,,Anjali Lee,Yoga Mat,SPORTS,1,809.10,15,$809.10,Processing,Credit_Card,Hyderabad,600064,anjali21@mail
+ORD-100540,"Friday, 01 May 2026",CUST1169,Olivia Reddy,Water Bottle,Home,4,404.1,0,1616.4,Returned,UPI, Delhi,500800,olivia50@mail
+ORD-100557,"Dec 05, 2024",CUST1218,Emily Iyer  ,Running Shoes,Footwear,1,3628.9,0,"3,628.90",PENDING,Credit Card,chennai,n/a,emily51@yahoo.com
+ORD-100359,08-May-2026,CUST1062,Amit Johnson,Water Bottle,Home,10,493.9,0.1,$ 4939,Cancelled,COD,Bengaluru,600252, 
+ORD-100407,TBD,CUST1181,Olivia Kulkarni,Running Shoes,Footwear,1,3299,0,3299.0,Pending,Net Banking,Kolkata  ,NULL,olivia39@gmail.com
+ORD-100372,02-26-2025,CUST1138,Manish Iyer,Blueooth Speaker,Electronics,2,2499,20 %,4998.00 USD,Pending,Net Banking,Bengaluru,500955,manish68@gmail.com
+ORD-100230,N/A,CUST1113,emily reddy,Running Shoes,Footwear,2,3299.00 USD,0.1,"6,598.00",Cancelled,Wallet  ,Chennai,411432,emily95@mail
+ORD-100224,"Tuesday, 12 August 2025",CUST1145,Aarav Singh,Air Fryer,Appliances,4,5849.1,0.1,23396.4,Processing,Wallet,Bengaluru,560682,aarav90@yahoo.com
+ORD-100619,2026-06-23,CUST1069,Sarah Singh,Headphones,Electronics,2,2999.00 USD,15,5998.0,Delivered,UPI,Ahmedabad,500644,sarah67@gmail.com
+ORD-100298,2026-03-12,CUST1185,Sarah Verma,Laptop Backpack,Accessories,3,1619.1,20,4857.30 USD,Returned,UPI,hyderabad,560345,sarah5@outlook.com
+ORD-100019,"May 28, 2025",CUST1201,Pooja Das,Running Shoes,Footwear,2,3299.00 USD,10%,6598.0,Pending,Credit Card,Chennai,500390,pooja48@gmail.com
+ORD-100038,0000-00-00,CUST1057,Vikram Reddy,DESK LAMP,Home,1,1199,0,1199.0,Shipped,Net Banking,Bengaluru,600601,vikram17@mail
+ORD-100636,04-10-2026,CUST1126,Mei Lee,Notebook Set,STATIONERY, ,$349,10,1745.0,Cancelled,COD,Chennai,400611,mei48@yahoo.com
+ORD-100628,TBD,CUST1168,sarah singh,Bluetooth Speaker,Electronics,1,$ 2749,15,2748.9,Processing,Credit Card,PUNE,600188,sarah40@outlook.com
+ORD-100201,yesterday,CUST1132, Olivia Mehta,Notebook Set,Stationery,3,349,0,"$1,047",Cancelled,Wallet,null,500625,olivia90@mail
+ORD-100627,2026-07-16,CUST1026,Emily Mehta,JEANS,APPAREL,2,"$1,799",10%,3598.0,Cancelled,Wallet,n/a,560502,emily91@yahoo.com
+ORD-100166,12/08/2025,CUST1109,Manish Mehta,Water Bottle,Home  ,2,493.9,10%,$988,Processing,UPI,Delhi,500892,manish27@yahoo.com
+ORD-100495,0000-00-00,CUST1145,aarav singh,Ai Fryer,APPLIANCES,1,6499,10%,"$6,499.00",Pending,Debit Card,Kolkata,560193,n/a
+ORD-100227,09-08-2026,CUST1086,Sarah Nair,Wireless Mouse,Electronics,3,$799.00,5,2397.0,Shipped,net banking,Hyderabad,110906,sarah39@mail
+ord-100274,2024-11-01,CUST1162,Priya Patel, ,Accessories,4,"$1,799.00",0,7196.0, Shipped,upi,Bengaluru,110356,priya84@outlook.com
+ORD-100593,"Thursday, 06 March 2025",CUST1030,Divya Verma,Notebook Set,Stationery,4,349,0.1,"$1,396.00",Returned,Credit Card,Surat,560265,divya82@gmail.com
+ORD-100594,20.01.24,CUST1153,Mei Garcia,Jeans,APPAREL,n/a,"$1,799",20,1799.0,Cancelled,Wallet,Pune,400100,mei40@yahoo.com
+ORD-100025,07.01.24,CUST1195,Aarav Khan,T-Shirt,Apparel,1,599,15,599.0,Delivered,DEBIT CARD,Kolkata,560220,aarav15@outlook.com
+ORD-100388,28-Jul-2025,CUST1154,POOJA LEE,Smart Watch,Electronics,2,5399.1,0.1,"$10,798.20",cancelled,Wallet,Kolkata,110920,pooja19@outlook.com
+ORD-100544,2024/01/18,CUST1040,Olivia Joshi,Running Shoes, Footwear,4,3628.9,0,14515.6,returned,COD,kolkata,600831,olivia53@yahoo.com
+ORD-100633,10-29-2024,CUST1028,Emily Kulkarni,Bluetoot Speaker,Electronics,2,2249.1,0,4498.2,Pending,UPI,Delhi,NaN,emily74@outlook.com
+ORD-100078,2025-10-07,CUST1035,Sneha Brown,Smart Watch,Electronics,1,6598.9,5,$ 6599,Delivered,COD,Bengaluru,500835,sneha95@gmail.com
+ORD-100052,15.03.26,CUST1142,Manish Khan,Smart Watch,Electronics,1,5999,20,5999.0,Pending,COD,Ahmedabad,600849,manish35@mail
+ORD-100333,01.09.26,CUST1042,Sarah Gupta, Yoga Mat,Sports,2,$809.10,0,1618.2,Shipped,Wallet,Bengaluru,110822,sarah43@yahoo.com
+ORD-100026,2025-11-14,null,Priya Das,Water Bottle,Home,2,404.1,10%,$808,Processing,WALLET,Delhi,500414,
+ORD-100247,11/10/2025,CUST1078,Sneha_Kulkarni,-,Electronics,1,2499,0,2499.0,Processing,net banking,Mumbai,600353,sneha95@gmail.com
+ORD-100648,2026/05/26,CUST1114,Michael Reddy,desk lamp,Home,1,1079.1,10%,"1,079.10",Shipped  ,net banking,Ahmedabad,411020,NaN
+ORD-100032,14/08/2026,CUST1164,John D'Souza,Wireless Mouse,Electronics,1,799,10%,$799.00,Returned,,Chennai,560939,john90@yahoo.com
+ORD-100362,2025/01/25,CUST1103,Sarah Lee,Bluetooth Speaker,Electronics,2,2249.1,20,4498.20 USD,NaN,Credit Card,CHENNAI,-,sarah40@gmail.com
+ORD-100039,07-Nov-2024,CUST1014,Arjun Sharma,Notebook Set,Stationery,3,383.9,0,1151.7,Shipped,UPI,Surat,110845,arjun11@gmail.com
+ORD-100053,11-Jan-2026,CUST1010,Aarav Khan,coffee maker,Appliances,4,3499,20 %,"13,996.00",Pending,Net Banking,Hyderabad,411100,aarav93@mail
+ORD-100107,01-Sep-2026,CUST1064,John Chen,Bluetooth Speaker,Electronics,1,2748.9,0.1,2748.9, Returned,UPI,Hyderabad,600339,john60@mail
+ORD-100275,"Sep 13, 2024",CUST1126,Mei Lee,Jeans,Apparel,1,1619.1,5,1619.1,Pending,COD,Delhi,500259,mei38@outlook.com
+ORD-100260,21.05.25,CUST1046,David Khan,Running Shoes,Footwear,2,3299,15,"$6,598.00",Pending,Wallet,DELHI,110371,NULL
+ord-100188,0000-00-00,CUST1094,Neha Patel,Smart Watch,Electronics  ,1,$ 5399,20 %,"$5,399",Delivered,Net Banking,Pune,560294,neha49@yahoo.com
+ORD-100159,"Tuesday, 07 October 2025",CUST1048,NaN,Headphones  ,Electronics,1,2699.1,0,2699.1,Delivered,WALLET,Jaipur,500152,N/A
+ORD-100416,05-11-2026,CUST1049,Neha Patel,Smart Watch,Electronics,1,5999,0,5999.0,Pending,UPI,Ahmedabad,110905,neha66@mail
+ORD-100134,01-27-2026,CUST1039,,Laptop Backpack,Accessories,2,1799,0,3598.0,Pending,Wallet,jaipur,400808,divya35@gmail.com
+ORD-100043,"Jun 03, 2025",CUST1189, Vikram Johnson,Coffee Maker,Appliances,?,3848.9,15,11546.7,Pending,Debit Card,Surat,,vikram25@gmail.com
+ORD-100363,12-Jul-2024,CUST1144,David_Khan,Coffee Maker,Appliances,1,3499.00 USD,0,"$3,499.00",Pending,Credit Card,Hyderabad,500171,david64@yahoo.com
+ORD-100429,2024/07/23,CUST1064,John Chen,SMART WATCH,Electronics,2,5999,20 %,11998.0,Processing,UPI,Ahmedabad,110105,john71@mail
+ORD-100264,2026/09/24,CUST1128,Sneha Lee,Smart Watch,Electronics,1,5399.1,15,5399.10 USD,Delivered,wallet,Bengaluru,500528,sneha78@outlook.com
+ORD-100113,11-Mar-2025,CUST1189,Vikram Johnson,Jeans,Apparel,4,"1,978.90",0,7915.6,Cancelled,Net Banking,Jaipur,560696,vikram27@mail
+ORD-100345,07-03-2026,CUST1170, Amit Mehta,Headphones, Electronics,1,3298.9,15,"3,298.90",Shipped,cod,Mumbai  ,411026,amit96@yahoo.com
+ORD-100490,2024/08/22,CUST1042,Sarah Gupta,Bluetooth Speaker,Electronics,1,2748.9,10,"$2,749",Shipped,Debit Card,Chennai,-,sarah33@outlook.com
+ORD-100632,yesterday,CUST1119,Rohan D'Souza,Coffee Maker,appliances,1,"$3,499",10%,$ 3499,shipped,UPI,Delhi,N/A,rohan52@yahoo.com
+ORD-100244,07-Feb-2024,CUST1053,Michael Smith,Desk Lamp, Home,2,1199.00 USD,5,$ 2398,Processing,Debit_Card,Pune,600840,michael21@mail
+ORD-100268,10-03-2024,CUST1013,Manish Verma,Yoga Mat,Sports,1,899.00 USD,20,899.0, Cancelled,Net Banking,Bengaluru,600584,NaN
+ORD-100047,"Tuesday, 20 May 2025",CUST1072,John Joshi,Laptop Backpack, Accessories,1,1978.9,10%,1978.90 USD,Returned,wallet,Pune  ,560976,john75@gmail.com
+ORD-100564,"Friday, 26 April 2024",CUST1135, Mei Mehta,Yoga at,Sports,1,809.1,10%,809.1,Returned,COD  , Surat,600320,mei69@gmail.com
+ORD-100065,02-03-2024,CUST1007,Aarav Singh,Coffee Maker,Appliances,3,3499,10,10497.0,Processing,Net_Banking,null,560882,aarav57@gmail.com
+ORD-100183,"Monday, 26 May 2025",CUST1180,Amit Iyer,Headphones,Electronics,2,2999,20 %,$ 5998,Returned,Credit Card,Hyderabad,560703,n/a
+ORD-100016,2025/09/30,CUST1039,Divya Nair,Headphones,,1,2999,15,"2,999.00",PROCESSING,Wallet,,560367,divya19@yahoo.com
+ORD-100346,08-27-2025,CUST1112,Aarav Verma,phone case,Accessories,1,$299.00,20,299.0,Cancelled,Net Banking  ,Kolkata,560968,aarav9@mail
+ORD-100562,07.04.24,CUST1059,Emily Joshi,Desk Lamp,Home,3,1199,0,3597.0,Pending, Net Banking,Ahmedabad,560772,emily67@gmail.com
+ORD-100611,null,CUST1053,Michael Smith,T-Shirt,APPAREL,3,658.9,10,$ 1977,processing,UPI,Hyderabad  ,560353,michael43@yahoo.com
+ORD-100498,06/07/2025,CUST1117,Neha Singh,Coffee Maker,Appliances,3,3848.9,5,11546.70 USD,Returned,Credit Card,Chennai,500591,
+ORD-100021,12.07.26,CUST1218,Emily Iyer,Yoga Mat,Sports,1,899,10%,899.0,Pending,UPI,Bengaluru,560879,emily17@outlook.com
+ORD-100488,06-15-2026,CUST1219,Sana Iyer,Yoga_Mat,-,3,899.00,20,"2,697.00",Returned,Wallet,Bengaluru,411028,sana23@outlook.com
+ORD-100174,2024/10/15,CUST1210,david joshi,laptop backpack,Accessories,1,1799,10%,1799.0,Delivered,Credit Card,Ahmedabad,400836,david77@outlook.com
+ORD-100168,"Mar 06, 2025",CUST1138,manish iyer,Headphones,Electronics,5,2699.1,15,13495.5,Pending,UPI, Hyderabad,110151,manish59@yahoo.com
+ORD-100165,11/03/2025,CUST1010,Aarav Khan,Wireless Mouse,Electronics,0,$ 879,0,0.00 USD,?,Net Banking, Kolkata,,aarav50@outlook.com
+ORD-100394,15/09/2024,CUST1009,John Das,SmartWatch,Electronics,10,"5,999.00",0.1,59990.0,Processing,net banking,Surat,NaN,john16@mail
+ORD-100111,09-06-2024,CUST1041,Liam Singh,coffee maker,Appliances,2,$ 3149,0,6298.2,Shipped,Net Banking  ,Surat,600523,liam93@outlook.com
+ORD-100336,2026-05-21,CUST1219,Sana Iyer,Water Bottle, Home,1,449,0,449.0,Returned,UPI,,560230,sana29@yahoo.com
+ORD-100087,2025-02-17,CUST1202,Karan Smith,DESK LAMP,Home,1,1199,10%,1199.0,Delivered,Net Banking,Ahmedabad,400857,karan96@gmail.com
+ORD-100531,null,CUST1037,David Johnson,Bluetooth Speaker,Electronics,-,2499,20 %,2499.0,Cancelled,Net Banking,Ahmedabad,110429,david50@outlook.com
+ORD-100494,11-09-2024,CUST1131,Emma Patel  ,Desk Lamp,Home,3,1318.9,0,3956.7,Shipped,Debit Card,Bengaluru,110154,N/A
+ORD-100520,2024-03-21,CUST1110,Neha Reddy,Bluetooth Speaker,Electronics,1,2499,0,2499.0,Cancelled,Net Banking,null,400245,neha92@gmail.com
+ORD-100120,"Jun 30, 2025",CUST1045,Amit Joshi,wireless mouse,Electronics,1,799,10%,799.0,Pending,COD,Surat,500178,amit37@outlook.com
+ORD-100226,12.04.24,CUST1215,null, Water Bottle,Home,1,$449,20 %,449.0,Processing,Wallet,Mumbai  ,400383,
+ORD-100249,2026-06-30,CUST1076,Carlos Joshi,Laptop Backpack,Accessories,1,1799.00 USD,15,1799.0,Cancelled,COD  , Ahmedabad,110367,null
+ORD-100006,2024-09-15,CUST1194,Sarah D'Souza,Laptop Backpack,Accessories,N/A,1799.00 USD,20,7196.0,Pending,COD,Surat,400987,sarah75@gmail.com
+ORD-100228,14.09.24,CUST1182,Manish Smith,Bluetooth Speaker,Electronics,2,2748.9,0,5497.8,Pending,Wallet,Mumbai,110316,manish55@yahoo.com
+ORD-100353,16-Mar-2026,CUST1195,Aarav Khan,Running Shoes,Footwear,10,"3,299.00",20,32990.0,CANCELLED,Debit_Card,Pune,110554,NULL
+ORD-100181,null,CUST1062,Amit Johnson,Headphones,Electronics,1,2999,20 %,2999.0,Returned,Credit Card,Pune,600347,amit39@outlook.com
+ORD-100173,"Jan 17, 2025",CUST1066, Sneha Iyer,Notebook Set,Stationery,2,$ 314,0,628.2,Delivered,UPI,Bengaluru,600819,NaN
+ORD-100097,2024/03/17,CUST1217,divya verma,Desk Lamp,Home,1,1079.1,0,1079.1,-,,Surat,500575,divya86@mail
+ORD-100115,2025-11-02,CUST1098,Rohan Khan,T-Shirt,Apparel,5,539.1,20 %,2695.5,Shipped,COD,Delhi,560685,rohan76@yahoo.com
+ORD-100373,2024/12/05,CUST1016,liam lee,Jeans,Apparel,1,1799,0,"$1,799",Shipped,Net Banking,Jaipur,560706,liam32@gmail.com
+ORD-100400,23.11.25,CUST1078,Sneha Kulkarni,Laptop_Backpack,Accessories,1,1799,10%,1799.0,Shipped,Wallet,Chennai,560251,sneha92@outlook.com
+ORD-100541,27-Aug-2026,CUST1182,Manish Smith,water bottle,Home  ,1,493.9,0,493.9,Pending,DEBIT CARD,Mumbai,600036,manish29@yahoo.com
+ORD-100211,2025-04-18,CUST1196, Pooja Mehta,Notebook Set,Stationery,3,349,0,1047.0,Delivered,-,Delhi,411174,N/A
+ORD-100314,23.05.24,,Emily Reddy,Phone Case,Accessories,2,$329,0.1,657.8,Pending,Debit Card,Chennai,400168,emily61@gmail.com
+ORD-100427,"Oct 23, 2024",CUST1213,Emily Sharma,Jeans,Apparel,1,1619.1,10%,1619.1,Returned,n/a,Ahmedabad,500521,emily19@gmail.com
+ORD-100235,12.08.26,CUST1001,Aarav Joshi,Jeans,Apparel,1,1978.9,10,1978.9,Delivered,Wallet,Mumbai,560973,aarav32@outlook.com
+ORD-100167,"Sunday, 25 February 2024",CUST1068,Mei Lee,Air Fryer,Appliances,1,5849.1,10,5849.1,Delivered  ,Net Banking, Delhi,400508,mei27@gmail.com
+ORD-100251,"Jul 10, 2024",CUST1109,Manish Mehta  ,Jeans,Apparel,1,1799,10%,1799.0,Shipped  ,UPI,SURAT,500313,manish30@yahoo.com
+ORD-100516,03-09-2024,CUST1063,Neha Iyer,Wter Bottle  ,Home,3,493.9,10,1481.7,Returned,Credit Card,Bengaluru,NaN,neha37@outlook.com
+ORD-100022,2025/01/01,null,Olivia_Reddy,BLUETOOTH SPEAKER,Electronics,3,2499,0,"$7,497",Cancelled,Credit Card,Kolkata,411075,null
+ORD-100161,2024-06-17,CUST1193,Emily Kulkarni,Running Shoes,FOOTWEAR,1,3299,10%,3299.0,Returned,Net Banking,Hyderabad,400625,emily77@yahoo.com
+ORD-100365,2025-02-17,CUST1114,Michael Reddy,Running Shoes,Footwear,2,3299,20,"$6,598.00",Cancelled,Debit Card,null,411192,michael69@gmail.com
+ORD-100124,02.01.26,CUST1143,Sneha_Patel,Air Fryer,Appliances,1,6499,0,6499.0, Delivered,Net Banking,Surat,400050,sneha3@yahoo.com
+ORD-100511,03-19-2026,CUST1116,Liam Patel,Air Fryer,Appliances,1,7148.9,10%,7148.9, Processing,UPI  ,Mumbai,NULL,liam21@yahoo.com
+ORD-100444,"Sep 28, 2025",CUST1124,Michael Chen,Notebook Set,Stationery,1,$384,0,383.9,PENDING,Wallet, Mumbai,600018,michael7@outlook.com
+ORD-100311,"Nov 02, 2025",CUST1063,Neha Iyer, ,Apparel,1,599,20,$599,Cancelled, Wallet,Delhi,411385,neha12@yahoo.com
+ORD-100556,08/10/2025,CUST1164,John D'Souza,Air Fryer,Appliances,3,6499,0,19497.0,Returned,COD, Bengaluru,411893,john41@mail
+ORD-100338,19/07/2025,CUST1116, Liam Patel,T-Shirt,APPAREL,1,$658.90,10,658.9,Returned,Debit Card,Surat,600907,liam83@yahoo.com
+ORD-100223,12.01.25,CUST1168,Sarah Singh,Water Bottle,Home,2,404.1,0,808.2,Processing,COD,N/A,411065,sarah78@yahoo.com
+ORD-100339,02-11-2026,CUST1157,Vikram Nair,Headphones,Electronics,2,2999,10,"5,998.00",Returned,UPI  ,Delhi,600703,vikram24@yahoo.com
+ORD-100464,30/07/2026,CUST1033,Carlos Kulkarni,Wireless Mouse,ELECTRONICS,1,878.9,0,878.9,Processing,Net Banking, Jaipur,400734,carlos45@gmail.com
+ORD-100596,"Friday, 03 July 2026",CUST1035,Sneha Brown, T-Shirt,Apparel,1,$ 599,5,599.0,Shipped,Credit Card,Surat,500428,sneha42@mail
+ORD-100140,04-02-2024,CUST1116,LIAM PATEL,Running Shoes,Footwear,2,"$3,299",0.1,6598.0,Shipped,Wallet,null,560747,liam58@outlook.com
+ORD-100114,2025/05/10,CUST1123,Vikram Verma,Desk Lamp,Home,1,1318.9,10%,1318.9,Pending,,Bengaluru,110065,vikram48@gmail.com
+ORD-100118,"Thursday, 02 May 2024",CUST1214,Sneha Singh,Yoga Mat  ,Sports,2,899,0,"$1,798",Cancelled,UPI  , Jaipur,600794,sneha16@mail
+ORD-100310,2024/04/02,CUST1005,Rohan Verma,Desk Lamp,Home,5,1199,20,$ 5995,Cancelled,,Jaipur  ,110160,rohan4@yahoo.com
+ORD-100615,17/04/2026,CUST1123,Vikram_Verma,Smart Watch,Electronics,2,5999,0,11998.0,Processing,Debit Card,Mumbai,500424,vikram88@yahoo.com
+ORD-100558,"Monday, 03 August 2026",CUST1017,Rahul Joshi,Bluetooth Speaker,Electronics,5,2249.1,5,$ 11246,Shipped,Wallet,Delhi,,rahul8@outlook.com
+ORD-100073,11/01/2025,CUST1092,Aarav Mehta,Desk Lamp,Home,1,1318.9,0,1318.9,Processing,COD,Delhi,n/a,aarav67@gmail.com
+ORD-100284,2025/08/14,CUST1036,Arjun Garcia  ,Headphones,Electronics,1,2999,5,$ 2999,Cancelled,COD,Jaipur,110443,arjun73@outlook.com
+ORD-100644,08/05/2026,CUST1178,Karan Smith,Coffee_Maker,Appliances,2,3149.1,20 %,6298.20 USD,Returned,Wallet,KOLKATA,500599,karan69@gmail.com
+ORD-100075,01.08.26,CUST1036,Arjun Garcia,WIRELESS MOUSE,Electronics,2,799,0,$ 1598,Cancelled,Net Banking,Chennai,400139,arjun75@gmail.com
+ORD-100519,2024/01/29,CUST1217,Divya Verma,Laptop Backpack,Accessories,2,1619.1,20,3238.2,Processing,Wallet,Pune,560402,divya94@mail
+ORD-100246,08-31-2025,CUST1099,Carlos Iyer,Jeans,Apparel,1,1978.9,10%,1978.9,Processing,UPI,Ahmedabad,411533,carlos30@outlook.com
+ORD-100112,15.05.24,CUST1151,Amit Sharma,Coffee Maker,Appliances,1,3149.1,20,3149.1,Pending,Wallet,Chennai,411234,amit62@mail
+ORD-100527,21.01.26,CUST1175,Olivia Verma,Headphones,Electronics,2,2999,0,5998.0,Shipped,Credit Card,Ahmedabad,110497,olivia30@outlook.com
+ORD-100300,16-Aug-2025,CUST1009,John Das,Headphones,Electronics,1,3298.9,0.1,3298.90 USD,Delivered,COD,Kolkata  ,400025,john47@outlook.com
+ORD-100646,"Dec 03, 2024",CUST1164,John D'Souza,Desk_Lamp,Home,2,1079.1,0,2158.2,Pending,Net_Banking,Kolkata,500793,john25@yahoo.com
+ORD-100024,28.12.24,CUST1143,Sneha Patel,Desk Lamp,Home,1,1199,20,1199.0,Delivered,Net Banking,Surat,110623,null
+ORD-100060,"Monday, 14 September 2026",CUST1177,Rahul Joshi,Coffee Maker,Appliances,1,"$3,499",0,3499.00 USD, Processing,Credit Card,Kolkata,560247,rahul20@mail
+ORD-100638,03-26-2025,CUST1080,manish sharma,Bluetooth Speaker,Electronics,1,$ 2499,10%,2499.0,Returned,Net_Banking,Jaipur,411987,manish39@mail
+ORD-100018,2024-01-09,CUST1005,Rohan Verma,Water Bottle,Home,-1,404.1,10,-404.1,Processing,Credit Card,NULL,null,rohan42@mail
+ORD-100305,11-26-2024,CUST1134,Emma Smith,Air Fryer,Appliances,2,$ 5849,10,11698.20 USD,Shipped,COD,Pune,400565,
+ORD-100487,13.09.24,CUST1206,Rohan Lee,Water Bottle,Home,1,493.9,20 %,$ 494,Cancelled,Net Banking,Surat,560987,rohan65@gmail.com
+ORD-100389,2026-06-20,CUST1204,John Chen,Air Fryer,Appliances,4,"$6,499.00",0,25996.0,Returned  ,Net Banking,Surat,560726,john62@yahoo.com
+ORD-100366,04-Jun-2025,CUST1111,Rohan Smith,Headphones,Electronics,2,3298.9,0,6597.8,n/a,Wallet,Bengaluru,560939,rohan6@yahoo.com
+ORD-100600,21-Apr-2024,CUST1186,Sneha Singh,Coffee Maker,Appliances,2,3848.9,15,"$7,698",Returned  ,Net Banking,Bengaluru,600311,sneha27@mail
+ORD-100205,"Jan 15, 2025",CUST1074,Olivia Mehta,Coffe Maker,Appliances,1,3499,0,3499.0,Returned,Net Banking,Ahmedabad,400780,olivia82@mail
+ORD-100635,2025-08-24,CUST1068,Mei Lee,Smart Watch,Electronics,3,6598.90 USD,10%,19796.7,Pending,UPI,NaN,600546,mei18@mail
+ORD-100610,03-09-2025,CUST1058,Emma Khan,Laptop Backpack,Accessories,1,1799,10,"1,799.00", Processing,COD,Bengaluru,411535,emma54@gmail.com
+ORD-100423,12-01-2024,CUST1076,Carlos Joshi,T-Shirt,Apparel,1,$599.00,10,$ 599,Cancelled,Debit Card,Jaipur,500304,-
+ORD-100332,02.07.25,CUST1162,Priya Patel,Headphones,Electronics,2,2999,10%,"$5,998.00",Returned,Net Banking,Surat,110613,priya53@gmail.com
+ORD-100013,2024/02/07,CUST1126,Mei Lee,T-Shit,Apparel,1,539.1,10%,539.1,Shipped,COD,Delhi,400726,mei71@gmail.com
+ORD-100481,03-21-2026,CUST1127,Karan Mehta,Desk Lamp,Home,2,"$1,318.90",10,"$2,637.80",Pending,Credit Card, Pune,600566,karan43@mail
+ord-100417,2026/02/28,CUST1051,?,Air Fryer,Appliances,2,5849.1,0,11698.2,Pending,Debit_Card,Ahmedabad,560551,amit59@gmail.com
+ORD-100329,06-Nov-2024,CUST1029,David Das,Smart Watch,Electronics,3,6598.9,10,19796.7,n/a,Credit Card,Hyderabad,n/a,david3@outlook.com
+ORD-100392,2025/05/15,CUST1170,Amit Mehta,Desk Lamp,Home,5,1199,15,"5,995.00",Processing,NET BANKING,Hyderabad  ,400554,null
+ORD-100261,16.04.25,CUST1217,Divya Verma,Laptop_Backpack,Accessories  ,3,1799,10,"$5,397", Shipped,Upi,kolkata,400766,divya39@mail
+ORD-100050,01.07.26,CUST1196,Pooja Mehta,Running Shoes,Footwear,1,2969.1,15,2969.1,Delivered,Wallet, Pune,400959,-
+ORD-100575,01-19-2025,CUST1189,Vikram Johnson,water bottle,Home,3,404.10,0,$ 1212,Processing,Credit Card,Delhi,500595,vikram12@yahoo.com
+ORD-100401,14.03.24,n/a,Karan Khan,Phone Case,Accessories,1,299,20 %,299.0,Processing,Net Banking, Bengaluru,110042,karan36@gmail.com
+ORD-100335,2026/03/25,CUST1105,Carlos_Nair, Laptop Backpack,Accessories,2,1799,5,"3,598.00",NULL,Debit Card,Bengaluru,600450,carlos20@yahoo.com
+ORD-100433,29/10/2024,CUST1197,Vikram_Joshi,Jeans,Apparel  ,3,1799,20,5397.0,Delivered,UPI,Mumbai,110247,vikram11@outlook.com
+ORD-100198,05-23-2026,CUST1056,Vikram Joshi,Desk Lamp,Home,2,"1,199.00",20 %,"$2,398.00",Processing,UPI,Kolkata,400214,vikram3@outlook.com
+ORD-100329,06-Nov-2024,CUST1029,David Das,Smart Watch,Electronics,3,6598.9,10,19796.7,n/a,Credit Card,Hyderabad,n/a,david3@outlook.com
+ORD-100267,19/10/2025,CUST1171,Michael Reddy,Phone Case,Accessories,1,269.1,0.1,269.1,Returned  ,UPI,NaN,411063,michael47@mail
+ORD-100014,"Thursday, 27 August 2026",CUST1057,Vikram Reddy,Bluetooth Speaker,Electronics,0,2499,0.1,0.0,Shipped,Net Banking,Hyderabad,560857,vikram85@mail
+ORD-100404,2026/03/17,CUST1019, Carlos Smith,T-Shirt,Apparel,2,$539.10,0,1078.2,-,Wallet,Kolkata,560933,carlos62@yahoo.com
+ORD-100331,null,CUST1042,Sarah Gupta,Coffee Maker,Appliances,2,3848.9,20,7697.8,Shipped,Wallet,Chennai,500285,sarah47@gmail.com
+ORD-100290,10-Jan-2024,CUST1119,Rohan D'Souza,Running_Shoes,Footwear,4,$ 2969,10,11876.4,Delivered,Net Banking,Bengaluru,600538,rohan90@outlook.com
+ORD-100475,19/07/2024,CUST1087,Vikram Johnson,BLUETOOTH SPEAKER,Electronics,2,2249.10 USD,0,"4,498.20",Delivered  ,Debit Card,Ahmedabad,,vikram72@gmail.com
+ORD-100509,05-05-2025,CUST1112,Aarav Verma,T-Shirt,Apparel,1,599.00 USD,5,599.0,N/A,?,Pune,400920,aarav37@gmail.com
+ORD-100051,"Tuesday, 30 July 2024",CUST1196,Pooja Mehta,Coffee Maker,APPLIANCES,5,"$3,499",5,17495.0,Pending,UPI, Jaipur,500971,pooja95@yahoo.com
+ORD-100548,28.02.24,N/A,Karan Smith,Desk Lamp,Home,1,$ 1319,0,1318.9,Cancelled,Debit Card,Mumbai,400947,karan79@yahoo.com
+ORD-100413,05-19-2026,CUST1101,Emily Gupta,Phone Case,Accessories,2,269.1,20,538.2,Processing,null,Chennai,600365,emily12@gmail.com
+ORD-100449,26.02.24,CUST1111,Rohan_Smith,Desk Lamp,HOME,2,1079.1,0,"$2,158",Delivered,Net Banking,Jaipur,600421,rohan7@outlook.com
+ORD-100280,"Friday, 29 May 2026",CUST1053,Michael Smith, Laptop Backpack,Accessories,3,1978.90 USD,10%,$ 5937,Pending,Credit Card,AHMEDABAD,500463,michael16@gmail.com
+ORD-100306,N/A,CUST1138,Manish Iyer,Air Fryer,Appliances,2,6499.00 USD,0,12998.0,Delivered,Wallet,Delhi,110334,manish43@outlook.com
+ORD-100377,19-Sep-2025,CUST1117,Neha Singh,Headphones,Electronics,2,2999,0,5998.0,Shipped,Net Banking,Hyderabad,110453,neha1@gmail.com
+ORD-100170,"Sunday, 29 March 2026",CUST1121,Olivia Chen  ,Water Bottle,Home,4,493.9,0,1975.6,Shipped,COD,Ahmedabad,500403,olivia41@gmail.com
+ord-100629,17.03.25,CUST1140,Arjun Garcia,WATER BOTTLE,Home,2,449,0.1,898.0,Processing,COD,Bengaluru,110274,
+ORD-100493,0000-00-00,CUST1044,Anjali Garcia,Laptop Backpack,Accessories,1,1799,15,1799.0,Processing,Debit Card,Jaipur,500752,anjali80@mail
+ORD-100014,"Thursday, 27 August 2026",CUST1057,Vikram Reddy,Bluetooth Speaker,Electronics,0,2499,0.1,0.0,Shipped,Net Banking,Hyderabad,560857,vikram85@mail
+ORD-100308,"Wednesday, 08 October 2025",CUST1107,Amit Johnson,Wireless Mouse,Electronics,2,878.9,20,"1,757.80",Delivered,COD,Pune,411979,amit15@outlook.com
+ORD-100341,02-26-2024,CUST1100,n/a,Coffee_Maker,Appliances  ,2,3499,20,"6,998.00",Pending,credit card,Ahmedabad,110799,vikram89@mail
+ORD-100402,2024-02-10,CUST1032,Priya Reddy,Water Bottle,Home,3,404.1,5,"$1,212.30",Pending,UPI,N/A,110584,priya35@mail
+ORD-100549,"Tuesday, 11 February 2025",CUST1196,Pooja Mehta,Coffee Maker,Appliances,2,3499,0.1,6998.0,Shipped, Wallet,Jaipur,411181,pooja14@yahoo.com
+ORD-100581,2024-06-01,CUST1114,Michael Reddy,Desk Lamp, Home,2,1199,0,2398.0,Shipped,Credit Card,Delhi,400564,michael14@gmail.com
+ORD-100058,21.08.26,CUST1115,Aarav Singh,Jeans,Apparel,1,1799,10%,"$1,799.00",Cancelled,credit card,Jaipur,110091,aarav12@outlook.com
+ord-100582,01.08.25,CUST1160,Emma Khan  , Bluetooth Speaker,Electronics,1,"$2,499.00",15,2499.0,Processing,UPI,KOLKATA,600926,-
+ORD-100055,26/02/2025,CUST1216,Emily Patel,Notebook_Set,Stationery, ,349,0,$ 349,-,UPI,Pune,560273,emily11@outlook.com
+ORD-100573,2024-03-12,?,Karan Smith,Jeans  ,Apparel,?,1619.10 USD,0,"$1,619.10",Processing,Credit Card  ,Jaipur,411507,karan16@gmail.com
+ORD-100504,02-Feb-2026,CUST1069,Sarah Singh,Smart Watch,Electronics,-1,5399.1,0,-5399.1,Processing,UPI,Mumbai,NULL,sarah58@outlook.com
+ORD-100303,"Saturday, 22 February 2025",CUST1073,Emily Sharma,Jans,Apparel,1,"$1,799.00",0,1799.0,Delivered,UPI,Kolkata,411713,NULL
+ORD-100560,04-25-2026,CUST1201,Pooja Das  ,Notebook Set,Stationery,1,$ 349,5,349.0,Returned,UPI,Chennai,560746,NaN
+ORD-100077,19/08/2025,,Mei_Smith, Running Shoes,Footwear,3,3299,0,9897.0,returned,COD,Mumbai,600302,null
+ORD-100618,02.01.25,CUST1153,Mei Garcia, Headphones, Electronics,2,2999,10,"$5,998",Pending,UPI,Delhi,411482,mei1@mail
+ORD-100204,13.01.25,CUST1033,Carlos Kulkarni,Air Fryer,Appliances,1,5849.1,0,5849.1,Returned,debit card,Mumbai,560943,NULL
+ORD-100245,10/09/2024,CUST1201,Pooja Das, Laptop Backpack,Accessories,1,1799,20 %,"$1,799.00",Delivered,Debit Card,Jaipur,560564,pooja13@gmail.com
+ORD-100350,10-11-2025,CUST1050,Mei Smith  ,Jeans,Apparel,-1,1799,0,-1799.0,Delivered,Debit Card,Bengaluru,411790,mei85@gmail.com
+ORD-100008,"Thursday, 30 April 2026",CUST1187,Emily Nair,Notebok Set, Stationery,2,349,5,$698.00,Pending,Wallet,Pune,411458,emily12@outlook.com
+ORD-100491,15-May-2026,CUST1166,John Singh,Water Bottle,Home,1,449,5,449.00 USD,Returned,COD, ,500388,john10@mail
+ORD-100305,11-26-2024,CUST1134,Emma Smith,Air Fryer,Appliances,2,$ 5849,10,11698.20 USD,Shipped,COD,Pune,400565,
+ORD-100440,19/02/2024,CUST1134,emma smith,Phone Case,,1,299,10%,299.0,Pending,Net Banking,Jaipur,110010,emma27@gmail.com
+ORD-100569,10-03-2025,CUST1107,Amit Johnson,Wireless Mouse,Electronics,1,799,20 %,$ 799,Pending, Net Banking,Mumbai,500982,amit16@gmail.com
+ORD-100210,30-Sep-2026,CUST1205,Arjun Patel,Desk Lamp,HOME,,1199,10,1199.0,Processing,Debit_Card,Jaipur,110361,arjun49@outlook.com
+ORD-100420,"Mar 08, 2024",CUST1031,Karan Singh  ,Notebook Set,Stationery,3,349,5,1047.0,Delivered,UPI,Mumbai,110064,karan44@yahoo.com
+ORD-100453,"Thursday, 22 January 2026",CUST1107,Amit Johnson,Air Fryer,Appliances,1,7148.9,15,"7,148.90",Pending,Credit Card,Jaipur,600949,amit59@mail
+ORD-100269,"Monday, 03 June 2024",CUST1037,David_Johnson,Coffee Mker,Appliances,1,3499,0,"3,499.00",Returned,Debit Card,Pune,110379,david3@outlook.com
+ORD-100530,0000-00-00,CUST1055,Amit Garcia  ,Phone ase,Accessories,1,269.1,0.1,269.1,Processing,Wallet,Hyderabad,411336,amit4@outlook.com
+ORD-100414,10-Feb-2024,CUST1084,David Kulkarni,Water Bottle,Home,1,493.90 USD,0,493.9,Cancelled,Net Banking,Mumbai,400711,david58@outlook.com
+ORD-100171,2025/01/30,CUST1101,Emily Gupta,Laptop Backpack  ,Accessories,1,1619.1,15,1619.1,Returned,UPI  ,Jaipur,500774,emily1@mail
+ORD-100399,"Saturday, 30 November 2024",CUST1087,Vikram Johnson,Air Fryer,Appliances,1,7148.9,20 %,7148.90 USD,Cancelled,Credit Card,Hyderabad,400320,vikram42@yahoo.com
+ORD-100378,23/09/2026,CUST1067,David Gupta,Yoga Mat  ,Sports,1,988.9,20 %,988.9,PROCESSING,Wallet,Delhi  ,600061,david56@gmail.com
+ORD-100309,"Sep 07, 2025",CUST1032,Priya Reddy  ,T-Shirt,Apparel,3,539.1,0.1,"1,617.30",Cancelled,Net Banking,Bengaluru,110970,priya79@outlook.com
+ORD-100059,07-15-2026,CUST1074, Olivia Mehta,Wireless Mouse,Electronics,1,799,10%,799.00 USD,Pending,UPI,Chennai,560450,olivia84@yahoo.com
+ORD-100505,2026/01/16,CUST1101,Emily Gupta,Laptop Backpack,Accessories,1,1978.9,0,1978.9,Returned,Credit Card,Bengaluru,411698,emily88@yahoo.com
+ORD-100328,03-Jul-2026,CUST1186,Sneha Singh,Running Shoes,NaN,1,2969.1,20,2969.1,Returned,COD,Kolkata,600263,sneha96@gmail.com
+ORD-100066,05-31-2026,CUST1053,Michael Smith,Yoga Mat,Sports,3,988.9,15,2966.7,Pending,Credit Card  ,Hyderabad,400255,michael42@yahoo.com
+ORD-100361,05-Jul-2025,CUST1101,Emily Gupta,Running Shoes,Footwear,1,2969.1,10,2969.1,Delivered,wallet,Surat,400030,emily64@gmail.com
+ORD-100067,04/10/2025,CUST1100,Vikram Chen,Headphones,Electronics,1,3298.90 USD,10,3298.9,Processing,Debit Card,Pune,560345,vikram17@mail
+ord-100616,2025/02/13,CUST1158,Pooja Nair,T-Shirt,Apparel,3,658.9,0.1,1976.7,Delivered,Wallet,PUNE,411781,pooja87@gmail.com
+ORD-100473,N/A,CUST1113,Emily Reddy,Wireless Mouse,Electronics,2,799,20,$ 1598,NULL,Net Banking,Ahmedabad,?,emily76@outlook.com
+ORD-100215,"Thursday, 19 September 2024",CUST1049,NEHA PATEL,Notebook Set,Stationery,4,349,10%,$ 1396,Pending,Credit Card,Bengaluru,NULL,neha26@yahoo.com
+ORD-100463,2026/06/08,CUST1164,john d'souza,Running Shoes,Footwear,4,3299,15,13196.0,Pending,Net Banking,Pune,411736,john83@mail
+ORD-100040,31/02/2025,CUST1147,Anjali Lee,Jeans,Apparel,1,1799,20 %,1799.0,Shipped,Wallet, Kolkata,110326,anjali16@outlook.com
+ORD-100079,08-15-2026,CUST1147,Anjali Lee,Yoga Mat,Sports,3,809.1,15,2427.3,Returned,credit card,NaN,400825,anjali92@yahoo.com
+ORD-100207,"Monday, 16 March 2026",CUST1136,Neha Nair,Air Fryer,Appliances, ,6499,10,"$6,499.00",Delivered,UPI,Hyderabad,110629,neha24@gmail.com
+ORD-100536,2024/08/11,CUST1206,Rohan_Lee,Smart Watch,Electronics,1,6598.9,20 %,6598.90 USD,Shipped,Credit Card,Ahmedabad,400671,rohan39@yahoo.com
+ORD-100321,"Jun 23, 2026",CUST1080,Manish Sharma,Coffee Maker,Appliances,1,"$3,499",10,3499.0,Pending,Net Banking,Hyderabad,500849,manish35@gmail.com
+ORD-100508,14/03/2024,CUST1156,Olivia Chen,Desk Lamp,Home,2,1199,0,2398.0,Shipped  ,Credit Card,SURAT,411965,-
+ORD-100568,"Dec 08, 2024",CUST1118,Priya Smith,T-Shit,N/A,10,599.00,5,5990.0,Pending,COD,Jaipur,560813,priya3@mail
+ORD-100455,"Sep 04, 2026",CUST1083,John Mehta,Running Shoes,FOOTWEAR,2,2969.1,20 %,5938.2,Shipped,Wallet,Jaipur,560903,john95@gmail.com
+ORD-100072,"Saturday, 07 September 2024",CUST1186,Sneha_Singh,Smart Watch,Electronics,5,5999,0,29995.0,Processing,Wallet,-,NaN,sneha81@gmail.com
+ORD-100265,10.02.24,CUST1086,Sarah Nair,Running Shoes,FOOTWEAR,1,3628.9,20,3628.9,Delivered,UPI,Hyderabad,110183,sarah59@outlook.com
+ORD-100330,25.08.25,CUST1073,Emily Sharma,Coffee Maker,Appliances,2,3848.90 USD,0.1,"$7,697.80",Processing,Wallet,Delhi,560768,NaN
+ORD-100457,2025-08-13,CUST1214,Sneha Singh,Running_Shoes,FOOTWEAR,3,3299,10%,9897.0,Returned,,Bengaluru,600350,sneha35@outlook.com
+ORD-100477,"Apr 20, 2026",CUST1149,Karan Brown,Water Bottle,Home,1,493.9,0,493.9,Pending,Net Banking,Ahmedabad,400474,karan88@gmail.com
+ORD-100013,2024/02/07,CUST1126,Mei Lee,T-Shit,Apparel,1,539.1,10%,539.1,Shipped,COD,Delhi,400726,mei71@gmail.com
+ORD-100056,2025-12-01,CUST1144,David Khan,PHONE CASE,Accessories,1,299,10,299.0,Pending,Wallet,Mumbai,560920,david85@gmail.com
+ORD-100458,"May 23, 2024",CUST1100,vikram chen,Desk Lamp,Home,1,1079.1,5,1079.1,Pending,UPI, Chennai,411182,vikram44@mail
+ORD-100279,22.11.24,CUST1035,Sneha Brown,Air Fryer  ,Appliances,2,6499,0,"$12,998.00",Cancelled,Wallet,Delhi  ,110686,sneha50@yahoo.com
+ORD-100323,2024-12-11,CUST1213,Emily Sharma,Phone Case,Accessories,1,$299,20 %,$ 299,Pending,UPI, Bengaluru,N/A,emily45@mail
+ORD-100438,09-Jan-2026,CUST1062,Amit Johnson,Wireles Mouse,Electronics,4,799,15,3196.0,delivered,COD,,411386,amit36@outlook.com
+ORD-100036,2025-03-21,CUST1186,Sneha Singh,Wireless Mouse,Electronics,3,799.00,20 %,2397.0,Cancelled,Credit Card,Chennai,500140,sneha51@outlook.com
+ORD-100057,27.05.24,CUST1080,Manish Sharma,Notebook Set,Stationery,1,349,20 %,349.0,Delivered,credit card,Chennai,500406,manish42@gmail.com
+ORD-100641,"Sunday, 27 October 2024",CUST1194,Sarah D'Souza,Yoga Mt,Sports,3,988.9,10,2966.7,Returned  ,Debit Card,Pune,110003,sarah51@outlook.com
+ORD-100233,06-14-2025,CUST1098,Rohan Khan,Air Fryer,Appliances,1,7148.9,0,"$7,149",Cancelled,UPI,hyderabad,-,rohan68@mail
+ORD-100175,11-May-2024,CUST1007,AARAV SINGH,?,Home,2,449,5,898.0,Delivered,,Delhi,400189,aarav4@gmail.com
+ORD-100155,2026/08/07,CUST1135,Mei Mehta,Running Shoes,Footwear,3,3299,10,"$9,897.00",Cancelled,Wallet,Surat,600706,mei41@gmail.com
+ORD-100027,01.05.26,CUST1043,Emily Reddy, Laptop Backpack,Accessories,3,1978.9,0.1,$ 5937,Cancelled,upi,Bengaluru,600077,emily99@mail
+ORD-100514,18/01/2026,CUST1071,Sarah Garcia,Water Bottle,Home,1,449.00,5,449.0,Cancelled,UPI,Ahmedabad,400712,sarah32@outlook.com
+ORD-100461,12/04/2025,CUST1022,Divya Johnson,Jeans, Apparel,1,1799,0,1799.0,Cancelled,COD,Kolkata,500518,divya97@mail
+ORD-100121,01-25-2025,CUST1124,Michael Chen,Desk Lamp,Home,3,1079.1,0,3237.3,Processing,COD,Chennai,411423,michael3@yahoo.com
+ORD-100485,03/05/2026,CUST1186,Sneha Singh,air fryer,Appliances,1,5849.1,0.1,5849.1,Pending,Wallet,Surat,500390,sneha89@gmail.com
+ORD-100609,08-12-2024,CUST1019,Carlos Smith,Coffee Maker,Appliances, ,3499.00 USD,20 %,3499.0,Cancelled,Wallet,Mumbai,400400,NaN
+ORD-100147,31/02/2025,CUST1018,Vikram Nair,Running Shoes,Footwear,1,3299,10%,3299.0,Shipped,Debit Card  ,Delhi,411099,vikram88@mail
+ORD-100637,13/01/2024,CUST1126,Mei Lee,Coffee Maker,Appliances,1,3149.1,20,"3,149.10",Cancelled,Debit Card,Pune,400695,mei12@mail
+ORD-100136,08-18-2024,CUST1208,Aarav Smith,Air Fryer,appliances,0,7148.9,10,0.0,shipped,Wallet,Hyderabad,400440,aarav99@yahoo.com
+ORD-100241,25.11.25,CUST1092,Aarav Mehta,Wireless Mouse,ELECTRONICS,2,878.9,0,1757.8,Shipped,Credit Card  ,Surat,411794,aarav86@gmail.com
+ORD-100156,"Apr 16, 2024",CUST1017,Rahul Joshi,Notebook Set,Stationery,1,$349,10%,$349,Shipped,COD,Delhi,560787,rahul86@outlook.com
+ORD-100599,2025-02-13,CUST1194,Sarah D'Souza,Air Fryer,Appliances,1,6499,0,"$6,499.00", Returned,Net Banking,Mumbai,110759,NULL
+ORD-100023,03.09.25,CUST1162,Priya Patel,Coffee Maker,Appliances  ,2,3499,20,6998.0,Processing  ,COD,AHMEDABAD,110762,priya17@gmail.com
+ORD-100604,12/07/2026,CUST1068,Mei Lee  ,Jeans  ,Apparel  ,2,1978.9,5,3957.8,Pending,net banking,Surat,NaN,mei21@outlook.com
+ORD-100424,11-04-2025,CUST1010,Aarav Khan,Jeas  ,apparel,1,1619.1,0,"1,619.10",Shipped,n/a,Bengaluru,411005,aarav35@yahoo.com
+ORD-100649,,CUST1207,Arjun Patel,Water Bottle,Home,5,$449,5,2245.00 USD,Processing,Net Banking,Surat,560344,NULL
+ord-100348,TBD,CUST1215,Liam Iyer,Air Fryer  ,n/a,1,6499,0,6499.00 USD,Returned,Debit Card,Mumbai,560131,liam70@outlook.com
+ORD-100370,27/05/2026,?,Arjun Sharma,Coffee Maker,Appliances,3,3848.9,0,11546.7,Returned,Net Banking,Bengaluru,411263,arjun48@gmail.com
+ORD-100390,31/02/2025,CUST1171,Michael Reddy,Wireless Mouse,Electronics,1,$ 799,5,799.0,Returned,COD,Chennai,400594,michael60@outlook.com
+ORD-100521,14-Nov-2025,CUST1031,Karan Singh,Smart Watch,Electronics,5,5999,0,29995.00 USD,Shipped,Credit Card,Delhi,560941,karan16@gmail.com
+ORD-100301,N/A,CUST1166,John Singh,Air Fryer,Appliances,1,6499,20 %,6499.0,Processing,WALLET,Pune,600561,john69@gmail.com
+ORD-100153,"Jun 20, 2024",CUST1107,Amit Johnson,Laptop Backpack,Accessories,1,1799,10,"$1,799",Delivered,UPI,HYDERABAD,500756,amit58@outlook.com
+ORD-100623,"Sunday, 14 June 2026",CUST1130,Sana Garcia,Air Fryer,-,2,6499,15,12998.0,Pending,UPI,Ahmedabad,600926,sana96@gmail.com
+ORD-100553,19-Feb-2025,CUST1175,Olivia Verma,Laptop Backpack  ,Accessories,2,1978.9,10,3957.8,Pending  ,Debit Card,Chennai,600527,olivia2@outlook.com
+ORD-100624,2026-09-11,CUST1154,Pooja Lee,Running Shoes, Footwear,2,3299,0,6598.0,Processing,Wallet, Jaipur,600488,pooja52@mail
+ORD-100386,06.06.25,CUST1099,n/a,Laptop Backpck,Accessories,2,1619.1,0,"$3,238.20",Processing,Debit Card,Pune,400334,carlos51@gmail.com
+ORD-100542,04/09/2025,CUST1158,pooja nair,Coffee Maker,Appliances,null,"$3,499.00",0,6998.0,Returned,COD,Pune,110708,pooja26@yahoo.com
+ORD-100094,07-Mar-2026,CUST1027,Amit Singh,Jeans,Apparel,,1978.9,5,1978.9,Processing,Debit_Card,Hyderabad,560270,amit13@yahoo.com
+ORD-100380,02-13-2025,CUST1035,Sneha Brown,Wireless Mouse  ,Electronics  ,3,719.1,0,"2,157.30",Returned,Net Banking,Mumbai,560722,sneha38@yahoo.com
+ORD-100088,27-May-2026,CUST1012,,Smart Watch,Electronics,1,6598.9,5,6598.9,Processing,Net Banking,Pune,500406,sana1@outlook.com
+ORD-100218,2024/07/15,CUST1030,Divya Verma,Bluetooth Speaker,Electronics,1,2499,5,"2,499.00",Pending,UPI,Surat,600769,divya64@mail
+ORD-100186,2025/07/19,CUST1204,John Chen,Headphones  ,Electronics,5,"2,999.00",10,"14,995.00",Returned,,Ahmedabad,560734,john13@yahoo.com
+ORD-100412,22-Jul-2025,CUST1205,ARJUN PATEL,Water Bottle,Home,3,449,0,1347.0, Processing,Credit Card,Bengaluru,560960,arjun40@yahoo.com
+ORD-100393,2024/09/16,CUST1053,Michael Smith,Bluetooth Speaker,Electronics,1,2499.00 USD,0,2499.0,Returned,Wallet,Jaipur,500635,michael88@mail
+ORD-100002,"Nov 10, 2025",CUST1170,Amit Mehta,Bluetooth Speaker,Electronics,4,"$2,749",15,10995.6,Pending,UPI,Chennai,400523,amit95@yahoo.com
+ORD-100197,"May 18, 2026",CUST1161,Priya Smith,Bluetooth Speaker,Electronics,3,"$2,249",20,6747.3,Delivered,Net Banking,Chennai,400294,priya61@outlook.com
+ORD-100454,2026-03-09,CUST1127,Karan Mehta,Smart Watch,Electronics,1,5399.1,10%,5399.1, Cancelled,Net Banking,Kolkata,500666,karan23@gmail.com
+ORD-100101,"Sep 30, 2024",CUST1097,EMMA CHEN,Wireless Mouse,Electronics,1,799,5,799.0,Processing,Debit Card,-,411426,emma88@outlook.com
+ORD-100214,"Mar 04, 2024",CUST1080,Manish Sharma,SMART WATCH,Electronics  ,4,5999,0,23996.00 USD,Returned,Debit_Card,Mumbai,400110,manish77@gmail.com
+ORD-100528,2024-08-13,CUST1143,Sneha Patel,Headphones,Electronics,1,2999,0,2999.0,Cancelled,Wallet,Kolkata,110579,sneha87@outlook.com
+ORD-100299,"May 07, 2024",CUST1064,,Headphones,Electronics,3,3298.9,0,"$9,897",Pending,UPI,Hyderabad,600178,john80@gmail.com
+ORD-100492,2026-03-13,CUST1167,Anjali Singh,Wireless Mouse,Electronics,2,799,20 %,1598.0,Cancelled,Credit_Card,Delhi,411451,anjali37@gmail.com
+ORD-100612,2024/06/18,CUST1146,Carlos Reddy,Smart Watch,Electronics,1,6598.9,0,"$6,598.90",Delivered,COD,Hyderabad  ,400328,carlos78@gmail.com
+ORD-100642,"Friday, 24 July 2026",CUST1172,Michael Das,Yoga Mat,Sports,1,809.10 USD,0,$809,Cancelled  ,COD,Jaipur,560086,michael5@mail
+ORD-100169,05-09-2026,CUST1182, Manish Smith,Running Shoes,Footwear,2,3299.00 USD,0,6598.0,Shipped,Credit Card,Bengaluru,400004,manish70@outlook.com
+ORD-100286,"Mar 08, 2025",CUST1121,Olivia Chen,Wireless Mouse,electronics,5,$ 799,20,"$3,995",Processing,Net Banking,Chennai,560479,olivia60@mail
+ORD-100385,2024/06/16,CUST1017,Rahul Joshi,Air Fryer,Appliances,1,"$6,499.00",10%,6499.0, Returned,Credit Card,Mumbai,n/a,rahul20@yahoo.com
+ORD-100257,26.05.24,CUST1100,Vikram Chen,Notebook Set,STATIONERY,2,349.00,0,698.0,Cancelled,Credit Card,Chennai,400491,vikram57@yahoo.com
+ORD-100369,TBD,CUST1064,John Chen,laptop backpack,Accessories  ,4,1799,0.1,7196.0,Shipped,Credit Card,Jaipur,,
+ORD-100031,06-06-2024,CUST1196, Pooja Mehta,Air Fryer  ,Appliances,2,7148.9,20,14297.8,Shipped,Net Banking,Kolkata,400836,pooja78@yahoo.com
+ORD-100439,01-18-2026,CUST1135,Mei Mehta,Notebook Set,,1,349,5,349.00,Shipped,UPI,Chennai,600227,NaN
+ORD-100510,20-Dec-2025,CUST1047,Neha Smith,Wter Bottle,Home,2,$449,20 %,898.0,Returned,UPI,Kolkata,400631,neha37@outlook.com
+ORD-100225,2026/02/12,CUST1195,aarav khan,Smart Watch,Electronics,2,5999,0,11998.0,Delivered,UPI,Ahmedabad,600248,aarav57@yahoo.com
+ORD-100250,"Jun 13, 2024",CUST1034,Rohan Reddy,Wireless Mouse,Electronics,1,799,0,799.0,SHIPPED,n/a,Mumbai,?,rohan38@outlook.com
+ORD-100626,13-Mar-2024,CUST1058,Emma Khan,Headphones,Electronics,3,2999,20 %,8997.0,Shipped,WALLET,bengaluru,400031,emma63@mail
+ORD-100430,07.02.24,CUST1188,John Joshi,Yoga Mat,SPORTS,1,899,0,899.0,Shipped,UPI,Mumbai,400814,NaN
+ORD-100584,2025-11-15,CUST1193,Emily Kulkarni,Laptop Backpack,Accessories,1,1799,0.1,1799.0,Pending,Net Banking,Hyderabad,N/A,emily75@gmail.com
+ORD-100108,03-24-2024,CUST1124,Michael_Chen,WATER BOTTLE,Home,2,449,20 %,$898.00,Pending,Debit Card,Chennai,500750,michael18@mail
+ORD-100283,11-27-2025,CUST1120,Neha Joshi,Yoga Mat,Sports,1,899,20 %,899.0,Cancelled,Debit Card,Surat,500745,neha19@mail
+ORD-100526,"Thursday, 09 October 2025",CUST1141,Neha Singh,Notebook Set,Stationery,1,383.9,10%,383.90,Shipped,UPI,JAIPUR,560259,neha45@yahoo.com
+ORD-100405,TBD,CUST1149,Karan Brown,Notebook Set,STATIONERY,2,383.90,10%,767.8,Cancelled,Net Banking,Pune,500670,karan95@yahoo.com
+ORD-100532,20-Feb-2025,CUST1065,Rohan_Patel,Wireless Mouse,Electronics,3,799,0,2397.0,Pending, UPI, Mumbai,500164,rohan87@yahoo.com
+ORD-100327,12.04.26,CUST1181,Olivia Kulkarni,Air Fryer,Appliances,2,6499,10%,12998.0,Pending, Net Banking,Mumbai,110544,
+ORD-100620,"Jul 17, 2025",CUST1038,Anjali Johnson,N/A,Electronics,2,6598.9,20,13197.80 USD,Processing,Debit Card,Surat,110175,anjali52@mail
+ORD-100132,10-Aug-2026,CUST1197,Vikram Joshi,Air Fryer,Appliances,1,5849.1,20,5849.1,Shipped,Net Banking, Delhi,400135,vikram61@gmail.com
+ORD-100534,06-22-2025,CUST1069, Sarah Singh,Coffee_Maker,Appliances,4,3499,0,13996.0,cancelled,Credit Card,Ahmedabad,NULL,sarah39@outlook.com
+ORD-100512,04-11-2024,CUST1001,Aarav Joshi,Desk Lamp,Home,1,1079.1,0,1079.1,Shipped,Debit Card,Surat,411171,aarav13@mail
+ORD-100003,"Apr 05, 2024",CUST1131,EMMA PATEL,Water Bottle,Home,2,493.9,15,987.8,Returned,Credit Card,Jaipur,110467,emma60@outlook.com
+ORD-100206,30.03.26,CUST1114,Michael Reddy,Headphones,Electronics,1,2999,0,2999.0,Processing,Wallet,Surat,500534,michael61@gmail.com
+ord-100162,04/03/2025,CUST1022,Divya Johnson,Coffee Maker,Appliances,2,"$3,499.00",15,6998.0,Processing,Net_Banking,Mumbai,411257,
+ORD-100535,04-28-2025,CUST1181, Olivia Kulkarni,Headphones,Electronics,3,$ 2999,15,"$8,997.00",Shipped,Net Banking,Surat,560643,olivia61@gmail.com
+ORD-100273,02-Sep-2024,CUST1162,Priya Patel  ,Phone Case,Accessories,2,299.00 USD,0,598.0, Delivered,UPI  ,Pune,,priya27@mail
+ORD-100435,2024/01/27,CUST1137,Karan Khan,Air Fryer,Appliances,2,6499,20 %,12998.0, Delivered,Credit Card,NaN,110002,karan32@mail
+ORD-100525,21-Oct-2024,CUST1133,priya brown, Yoga Mat,SPORTS,2,899,0,1798.0,Returned,Debit Card,Pune,411127,priya13@outlook.com
+ORD-100068,03/10/2025,CUST1174,-,Air_Fryer,Appliances,2,$ 6499,0,$ 12998,Processing,Net Banking,Pune,110001,rohan10@yahoo.com
+ORD-100316,"Aug 12, 2025",CUST1150,Priya Gupta,n/a,Home,2,"1,079.10",15,2158.2,Delivered,Credit Card  ,Ahmedabad,110246,priya49@mail
+ORD-100116,2024/10/18,CUST1180,Amit Iyer,T-Shirt,apparel,1,$ 599,10%,599.0,Delivered,Debit Card,Ahmedabad,400775,amit59@mail
+ORD-100374,06-20-2026,CUST1113,Emily Reddy,Running Shoes,?,1,3299,0,3299.0,Delivered,UPI,Bengaluru,600328,emily11@outlook.com
+ORD-100624,2026-09-11,CUST1154,Pooja Lee,Running Shoes, Footwear,2,3299,0,6598.0,Processing,Wallet, Jaipur,600488,pooja52@mail
+ORD-100371,2026/05/22,CUST1036,Arjun Garcia,Water Bottle,Home,1,$404,10%,404.10,processing,Wallet,Ahmedabad,411383,arjun28@mail
+ORD-100471,"Jan 14, 2024",CUST1110, Neha Reddy,YOGA MAT,Sports,1,$ 899,10%,899.0,Shipped,Credit Card,Chennai,411859,neha95@gmail.com
+ORD-100447,17-Nov-2025,CUST1058,Emma Khan,T-Sirt,Apparel,2,599.00,15,1198.0,Pending,Debit Card,Kolkata,600150,emma35@gmail.com
+ORD-100545,"Mar 17, 2025",CUST1075,Olivia_Khan,t-shirt,Apparel,2,599,0,1198.0,Shipped,wallet,Bengaluru,560523,olivia15@outlook.com
+ORD-100292,17-May-2025,CUST1146,Carlos Reddy,Headphones,Electronics,2,"$2,999.00",10,5998.0,Returned,COD,Jaipur,500847,carlos46@outlook.com
+ORD-100482,26.10.24,CUST1117,Neha Singh,Jeans,?,2,1619.10 USD,0,"$3,238",cancelled,COD,Kolkata,110514,neha29@outlook.com
+ORD-100470,02-11-2025,CUST1127,Karan_Mehta,Coffee Maker,APPLIANCES,1,"$3,499.00",0,3499.0,delivered,Debit Card,Chennai,411954,NaN
+ORD-100450,2025-03-29,CUST1069,Sarah Singh,Water Bottle,Home,1,404.10 USD,0.1,404.1,Returned,UPI,Delhi,411959,n/a
+ORD-100577,02-06-2025,CUST1103,Sarah Lee,Wireless Mouse,Electronics,2,$879,5,1757.8,Returned,,Bengaluru,600151,n/a
+ORD-100098,"Thursday, 05 December 2024",CUST1211,Anjali Garcia,Laptop_Backpack,Accessories,1,1799,0.1,1799.0,Delivered,Wallet,Hyderabad,411220,-
+ORD-100232,2024/07/17,CUST1031,Karan Singh,Wireless Mouse,Electronics,1,878.9,0,878.9,Processing,COD,Bengaluru,600861,karan15@gmail.com
+ORD-100041,03-04-2025,CUST1024,Mei Patel,running shoes,Footwear,-,2969.1,20 %,2969.1,Shipped,COD,,411137,mei94@outlook.com
+ORD-100157,yesterday,CUST1018,Vikram Nair,Jeans,Apparel,1,"$1,799.00",20,1799.0,Processing,Credit Card,Ahmedabad  ,600000,vikram86@mail
+ORD-100319,,CUST1021,Amit Mehta,Running Shoes,Footwear,1,"$3,299",0,3299.0,Cancelled,Net Banking,Mumbai,560085,amit6@outlook.com
+ORD-100195,2024-07-02,CUST1196,Pooja Mehta,Bluetooth Speaker,Electronics,1,2499,0.1,"2,499.00",Delivered,-,Delhi,600414,pooja96@mail
+ORD-100479,N/A,CUST1131,Emma Patel,Wireless Mouse,Electronics,1,$ 879,0,878.9,Pending,Debit Card,Delhi  ,600856,emma81@outlook.com
+ORD-100017,21-Mar-2024,CUST1174,Rohan Lee,Coffee Maker,Appliances,3,3499,0,$ 10497,Pending,Wallet,Pune,110242,rohan46@outlook.com
+ORD-100625,11-04-2024,CUST1156,Olivia Chen,Phone Case,Accessories,1,269.1,0,269.10,RETURNED,COD,Ahmedabad,500741,olivia9@outlook.com
+ORD-100287,"Mar 31, 2024",CUST1007,Aarav Singh,Phone Case,Accessories  ,4,299,20,1196.0,Pending,Credit Card,Delhi,560579,aarav43@gmail.com
+ORD-100533,2026/07/27,CUST1020,Sneha Singh,Yoga Mat,Sports,3,988.9,10,$ 2967,Delivered,Credit Card,Surat,600967,sneha36@mail
+ORD-100340,"Nov 23, 2024",CUST1059,Emily_Joshi,Jeans  ,Apparel,1,1978.9,10,1978.9,Returned,COD,Hyderabad,600362,emily41@mail
+ORD-100228,14.09.24,CUST1182,Manish Smith,Bluetooth Speaker,Electronics,2,2748.9,0,5497.8,Pending,Wallet,Mumbai,110316,manish55@yahoo.com
+ORD-100614,,CUST1177,Rahul Joshi,Water Bottle,Home,1,449,10%,449.0,Delivered,Net Banking,Chennai,400454,rahul55@yahoo.com
+ORD-100543,2025/05/29,?,NULL,Water Bottle,Home,1,449.00 USD,10,449.0,Pending,Net Banking,Surat,560189,carlos64@mail
+ORD-100362,2025/01/25,CUST1103,Sarah Lee,Bluetooth Speaker,Electronics,2,2249.1,20,4498.20 USD,NaN,Credit Card,CHENNAI,-,sarah40@gmail.com
+ORD-100092,null,CUST1098,,Phone Case,Accessories,1,328.9,5,$328.90,Cancelled,Debit Card,Bengaluru,560768,rohan52@gmail.com
+ORD-100238,16-Sep-2026,CUST1183,Carlos Singh,Smart Watch,Electronics,2,5399.1,10%,10798.2,PROCESSING,UPI,Chennai,400532,
+ORD-100045,04.05.24,CUST1143,Sneha Patel,Laptop Backpack,Accessories,5,1799,10,"$8,995",Cancelled,UPI,Pune,400053,N/A
+ORD-100150,2025/09/22,CUST1038,Anjali Johnson,Headphones,Electronics,1,2999,20,2999.0,Shipped, , Chennai,400442,anjali51@outlook.com
+ORD-100276,2025/01/01,CUST1046,David Khan,Bluetoth Speaker,Electronics,3,$ 2249,0,6747.3,Pending,Debit Card,Delhi,600774,david41@yahoo.com
+ORD-100256,"Jan 09, 2026",CUST1137,Karan Khan,Wireless Mouse,Electronics,2,878.90,0,1757.8,Returned,Credit Card,Bengaluru  ,400663,karan40@yahoo.com
+ORD-100631,2025-01-26,CUST1138,Manish Iyer,Jeans,Apparel,1,1799,20 %,1799.00 USD,Cancelled,Net Banking,surat,560738,manish26@gmail.com
+ORD-100172,12.02.26,CUST1106,Liam Kulkarni,Water Bottle,Home,1,$ 404,20 %,404.1,Processing,COD, Pune,110613,liam75@mail
+ORD-100001,yesterday,CUST1058,Emma Khan,Jeans, Apparel,1,1799,20,1799.00 USD,Cancelled,Debit Card,SURAT,110532,emma69@yahoo.com
+ORD-100442,05-22-2024,CUST1135,mei mehta,Smart Watch,Electronics,1,5999,20 %,5999.0,Processing,Net Banking,Chennai,560243,mei51@mail
+ORD-100143,"Saturday, 28 December 2024",CUST1081,Emma Joshi,Notebook Set,,1,$384,20 %,383.9, Returned,Wallet,Hyderabad,560518,NULL
+ORD-100046,"Thursday, 30 October 2025",CUST1140,Arjun Garcia,Wireless Mouse,Electronics,-1,799,20,-799.00,Returned,Credit Card,Ahmedabad,null,arjun73@gmail.com
+ORD-100561,26/10/2024,CUST1027,Amit Singh,Notebook Set  ,Stationery,1,314.1,5,314.1,Returned,Cod,Mumbai,500609,amit62@yahoo.com
+ORD-100643,"Friday, 19 January 2024",CUST1186,Sneha Singh,Water Bottle,Home  ,,404.10 USD,10,$404,Processing,Net Banking,Kolkata,411273,n/a
+ORD-100598,2026/03/09,CUST1125,Neha Chen,Bluetooth Speaker,Electronics,1,"$2,499",0,2499.0,shipped,null,Bengaluru,110062,neha4@gmail.com

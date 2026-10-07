@@ -1,0 +1,577 @@
+employee_id,full_name,department,job_title,joining_date,annual_salary,performance_rating,gender,age,location,employment_type,manager_id,status,email,leave_balance_days
+EMP5484,John Sharma,HR  ,Senior Manager,16/11/2015,788261.32,2,Male,52,Mumbai,Contract,EMP5342,Terminated,john.sharma@company.com,0
+EMP5470,Sana Das,Finance,Manager,"Tuesday, 01 April 2014","₹1,167,886",4,Female,0,mumbai ,Contract,EMP5384,active,sana.das@company.com,20
+EMP5319,Emily_Chen,HR,Lead  ,07-24-2022,523942.67,3,M,34,Remote,FT,EMP5088,On Leave,-,12
+EMP5324,Olivia Iyer,Marketing,Director,22.11.15,1241382.69,Excellent,male,NULL,Remote,Full-time,EMP5230,Active,olivia.iyer@company.com,0
+EMP5390,Sneha Kulkarni,HR,Lead,18/05/2023,855809.63,3,Female,38,Bengaluru,Full-time,EMP5490,Terminated,sneha.kulkarni@company.com,30
+EMP5391,Liam Das,Marketing,Executive,14/09/2014,1235613.06,Good,Female,31,mumbai ,Full-time,,Terminated,liam.das@company.com,5
+EMP5021,Isha Khan,Sales,Senior Manager,28/05/2024,706782.93,5,male,28,Bengaluru,FT,EMP5434,Resigned,isha.khan@company.com,2
+EMP5250,Sana Kulkarni,Finance,EXECUTIVE,03-Mar-2017,"₹1,481,435.48",NULL,Prefer not to say,28,mumbai ,Part-time,EMP5181,RESIGNED,sana.kulkarni@company.com,12
+EMP5124,Mei Nair,Finance,Associate,"Saturday, 17 January 2026",717411.86,null,Male,52,mumbai ,Contract,NaN,Active,mei.nair@company.com,NA
+EMP5415,John Gupta,Marketing  ,Lead,24-Apr-2020,"₹587,853.84",3,Other,58,mumbai ,Contract,EMP5393,On Leave,john.gupta@company.com,30
+EMP5437, Aarav Kulkarni,OPERATIONS,Associate,"Friday, 29 March 2019",739443.94, ,M,31,BLR,Full-time,EMP5096,Resigned,aarav.kulkarni@company.com,NULL
+EMP5134,Arjun Verma,HR,Analyst,18-Sep-2021,464422.02,2,Prefer not to say,45,Bengaluru,Contract,EMP5413,Resigned,arjun.verma@company.com,NA
+EMP5032,Manish_Joshi,Finance,Lead,03/12/2022,635401.72,3,Male,n/a,Hyderabad,full time,EMP5116,On Leave,manish.joshi@company.com,0
+EMP5148,Aarav Lee,Marketing,senior manager,"Monday, 01 October 2012",396936.5,Excellent,Other,thirty,Mumbai,Full-time,EMP5027,On Leave,aarav.lee@company.com,NA
+EMP5109,John Khan, HR,Lead,09-Jun-2019,"₹853,150",N/A,Male,34,Mumbai,Full-time,N/A,Active,john.khan@company.com,30
+EMP5422,Vikram Johnson,Operations,Manager,2014-10-29,406533.04,4,Other,47,Mumbai,FT,,active,vikram.johnson@company.com,15
+EMP5077,Divya Singh,Sales,Lead  ,02-Apr-2014,₹ 550387,NaN,Male,0,Pune,Contract,EMP5350,RESIGNED,divya.singh@company.com,12
+EMP5290,Carlos Khan,Marketing,Executive,21-Feb-2012,₹ 853184,3,Non-binary,thirty,mumbai ,Part-time,EMP5241,Resigned,NaN,20
+EMP5040,Michael Kulkarni,Engineering,Intern,"Aug 21, 2019",1272071.1,Needs Improvement,F,150,Bengaluru,FT,EMP5026,Resigned,michael.kulkarni@company.com,25
+EMP5064,Priya Brown,Operations, Executive,2021/06/09,"866,547.15",4/5,male,58,Delhi,FT,EMP5050,Resigned,priya.brown@company.com,5
+EMP5493,Anjali Singh,Hr,Analyst,31/02/2025,370755.0,Good,male,31,BLR,Part-time,EMP5374,RESIGNED,anjali.singh@company.com,NA
+EMP5337,Sana Kulkarni,Marketing,Analyst,2020-02-27,461340.99,4,Non-binary,150,Remote,Contract,EMP5471,Terminated,sana.kulkarni@company.com,25
+EMP5479,MEI SHARMA,Support,Executive,26.09.12,null,Meets Expectations,Other,38,Bengaluru,FT,EMP5422,Terminated,mei.sharma@company.com,NA
+EMP5540,Emma Smith,Legal,Analyst,19-Jan-2013,"1,640,482.28",Needs Improvement,Female,47,Bengaluru,full time,EMP5258,Active,emma.smith@company.com,2
+EMP5363,Liam Garcia,Legal,Executive,2017/01/03,1792337.9,N/A,Non-binary,0,BLR,Part-time,EMP5369,Resigned,liam.garcia@company.com,20
+EMP5519,Neha D'Souza,Marketing,Lead,10-07-2012,1089454.58,Excellent,F,34,Bengaluru,FT,EMP5294,Resigned,neha.d'souza@company.com,12
+EMP5081,Emma Garcia  ,Marketing,Senior Manager,2018/11/29,941936.51,-,Prefer not to say,52,Hyderabad,Full-time,EMP5086,active,emma.garcia@company.com,15
+EMP5028,Rohan Nair,Operations,Lead,2016/07/03,855540.20 USD,2,M,58,BLR,Contract,EMP5531,Terminated,rohan.nair@company.com,15
+EMP5110,Liam Brown,Finance,Analyst,"Thursday, 05 June 2014",821610.16,Good,Male,150,BLR,FT,EMP5293,On Leave,liam.brown@company.com,20
+EMP5300,Amit Lee,Support  ,Lead,"Jul 23, 2012",₹ 379869,2,Non-binary,42,Remote,FT,EMP5025,On Leave,amit.lee@company.com,30
+5389,Karan Lee,Operations,Associate,24/12/2024,759526.29,3,F,150,Hyderabad,Full-time,EMP5183,RESIGNED,karan.lee@company.com,8
+EMP5414,Sana Smith,Marketing,Lead,04-Jul-2025,522308.49,3,female,31,Pune,Intern,?,RESIGNED,sana.smith@company.com,NA
+EMP5511,Michael Smith,Operations,Director,2012-02-26,n/a,2,Other,-1,Hyderabad,Full-time,EMP5372,Active,michael.smith@company.com,0
+EMP5504,AMIT JOHNSON,Marketing,Intern,05-20-2016,₹ 1030064,3,M,31,Pune,full time,EMP5066,active,NaN,20
+EMP5530,EMILY REDDY,Operations  ,Manager,"Wednesday, 17 August 2016",591303.68,2,male,38,Delhi,Contract,EMP5150,Active,emily.reddy@company.com,5
+EMP5047,Neha Brown,LEGAL,Executive,"Tuesday, 19 March 2019",987119.55,4/5,Other,26,Hyderabad,Part-time,,Resigned,neha.brown@company.com,NA
+EMP5007,John Sharma,Marketing,LEAD,11-May-2019,417432.0,4,?,34,BLR,full time,EMP5239,RESIGNED,john.sharma@company.com,5
+EMP5131,Amit_Gupta,SUPPORT,Director,"Monday, 11 August 2025","₹683,778",3.5,Non-binary,38,Bengaluru,Full-time,EMP5080,active,amit.gupta@company.com,NA
+EMP5188,Isha Joshi,Sales,Director,"Aug 11, 2015",1005717.39,Good,Non-binary,34,BLR,Intern,EMP5077,Active,isha.joshi@company.com,12
+EMP5314,Isha Garcia, Sales,lead,01-Apr-2019,"786,019.39",3,Female,25,Mumbai,FT,EMP5026,On Leave,isha.garcia@company.com,30
+EMP5200,Mei Joshi,Sales,Associate,"Monday, 08 February 2021",10077827.29,3,M,34,Bengaluru,Full-time,EMP5119,Resigned,mei.joshi@company.com,5
+EMP5166,Divya Das,operations,Director,26/02/2016,"783,562.46",4,Other,58,Mumbai,Intern,EMP5445,Active,divya.das@company.com,5
+EMP5229,Liam Brown,Finance,Lead,25-Feb-2024,538476.89,2,n/a,47,mumbai ,null,EMP5412,RESIGNED,liam.brown@company.com,12
+EMP5465,Karan Khan,finance,Analyst,"Mar 10, 2020","529,466.15",3.5,,58,Bengaluru,full time,EMP5211,Resigned,karan.khan@company.com,NULL
+EMP5514,Arjun Singh  ,FINANCE,Intern,yesterday,"813,407.74",null,Male,42,Remote,FT,EMP5180,Terminated,arjun.singh@company.com,NaN
+EMP5216,Rahul Khan  ,Marketing,Intern,2018-03-19,1042940.5,3,female,-1,Remote,Contract,EMP5125,active,rahul.khan@company.com,5
+EMP5526,Emily Reddy,Marketing,Analyst,2023-03-30,671819.94,4,Prefer not to say,thirty,Hyderabad,Contract,EMP5235,Active,emily.reddy@company.com,15
+EMP5420,Amit Garcia,Operations,Intern,"Feb 10, 2023",739971.83,Good,M,thirty,Delhi,Part-time,EMP5192,On Leave,amit.garcia@company.com,12
+EMP5146,Sarah Smith,sales,Intern,21/03/2023,468047.63,Excellent,Other,31,BLR,Full-time,EMP5000,active,sarah.smith@company.com,0
+EMP5119,KARAN KULKARNI,Marketing,Intern,11/01/2026,824598.82,3.5,female,22,Hyderabad,Contract,EMP5100,Resigned,karan.kulkarni@company.com,30
+EMP5277,Pooja Patel  ,Marketing,Associate,2025-01-26,975785.48,4,M,42,Remote,Full-time,EMP5163,Active,pooja.patel@company.com,8
+5263,Karan Iyer,Marketing,Intern,28-Dec-2014,-50000,N/A,Female,28,Pune,FT,EMP5406,On Leave,karan.iyer@company.com,NA
+EMP5351, Vikram Das,Operations,Lead,2025/06/18,842844.89,5,female,49,Pune,full time,EMP5411,Resigned,vikram.das@company.com,-
+EMP5534,Rohan Patel,Sales,Manager,28/11/2017,1302220.72,Needs Improvement,Female,40,Hyderabad,N/A,EMP5223,RESIGNED,rohan.patel@company.com,5
+EMP5452,Pooja Smith,Support,Director,18.10.15,464034.23,5,,32,Pune,Full-time,EMP5394,active,pooja.smith@company.com,5
+EMP5480,Mei Joshi,HR,Lead,"Friday, 13 June 2014",601140.76,3,Prefer not to say,-1,Remote,FT,EMP5344,Active,mei.joshi@company.com,25
+EMP5258,Vikram Patel,Legal,Intern,04.07.22,533582.6,Meets Expectations,Non-binary,25,mumbai ,FT,EMP5117,,vikram.patel@company.com,25
+EMP5412,Karan Patel,Legal,Executive,23.10.25,1057035.75,1, ,38,Mumbai,Intern,EMP5356,active,karan.patel@company.com,25
+EMP5223,David Gupta,Finance,Associate,03.05.26,1418320.52,Excellent,Non-binary,52,Delhi,FT,EMP5088,On Leave,david.gupta@company.com,30
+EMP5152,Vikram Mehta,Marketing,Executive,22-May-2020,645698.17,4,Male,150,Hyderabad,Contract,n/a,Active,vikram.mehta@company.com,NULL
+EMP5168,Aarav Brown,Support,Manager,"Mar 13, 2014",N/A,Good,Other,-1,Delhi,Full-time,EMP5165,Terminated,aarav.brown@company.com,NA
+EMP5054,David Khan,Support,Analyst,23-Apr-2016,₹ 592861,2,Non-binary,22,mumbai ,Part-time,EMP5185,Terminated,david.khan@company.com,20
+EMP5065,Anjali Nair,Engineering,Senior Manager,"Feb 09, 2016",1260382.95,3.5,M,34,Hyderabad,Contract,EMP5469,Terminated,anjali.nair@company.com,30
+EMP5520,Divya Johnson,Support,Associate,2023-04-15,₹ 310460,4,male,38,Hyderabad,full time,,Resigned,divya.johnson@company.com,5
+EMP5279, David Singh,HR,Intern,2020/03/12,"₹862,337.38",null,female,22,mumbai ,Full-time,NULL,active,david.singh@company.com,30
+EMP5106,Neha_Das,Sales, Manager,N/A,868852.39 USD,4,M,59,BLR,Part-time,EMP5117,Resigned,neha.das@company.com,25
+EMP5082,Sarah Patel,Finance,Intern,02-Nov-2023,573826.53 USD,N/A,Female,47,Bengaluru,full time,EMP5371,Terminated,sarah.patel@company.com,5
+EMP5066,SANA LEE,Operations,Associate,N/A,996668.4,4,Non-binary,-1,Remote,Contract,EMP5523,Terminated,sana.lee@company.com,25
+EMP5075,John Gupta,Operations,Manager  ,"Sep 13, 2021",826028.02,1,,thirty,Mumbai,Intern,EMP5103,RESIGNED,?,8
+EMP5340,Michael Smith,HR,Associate,2019/06/17,713055.87,1,M,150,mumbai ,Contract,EMP5221,Active,michael.smith@company.com,0
+5176,Neha D'Souza,Engineering,Manager,24.11.14,1938402.95,3,male,N/A,Bengaluru,Part-time,EMP5526,On Leave,neha.d'souza@company.com,30
+EMP5289,Olivia Lee,Engineering,Intern,02-10-2021,1796397.6,4,Male,,Delhi,Intern,EMP5025,On Leave,olivia.lee@company.com,30
+EMP5295,Rohan Garcia,SUPPORT,Manager,12.08.13,585651.29,3,M,28,N/A,FT,EMP5016,Active,rohan.garcia@company.com,NA
+5159,Liam Johnson,Operations,Senior Manager,12-24-2020,879636.3,2,M,38,Bengaluru,full time,EMP5022,On Leave,liam.johnson@company.com,25
+EMP5071,Priya Iyer,Sales,Director,12-Mar-2012,531991.71,3,F,22,mumbai ,FT,EMP5545,active,priya.iyer@company.com,NA
+EMP5557,Olivia Reddy,Sales,Executive,08.03.12,₹ 1160960,3, ,22,mumbai ,Intern,EMP5485,On Leave,olivia.reddy@company.com,20
+EMP5077,Divya Singh,Sales,Lead  ,02-Apr-2014,₹ 550387,NaN,Male,0,Pune,Contract,EMP5350,RESIGNED,divya.singh@company.com,12
+EMP5327,Manish Johnson,Operations,Director,23/03/2021,381712.58,5,male,52,mumbai ,Contract,EMP5225,RESIGNED,manish.johnson@company.com,0
+EMP5501,amit brown,Support, Executive,10-Jul-2012,362922.85,4,Male, ,Pune,FT,EMP5373,Resigned,amit.brown@company.com,5
+EMP5273,Arjun Brown,HR,Intern,2014-11-26,585824.37,5,M,58,mumbai ,Intern,EMP5458,On Leave,arjun.brown@company.com,12
+EMP5449,Michael Garcia,HR,Lead,17.11.17,"615,022.48",4,Prefer not to say,38,Pune,FT,EMP5142,Terminated,michael.garcia@company.com,0
+EMP5016,Emma Brown,Marketing,Executive,2022/05/18,502435.11,4,M,NaN,Pune,Intern,EMP5271,Active,emma.brown@company.com,0
+EMP5214,Mei Singh,Marketing,Analyst,"Sunday, 30 June 2013",1148410.54,3.5,female,58,Pune,Full-time,EMP5299,Active,mei.singh@company.com,12
+EMP5456,Isha Chen,Finance,Senior Manager,05-24-2015,758121.44,1,Female,52,Pune,FT,?,Terminated,isha.chen@company.com,12
+EMP5024,Mei_Das, Finance,Director,23-May-2017,1164777.18 USD,3.5,Non-binary,34,Remote,Intern,EMP5354,active,mei.das@company.com,5
+EMP5358,Sneha Gupta,Operations,Lead,31/02/2025,644152.34,Good,Prefer not to say,150,Bengaluru,Part-time,null,RESIGNED,sneha.gupta@company.com,5
+EMP5224,john garcia,Support,Executive,2013/11/03,588809.9,Good,male,52,Pune,FT,N/A,Resigned,john.garcia@company.com,2
+EMP5330,Liam Lee,Sales,Associate,25.12.24,1248078.24,5,Prefer not to say,34,BLR,Part-time,EMP5543,active,liam.lee@company.com, 
+EMP5321,Isha Joshi,SUPPORT, Associate,11-07-2017,645537.44,Excellent,Female,38,Pune,FT,EMP5539,Active,isha.joshi@company.com,5
+EMP5193,Rahul Joshi,Finance,Intern,21-Dec-2014,1149046.39,Meets Expectations,Female,42,mumbai ,full time,EMP5013,active,rahul.joshi@company.com,25
+EMP5241,SNEHA JOSHI,Sales,Analyst,29-Apr-2025,"₹923,456.30",4,Female,0,Mumbai,Intern,EMP5112,On Leave,sneha.joshi@company.com,20
+EMP5167,Anjali Sharma,Marketing,Manager,2023/01/28,1214245.41,-,male,52,mumbai ,Part-time,EMP5514,active,anjali.sharma@company.com,30
+EMP5477,Michael Nair,Sales  ,Senior Manager,05-01-2021,1095011.76,2,M,34,Hyderabad,Full-time,EMP5279,Active,michael.nair@company.com,20
+EMP5370,Manish Kulkarni, Sales,Associate,04.02.17,939503.69,Meets Expectations,Female,thirty,Pune,Intern,EMP5245,Resigned,manish.kulkarni@company.com,NA
+EMP5184,emily lee,Support,Intern,"Apr 26, 2022",330333.66,N/A,Other,47,Remote,Contract,EMP5122,Active,emily.lee@company.com,25
+EMP5474,RAHUL JOSHI,Support,Associate,12-31-2020,395159.53 USD,N/A,Prefer not to say, ,Hyderabad,Contract,EMP5210,RESIGNED,rahul.joshi@company.com,2
+EMP5536,Liam Gupta,Engineering,Analyst,2014-04-28,1093944.01,N/A,M,42,mumbai ,full time,null,active,liam.gupta@company.com,8
+EMP5217,Karan Joshi,Engineering,Lead  ,2021/04/29,1961173.32,3,F,58,Bengaluru,full time,EMP5521,RESIGNED,karan.joshi@company.com,5
+EMP5476,Liam Das,Marketing,Analyst,10-02-2025,894997.51,2,female,34,Pune,Contract,EMP5044,active,liam.das@company.com,8
+EMP5543,Emma Chen,HR,Associate,05.03.14,448143.71,2,F,150,Remote,Intern,EMP5511,Active,emma.chen@company.com,NA
+EMP5253,Vikram Joshi,Legal  ,Senior Manager  ,12-10-2020,"1,277,666.44",3,Prefer not to say,52,Delhi,Contract,EMP5226,Active,vikram.joshi@company.com,2
+EMP5343,Pooja Joshi,ENGINEERING,Analyst,06-Jul-2024,1149135.48,N/A,F,38,BLR,,EMP5459,On Leave,pooja.joshi@company.com,12
+EMP5231,Mei Nair,HR,Analyst,10-04-2024,439049.35,Needs Improvement,F,38,Remote,Intern,?,RESIGNED,mei.nair@company.com,2
+EMP5021,Isha Khan,Sales,Senior Manager,28/05/2024,706782.93,5,male,28,Bengaluru,FT,EMP5434,Resigned,isha.khan@company.com,2
+EMP5332,Sneha Kulkarni,ENGINEERING,Director,2022-04-01,979482.98,4/5,Non-binary,58,mumbai ,full time,EMP5505,active,sneha.kulkarni@company.com,25
+EMP5442,Sneha Brown,Operations,Executive,0000-00-00,673373.76,1,Prefer not to say,58,Mumbai,FT,EMP5144,active,sneha.brown@company.com,NA
+EMP5316, Anjali Johnson,Marketing,Director,12-04-2022,N/A,Needs Improvement,Male,150,mumbai ,FT,EMP5113,active,anjali.johnson@company.com,0
+EMP5092,Olivia Kulkarni,Sales,Associate,TBD,778574.29 USD,2,Other,25,Hyderabad,full time,EMP5354,Terminated,olivia.kulkarni@company.com,12
+EMP5242,Mei Garcia,Sales,Director,10-30-2025,736485.46,4/5,NULL,47,Hyderabad,Full-time,,Resigned,mei.garcia@company.com,0
+EMP5174,Amit Lee,Sales,Manager,08-Dec-2020,1010754.78,Excellent,Non-binary,42,Delhi,Contract,EMP5283,active,amit.lee@company.com,30
+EMP5247,Isha Kulkarni,HR,Manager,2015-02-25,"588,872.99",1,Prefer not to say,52,Hyderabad,Full-time,EMP5528,Resigned,isha.kulkarni@company.com,12
+EMP5294,aarav d'souza,Engineering,Lead,"Jul 07, 2023","₹1,483,849.26",5,female,42,Hyderabad,Contract,EMP5504,On Leave,aarav.d'souza@company.com,0
+EMP5264,Rohan Gupta,Sales,Manager,04.04.16,700038.71,NULL,F,38,Remote,FT,EMP5215,On Leave,rohan.gupta@company.com,12
+EMP5516,Aarav Chen,Support,Senior Manager,2017-01-19,337521.32,4/5,female,38,Mumbai,Full-time,EMP5083,Resigned,aarav.chen@company.com,NA
+EMP5505,Liam Singh,Support,Executive,12/08/2014,"296,504.64",4/5,null,47,mumbai ,Intern,EMP5053,active,liam.singh@company.com,30
+EMP5529,Emma Brown,FINANCE,Analyst,18/04/2024,1256491.74 USD,Needs Improvement,Female,thirty,Bengaluru,full time,EMP5148,Terminated,emma.brown@company.com,30
+5384,POOJA PATEL,Legal,Executive,2023/03/28,1087285.56,4/5,Other,45,Delhi,full time,EMP5505,RESIGNED,pooja.patel@company.com,25
+EMP5142,Sarah Khan,Engineering,Senior Manager,"Sep 30, 2022",624734.42,N/A,F,22,BLR,?,,Terminated,sarah.khan@company.com,12
+EMP5307,Amit Johnson,Sales, Executive,21-Oct-2018,912151.14,4,Non-binary,31,Delhi,Contract,EMP5438,Resigned,amit.johnson@company.com,25
+EMP5181,MANISH REDDY,Marketing,Analyst  ,2014/08/06,974169.86 USD,N/A,Non-binary,42,Remote,Contract,EMP5520,Active,manish.reddy@company.com,20
+EMP5205,Amit_Iyer,Operations,Lead,08/08/2023,774397.03 USD,3,M,-1,Mumbai,Full-time,EMP5257,RESIGNED,amit.iyer@company.com,30
+EMP5111,Vikram Nair,Finance,Lead,"Tuesday, 06 September 2016",₹ 485390,3,Female,34,mumbai ,Part-time,EMP5095,RESIGNED,NULL,15
+EMP5301,Sneha Reddy,Marketing,Director,07-Feb-2020,1265505.49 USD,3,Female,52,BLR,FT,EMP5161,Terminated,sneha.reddy@company.com,2
+EMP5481,Vikram Mehta,HR,lead,05-15-2014,666257.34,3,Female,40, ,Full-time,EMP5163,Resigned,vikram.mehta@company.com,15
+EMP5198,Emily Singh,Support,Manager,29.08.24,"₹322,835.03",3.5,male,23,mumbai ,full time,EMP5164,Terminated,emily.singh@company.com,30
+EMP5076,Neha Chen,Legal,Senior Manager,2016/07/27,571338.32,Excellent,Non-binary,0,Delhi,N/A,EMP5344,active,neha.chen@company.com,12
+EMP5371,Manish Das,Finance,Executive,21.03.25,1114870.48,Meets Expectations,male,58,Hyderabad,FT,EMP5345,Terminated,manish.das@company.com,12
+EMP5169,Manish Verma,Operations, Associate,08/02/2012,337060.72,NULL,male,52,Remote,Contract,EMP5314,Active,manish.verma@company.com,30
+EMP5139,Manish Lee,Operations  ,Lead,31/02/2025,₹ 727718,3,M,0,Delhi,Contract,EMP5377,Active,manish.lee@company.com,25
+EMP5460,Isha Khan,OPERATIONS,Associate,2016/11/28,"992,334.56",4,female,58,Hyderabad,Full-time,EMP5109,On Leave,isha.khan@company.com,NA
+EMP5515,Rohan Chen,HR  ,Senior Manager  ,08-17-2013,834959.56,5,M,31,n/a,full time,,Active,rohan.chen@company.com,20
+EMP5362,Olivia Singh,Finance,Executive,"Sunday, 13 October 2019","₹629,265",Good,Prefer not to say,52,Bengaluru,Intern,EMP5449,RESIGNED,olivia.singh@company.com,15
+EMP5376,Arjun Khan  ,HR,Senior Manager,13/05/2026,"₹777,640",Excellent,Other,25,Delhi,full time,EMP5348,Terminated,arjun.khan@company.com,8
+EMP5083,Priya Nair,Hr,Director,01-Jun-2016,888930.92,3,Non-binary,thirty,Bengaluru,FT,EMP5448,Resigned, ,5
+EMP5164,Arjun Johnson, HR,Executive,03/11/2018,485856.86 USD,4,male,N/A,Bengaluru,full time,EMP5533,active,arjun.johnson@company.com,NA
+EMP5463,Neha Iyer,Finance,Lead,01-Oct-2024,978623.2,,F,thirty,Hyderabad,Part-time,EMP5401,active,neha.iyer@company.com,20
+EMP5114,John Khan,Engineering,Lead,23.08.15,876789.61,1,Male,25,mumbai ,Contract,EMP5245,Resigned,john.khan@company.com,NA
+EMP5346,John Gupta,Support,Lead,2023/03/16,376261.42,Excellent,F,-1,N/A,FT,EMP5151,Active,john.gupta@company.com,30
+EMP5187,Amit Sharma,Hr,ASSOCIATE,TBD,638947.41,4,Female,28,Delhi,Contract,EMP5552,RESIGNED,amit.sharma@company.com,0
+EMP5156,Rahul Chen,sales,DIRECTOR,02-Jul-2019,887491.35,3,Female,58,Remote,Intern,EMP5374,On Leave,rahul.chen@company.com,20
+EMP5095,MICHAEL KHAN,SALES,Senior Manager,29.11.16,₹ 12905844,Excellent,Male,38,Mumbai,Contract,NaN,Active,michael.khan@company.com,25
+EMP5026,Rohan Gupta,Marketing,Senior Manager,28-Oct-2017,821629.83 USD,,Prefer not to say,52,mumbai ,full time,EMP5124,RESIGNED,rohan.gupta@company.com,2
+EMP5013,Liam Mehta,Marketing,director,11-May-2022,1046263.17,3,Non-binary,-1,BLR,FT,EMP5263,active,liam.mehta@company.com,12
+EMP5438,Mei Mehta,Sales,Director,"Apr 02, 2023",668141.04,Meets Expectations,Female,31,Bengaluru,FT,EMP5057,Resigned,mei.mehta@company.com,12
+EMP5349,Rahul Das,Sales,DIRECTOR,"Thursday, 06 February 2020",1021082.0,N/A,male,48,Delhi,Full-time,EMP5222,?,N/A,25
+EMP5533,Olivia Iyer,Finance  ,Executive,01-31-2015,545281.47,Meets Expectations,Non-binary,38,Mumbai,Part-time,EMP5260,On Leave,olivia.iyer@company.com,2
+EMP5439,Isha Khan,Engineering,Intern,2013-07-27,1888129.61,3,Prefer not to say,25,Hyderabad,FT,EMP5023,On Leave,isha.khan@company.com,5
+EMP5478,Pooja Sharma,OPERATIONS,Executive,2022-06-17,983457.76,Good,Female,22,Bengaluru,full time,EMP5151,active,pooja.sharma@company.com,NA
+EMP5261,Sana Das,Marketing,Manager,23/06/2012,₹ 780160,Excellent,Female,42,Mumbai,FT,EMP5540,Terminated,NaN,25
+EMP5483,Karan Khan,SALES,Analyst,22/08/2024,"₹1,325,765",5,M,22,Mumbai,Full-time,-,RESIGNED,karan.khan@company.com,5
+EMP5196,Sneha Gupta,Sales,Executive,2020/11/26,1143275.10 USD,4,Prefer not to say,42,Mumbai,Contract,EMP5519,Terminated,sneha.gupta@company.com,5
+EMP5552,John Smith,Engineering,Lead,22-Aug-2018,"₹1,018,575.16",1,Prefer not to say,38,Delhi,full time,EMP5384,NaN,john.smith@company.com,?
+EMP5100,David D'Souza,Sales  ,INTERN,2026/03/15,"₹1,079,836.77",4/5,Other,47,Bengaluru,Intern,,Terminated,david.d'souza@company.com,15
+EMP5030,Carlos Iyer,Legal,Executive,2014-05-16,782972.28,N/A,Female,-1,Hyderabad,Intern,EMP5330,active,carlos.iyer@company.com,30
+EMP5457, Karan Smith,finance,Lead,02-27-2026,1126556.90 USD,4,Prefer not to say,31,Delhi,FT,EMP5222,Resigned,karan.smith@company.com,15
+EMP5070,Anjali_Nair,Legal,Analyst,24.02.12,1068151.97,4, ,58,Delhi,Full-time,EMP5126,RESIGNED,anjali.nair@company.com,25
+EMP5403,Sana Singh,HR,Executive,2022-01-03,856242.9,3,M,58,Hyderabad,Part-time,EMP5268,Active,sana.singh@company.com,5
+EMP5292,Sneha Singh,Operations,Intern,"Feb 04, 2017","₹709,999",Meets Expectations,Male,54,Mumbai,Intern,EMP5191,Terminated,sneha.singh@company.com,-
+5365,Arjun Johnson,FINANCE,Lead,"May 03, 2021",729614.75,Needs Improvement,Female,150,Remote,FT,EMP5063,On Leave,arjun.johnson@company.com,25
+EMP5143,Rahul_Mehta,Operations,Intern,2024-02-21,875287.38,4,male,27,Pune,full time,EMP5240,active,rahul.mehta@company.com,15
+EMP5266,Emily Smith,Operations,Associate,04-10-2015,878385.84,4,male,42,Hyderabad,Intern,EMP5542,On Leave,emily.smith@company.com,5
+EMP5236,michael lee,Legal,Executive,11/03/2016,"₹1,704,151.96",3,,28,Bengaluru,FT,EMP5118,active,michael.lee@company.com,15
+EMP5033,Sneha D'Souza,Engineering,Executive,"Jan 25, 2020","₹1,299,428",N/A,female,25,Pune,full time,NaN,Active,sneha.d'souza@company.com,5
+EMP5323,Karan Sharma,Sales,Executive,20/05/2026,1398750.0,2,Other,43,Pune,Part-time,EMP5396,Active,karan.sharma@company.com,25
+EMP5494,Arjun Smith,Marketing,senior manager,15/07/2022,1041925.01,4,F,31,Bengaluru,Full-time, ,Terminated,arjun.smith@company.com,N/A
+EMP5192,Karan Joshi  ,Marketing,Manager,"Sunday, 19 January 2025",₹ 1066103,1,N/A,31,Pune,Part-time,EMP5172,Terminated,karan.joshi@company.com,15
+EMP5140,Olivia Garcia,Marketing,Analyst  ,03-24-2019,"819,394.97",1,Female,52,Bengaluru,Contract,EMP5132,Terminated,olivia.garcia@company.com,-
+EMP5239,Pooja Johnson,Sales,Lead,23-May-2015,"₹1,100,935.71",Good,female,25,Hyderabad,Full-time,N/A,Terminated,pooja.johnson@company.com,NA
+EMP5502,Pooja Nair,finance,Executive,03-02-2026,"₹922,311.59",3,F,58,Remote,full time,EMP5055,Resigned,pooja.nair@company.com,0
+EMP5440,PRIYA KULKARNI,Legal,Director,04-27-2014,592713.29,3,Non-binary,47,mumbai ,FT,EMP5063,Terminated,priya.kulkarni@company.com,0
+EMP5368,Aarav Singh,Finance,Lead,02-23-2015,1343897.3,Meets Expectations,Other,25,Mumbai,Part-time,EMP5147,RESIGNED,aarav.singh@company.com,8
+EMP5513,Olivia Patel,Finance,Executive,0000-00-00,"1,487,078.68",1,male,36,Remote,Full-time,EMP5411,Terminated,olivia.patel@company.com,5
+EMP5127,Sneha Brown,Sales,Executive,05.01.25,492396.98,Needs Improvement,male,38,BLR,Contract,EMP5475,On Leave,sneha.brown@company.com,?
+EMP5451,Rohan Reddy,Finance,Analyst,"Saturday, 06 December 2025",1453602.83,Excellent,Male,62,n/a,Part-time,EMP5531,active,rohan.reddy@company.com,25
+EMP5204,Vikram Singh,Operations,Executive  ,yesterday,774581.65,1,M,27,-,full time,EMP5482,Active,null,15
+EMP5249,Arjun Verma,Legal,Senior Manager,2022/02/04,₹ 1363400,3,Female,thirty,BLR,Intern,EMP5382,active,arjun.verma@company.com,0
+EMP5091,Isha Iyer,HR,Associate,17.09.23,777548.01,3.5,male,28,Remote,FT,EMP5227,On Leave,isha.iyer@company.com,0
+EMP5432,Aarav Khan,HR,Director,31/02/2025,633642.72,Excellent,female,42,Delhi,full time,EMP5532,On Leave,aarav.khan@company.com,0
+EMP5257,Pooja Nair,HR,Manager,"Mar 05, 2013","₹809,586",3.5,Other,42,Hyderabad,Contract,EMP5214,active,pooja.nair@company.com,NA
+EMP5283,Rahul Khan,Hr,Intern,12-Oct-2020,-,Excellent,male,47,Hyderabad,Intern,EMP5465,Active,rahul.khan@company.com,25
+EMP5000,Aarav Nair,HR,Lead,"Tuesday, 02 October 2012",503702.96,4,Non-binary,25,Remote,Contract,EMP5397,Active,aarav.nair@company.com,2
+EMP5418,Arjun Nair,Finance,associate,21.11.14,567572.31,Needs Improvement,Non-binary,25,BLR,Full-time,EMP5119,active,arjun.nair@company.com,20
+EMP5018,Emma Singh,Sales,Director,2023/05/10,645352.01,4,Prefer not to say,38,BLR,Part-time,EMP5341,On Leave,emma.singh@company.com,5
+EMP5369,Isha Brown  ,Finance,Analyst,31/02/2025,408410.5,3,Prefer not to say,25,Delhi,full time,EMP5441,On Leave,isha.brown@company.com,0
+EMP5296,Neha Khan, Sales,Senior Manager,12-11-2024,669029.14 USD,Meets Expectations,Non-binary,47,BLR,Full-time,EMP5041,Resigned,neha.khan@company.com,0
+EMP5084,Sneha Kulkarni,Support,Executive,TBD,"₹614,413.30",3,Prefer not to say,58,BLR,Part-time,n/a,Active,sneha.kulkarni@company.com,8
+EMP5050,Karan Lee,Support,Executive,03/09/2021,"518,981.77",N/A,F,34,BLR,full time,NaN,N/A,karan.lee@company.com,NA
+EMP5272,Emily Lee,Engineering,Senior Manager,10-01-2021,₹ 1002019,4,Prefer not to say,58,Mumbai,FT,null,On Leave,emily.lee@company.com,0
+EMP5398,Amit Gupta,HR,Intern,2018/05/01,362822.29,3,null,thirty,Hyderabad,Full-time,EMP5405,Active,amit.gupta@company.com,15
+EMP5549,Amit Garcia,Finance,Senior Manager,10-12-2015,"₹1,048,740",4/5,Prefer not to say,28,Hyderabad,Part-time,EMP5493,RESIGNED,amit.garcia@company.com,30
+EMP5014,Emma Sharma,Marketing  ,Director,"Sep 03, 2012",675623.83,3,Prefer not to say,29,Remote,Contract,EMP5223,On Leave,emma.sharma@company.com,30
+EMP5471,Priya Gupta,Support,Lead,"Apr 28, 2026",503619.33,3.5,male,31,BLR,Part-time,EMP5111,RESIGNED,priya.gupta@company.com,5
+EMP5215,Arjun Sharma,Finance,Executive,02.09.19,793665.54,5,Other,25,Hyderabad,Part-time,EMP5288,Active,arjun.sharma@company.com,25
+EMP5375,John Garcia,Operations,Analyst,2024-03-04,₹ 653842,5,F,54,mumbai ,NaN,EMP5190,N/A,john.garcia@company.com,15
+EMP5482,Anjali Reddy,HR,Executive,2018-12-23,"₹854,495",2,Prefer not to say,35,,Contract,EMP5350,Terminated,anjali.reddy@company.com,12
+EMP5141,John Gupta,HR,MANAGER,01-20-2013,736884.29,NaN,male,38,BLR,Part-time,EMP5160,active,john.gupta@company.com,5
+EMP5137,Sana Gupta,Finance,Lead,2019-11-25,797513.91,Needs Improvement,Male,-1,BLR,FT,EMP5544,active,sana.gupta@company.com,12
+EMP5522,Mei Khan,Operations,Intern,07/07/2017,"479,037.13",N/A,Other,31,Delhi,FT,EMP5273,Terminated,mei.khan@company.com,null
+EMP5122,Liam Brown,Finance,Manager,11/06/2016,424597.21,3,female,31,Hyderabad,full time,EMP5286,Resigned,liam.brown@company.com,5
+EMP5276,Amit Das,Legal,Manager,"Jun 09, 2020","₹1,483,668",Meets Expectations,M,0,Pune,Intern,EMP5436,Resigned,amit.das@company.com,30
+EMP5195,Rohan Chen,HR,Intern,2013-06-08,802443.34,Meets Expectations,null,0,BLR,Part-time,EMP5164,Active,null,8
+EMP5523,Sarah Singh,Operations,Executive,05-23-2022,335992.67,4,Other,28,Mumbai,Full-time, ,Terminated,sarah.singh@company.com,30
+5042,Isha Garcia,HR,Analyst,,₹ 695698,4,Prefer not to say,25,Delhi,FT,EMP5250,RESIGNED,isha.garcia@company.com,8
+EMP5411,Vikram D'Souza,Finance,Lead,23/12/2020,1197013.91,Needs Improvement,Prefer not to say,25,Remote,Intern,EMP5354,Resigned,vikram.d'souza@company.com,12
+EMP5079,Rohan Smith,Support,Senior Manager  ,2026-05-15,"379,790.83",3,F,34,Mumbai,Part-time,EMP5406,On Leave,rohan.smith@company.com,2
+EMP5069,Olivia Mehta,Legal  ,lead,04.10.13,₹ 1141865,Good,Male,thirty,Delhi,Contract,EMP5465,Resigned,olivia.mehta@company.com,15
+EMP5020,David Johnson,Operations, Senior Manager,2016/02/10,816763.23,4,Female,thirty,BLR,FT,EMP5211,Resigned,david.johnson@company.com,5
+EMP5067,Liam Iyer,Finance,Senior Manager,2024/08/08,"₹1,080,274.88",4,male,-,Bengaluru,Contract,EMP5366,Terminated,liam.iyer@company.com,n/a
+EMP5510,David Verma,Engineering,Intern,28.01.26,24531771.29 USD,Good,Non-binary,-1,mumbai ,Intern,EMP5290,Terminated,david.verma@company.com,2
+EMP5147,Anjali Brown,Finance,Director,10/04/2017,1010753.39,4,female,47,Hyderabad,Part-time,EMP5041,Resigned,anjali.brown@company.com,null
+EMP5060,Olivia Garcia,Support,Associate,14-Dec-2013,-50000,1,Male,58,mumbai ,Full-time,EMP5305,Terminated,olivia.garcia@company.com,30
+EMP5333,Anjali Smith,HR,Executive,"Sep 11, 2017",402435.06,1,Female,22,mumbai ,Full-time,EMP5276,Active,anjali.smith@company.com,0
+EMP5094,Manish Lee,Support,Senior Manager,"Sep 28, 2019",332089.37,2,Prefer not to say,150,Delhi,Contract,EMP5148,active,manish.lee@company.com,8
+EMP5427,Vikram Kulkarni,Marketing,Executive,16-Nov-2023,774288.58,4,M,-1,Bengaluru,FT,EMP5094,active,vikram.kulkarni@company.com,NULL
+EMP5048,Liam Verma,Support,Associate,19.10.21,612219.66,3,Other,28,Mumbai,Full-time,EMP5412,active,liam.verma@company.com,15
+EMP5285,Rahul Lee,Legal  ,ANALYST,20.11.22,1503881.44,3,Other,47,BLR,full time,EMP5244,Resigned,rahul.lee@company.com,2
+EMP5490,Olivia Brown,Sales,Lead,11/03/2014,534723.93,4,Other,thirty,Bengaluru,Part-time,EMP5338,Resigned,olivia.brown@company.com,5
+EMP5280,Anjali Mehta,Finance,Analyst,04-04-2013,579382.53,2,Prefer not to say,48,Pune,FT,EMP5374,RESIGNED,anjali.mehta@company.com,2
+EMP5256,Isha Chen,Engineering,Intern,08.04.12,1896880.67,4/5,M,N/A,Bengaluru,Contract,-,Terminated,isha.chen@company.com,20
+EMP5554,Sneha Johnson,Support,Intern,2023-07-21, ,5,Female,22,BLR,full time,EMP5295,active,sneha.johnson@company.com,8
+EMP5049,Arjun Joshi,finance,Manager,"Mar 22, 2015","₹1,353,287.25",4,female,46,Delhi,Full-time,EMP5081,active,arjun.joshi@company.com,15
+EMP5409,John Das,Finance, Executive,"Mar 11, 2016",1103926.92,5,Female,42,Mumbai,Full-time,NaN,On Leave,john.das@company.com,15
+EMP5501,amit brown,Support, Executive,10-Jul-2012,362922.85,4,Male, ,Pune,FT,EMP5373,Resigned,amit.brown@company.com,5
+EMP5509,Divya Chen,Legal,Lead,03-28-2021, ,1,Female,58,Bengaluru,Part-time,EMP5334,RESIGNED,divya.chen@company.com,15
+5313,Anjali Verma,Operations,Senior Manager,2018-03-10,"₹483,287.96",4,male,0,Remote,FT,EMP5313,-,anjali.verma@company.com,8
+EMP5531,Karan Verma,Operations,Analyst,"Friday, 31 May 2024",936075.51,Good,Female,34,Remote,FT,EMP5361,On Leave,karan.verma@company.com,5
+EMP5161,Carlos Das,Marketing,Associate,2020/11/10,859074.46,Meets Expectations,male,47,Delhi,Full-time,-,Terminated,carlos.das@company.com,8
+EMP5210,Rahul Johnson,Finance,Executive,31-Dec-2022,812517.93 USD,3,Prefer not to say,42,Remote,Intern,EMP5069,RESIGNED,rahul.johnson@company.com,0
+EMP5320,Liam Iyer,Sales,Director  ,29-Nov-2023,"₹1,014,473.98",5,Male,31,Bengaluru,full time,EMP5159,Terminated,liam.iyer@company.com,12
+EMP5450,Sana Johnson,Marketing,Associate,"Monday, 06 January 2020",738740.89 USD,3.5,Other,thirty,Bengaluru,full time,EMP5456,Terminated,sana.johnson@company.com,5
+EMP5430,Divya Reddy,Engineering,Intern,N/A,815070.55,3.5,Other,28,Delhi,FT,EMP5269,Active,divya.reddy@company.com,8
+EMP5431,Aarav Smith,Engineering,Associate,2018-05-23,1071244.08,1,Other,50,mumbai ,Intern,EMP5059,active,aarav.smith@company.com,15
+EMP5052,Mei Patel,Legal,Lead,12/08/2012,548013.13,4/5,F,42,mumbai ,Full-time,NULL, ,mei.patel@company.com,25
+5058,Sneha Garcia,finance,Lead,20-Jul-2014,484955.79,N/A,Female,58,mumbai ,Part-time,EMP5559,active,sneha.garcia@company.com,8
+EMP5303,Emma Sharma,Legal,Intern,03-29-2016,727313.05,N/A,Other,thirty,Pune,Part-time,EMP5441,Active,emma.sharma@company.com,0
+EMP5238,priya nair,operations,Director,2013-08-28,686401.26,5,female,52,Delhi,FT,,Terminated,priya.nair@company.com,12
+EMP5360,Emma Iyer,Operations, Manager,"Feb 15, 2020",-50000,4,Male,52,BLR,Contract,EMP5109,On Leave,emma.iyer@company.com,15
+EMP5459,Anjali Das,Marketing,Associate,"Aug 05, 2025",936927.33,3,male,62,Delhi,FT,EMP5167,Resigned,anjali.das@company.com,25
+EMP5535,Manish Sharma, HR,Manager,"Monday, 22 November 2021","751,734.30",Excellent,Prefer not to say,25,Hyderabad,Contract,EMP5255,active,manish.sharma@company.com,20
+EMP5413,Priya Johnson,HR,Lead,13-Mar-2024,"₹358,486.17",Meets Expectations,Male,150,Delhi,Part-time,EMP5369,On Leave,priya.johnson@company.com,0
+EMP5074,Mei Lee  ,Marketing,Manager,30-Nov-2016,1029420.79,3,female,null,Bengaluru,full time,EMP5464,RESIGNED,mei.lee@company.com,20
+EMP5269,Anjali Sharma,Hr,Associate,0000-00-00,"363,172.89",Meets Expectations,Non-binary,58,Bengaluru,full time,EMP5147,RESIGNED,anjali.sharma@company.com,5
+5385,Sarah Gupta,Engineering,Senior Manager,19/12/2023,1743323.61,4/5,Other,52,Pune,Intern,EMP5387,On Leave,sarah.gupta@company.com,20
+5444,Priya Verma,HR,Senior Manager,02-19-2017,"₹414,505",4/5,Male,-1,Bengaluru,Part-time,EMP5300,On Leave,priya.verma@company.com,0
+EMP5325,Michael Patel,Legal,Intern,03/10/2025,"₹1,489,212.34",4/5,Prefer not to say,38,Remote,Intern,NULL,On Leave,michael.patel@company.com,20
+EMP5475,karan lee,Operations,Intern,"Saturday, 22 August 2026","881,939.70",1,Other,25,BLR,FT,EMP5014,On Leave,NULL,8
+EMP5540,Emma Smith,Legal,Analyst,19-Jan-2013,"1,640,482.28",Needs Improvement,Female,47,Bengaluru,full time,EMP5258,Active,emma.smith@company.com,2
+EMP5201,Sneha Brown,Sales,Senior Manager,2020-11-04,1356901.21,3,Female,34,Mumbai,Contract,EMP5384,Active,sneha.brown@company.com,8
+EMP5179,Arjun Reddy,Operations,Analyst,31/02/2025,753426.08,3,Non-binary,45,Hyderabad,Contract,EMP5452,Active,arjun.reddy@company.com,8
+EMP5096,carlos das,Engineering,Intern,11-Jul-2013,1033974.63,Meets Expectations,Other,42,BLR,FT,EMP5468,active,carlos.das@company.com,12
+EMP5367,Liam Lee,Support,Director,"Sep 16, 2023",668819.12,1,female,-1,Bengaluru,Part-time,,On Leave,liam.lee@company.com,NA
+EMP5123,Emily Patel,Operations,Intern,"Nov 04, 2019",670096.14,Good,Male,31,Delhi,full time,EMP5190,Resigned,emily.patel@company.com,25
+EMP5532,Emily Das,Sales,Senior Manager,,"₹1,069,002.20",Excellent,female,52,Remote,FT,EMP5073,On Leave,emily.das@company.com,30
+EMP5185,John Patel,HR,senior manager,"Saturday, 19 April 2014",493757.6,3.5,female,thirty,BLR,Intern,EMP5150,Active,john.patel@company.com,NA
+EMP5108,Karan Iyer,Engineering,Lead,"Saturday, 25 February 2023","1,438,995.32",Excellent,male,58,Hyderabad,full time,EMP5062,Active,karan.iyer@company.com,0
+EMP5245,Neha Das, Finance,Director,01.03.12,1478346.41 USD,2,male,35,Hyderabad,Contract,EMP5490, ,neha.das@company.com,5
+EMP5010,Rahul D'Souza,SUPPORT,executive,"Mar 26, 2025",365781.01,Good,female,38,Bengaluru,Full-time,EMP5145,Terminated,?,N/A
+EMP5305,Rohan Reddy,Sales  ,Associate,14/11/2024,"₹473,688",NULL,Other,null,BLR,Intern,EMP5413,active,rohan.reddy@company.com,20
+EMP5350,Emma Iyer,HR,Director,"Saturday, 28 June 2014",517664.1,1,Other,38,Mumbai,full time,EMP5177,Terminated,emma.iyer@company.com,30
+EMP5046,Aarav Garcia,hr,Director,2012-10-09,"₹784,800",3,Other,150,Remote,Contract,null, ,aarav.garcia@company.com,15
+EMP5336,Isha Patel,Support,Manager,22-Mar-2012,619598.55,3,Other,0,Bengaluru,Contract,EMP5099,Terminated, ,15
+EMP5182,Neha Sharma,Legal,Manager,2013-03-04,n/a,Meets Expectations,Female,25,Hyderabad,Full-time,EMP5200,Resigned,neha.sharma@company.com,0
+EMP5031,Rohan Gupta,Marketing,Senior Manager,2018-11-27,628497.66,4,M,58,mumbai ,Contract,EMP5160,Active,rohan.gupta@company.com,8
+EMP5038,Sana Reddy,Operations,Lead,22.09.24,989193.65,2,Other,34,Mumbai,Contract,EMP5544,On Leave,sana.reddy@company.com,8
+EMP5056,Pooja Joshi,Sales,Director,2014-07-24,714930.69 USD,4,M,52,Remote,Contract,EMP5240,RESIGNED,pooja.joshi@company.com,25
+EMP5001,Rahul Mehta,Finance,Senior Manager,2015-01-03,"847,752.48",,Other,52,Bengaluru,Part-time,EMP5156,Terminated,rahul.mehta@company.com,12
+EMP5004,Liam D'Souza,Finance,Director,13-May-2013,1324680.24,4,Non-binary,58,BLR,Contract,EMP5165,RESIGNED,liam.d'souza@company.com,8
+EMP5423,Rahul Garcia,OPERATIONS,Executive,31/02/2025,463549.19,3.5,Other,150,Pune,FT,EMP5517,Terminated,rahul.garcia@company.com,20
+EMP5259,Liam Lee,engineering,Director,"Aug 09, 2017",₹ 683807,3,Other,28,Mumbai,Contract,EMP5026,Active,liam.lee@company.com,15
+EMP5331,Emma Kulkarni,LEGAL,Manager,10-09-2015,"1,118,918.51",Good,male,28,Hyderabad,Intern,EMP5150,active,emma.kulkarni@company.com,2
+EMP5244,Emma Garcia,HR,Senior Manager,"Mar 24, 2020","₹303,435",1,Prefer not to say,150,BLR,Part-time,EMP5504,Resigned,emma.garcia@company.com,5
+EMP5144,John Joshi,engineering,Executive,"Thursday, 22 July 2021",₹ 1807743,3.5,M,58,Hyderabad,full time,EMP5331,Active,john.joshi@company.com,25
+EMP5339,Emily Reddy,Marketing,Analyst  ,02-Dec-2013,730306.62,5,Non-binary,58,Delhi,Contract,-,Terminated,emily.reddy@company.com,12
+EMP5171,Manish Joshi,Marketing,Intern,"Friday, 30 December 2022",481657.12,2,Non-binary,42,Pune,FT,EMP5377,Terminated,manish.joshi@company.com,NA
+EMP5059,Manish Kulkarni,Operations  ,Manager,"Thursday, 02 November 2023",₹ 787352,5,Male,31,Remote,Full-time,EMP5038,Terminated,N/A,15
+EMP5062,Liam Gupta,Sales,Executive,04.07.22,,3,Other,150,Mumbai,full time,N/A,On Leave,liam.gupta@company.com,5
+5212,michael garcia,Engineering,Senior Manager,29.10.14,₹ 702613,N/A,female,27,BLR,Full-time,EMP5252,Resigned,michael.garcia@company.com,2
+EMP5469,Pooja Singh,Finance,MANAGER,15.05.21,1306720.89,1,Male,0,Hyderabad,FT,EMP5309,Active,pooja.singh@company.com,30
+EMP5472,Pooja Lee,Sales,Associate,2013/01/13,596258.64,Needs Improvement,Non-binary,22,Mumbai,Intern,EMP5039,Resigned,pooja.lee@company.com,0
+EMP5462,Liam Lee,Support,Intern,23.06.24,492525.66,4,Prefer not to say,42,Pune,full time,EMP5339,Active,NaN,12
+EMP5120,Arjun Brown,finance,Associate,"Feb 27, 2018",940324.6,3.5,F,34,?,FT,EMP5498,Active,arjun.brown@company.com,15
+EMP5089,Emma_Patel,Finance,Executive,31/02/2025,1328125.88,4,Female,150,Bengaluru,Full-time,EMP5308,Active,emma.patel@company.com,25
+EMP5163,Rohan D'Souza,Finance,Analyst,"Aug 28, 2024",1003905.62,4/5, ,25,Remote,FT,EMP5341,RESIGNED,-,25
+EMP5226,Olivia Iyer,Engineering,Analyst,2018-01-08,1485771.84,Needs Improvement,Prefer not to say,58,Remote,full time,EMP5407,RESIGNED,olivia.iyer@company.com,30
+EMP5213,Olivia_Reddy,Marketing,Senior Manager  ,12-09-2014,"1,024,801.05",n/a,male,thirty,Hyderabad,Contract,EMP5209,Active,olivia.reddy@company.com,NA
+EMP5117,Arjun Smith,Marketing,Executive,"Aug 24, 2025",1219143.26,4,M,,Pune,FT,EMP5458,On Leave,?,5
+EMP5405,Aarav Khan,Operations,Intern,2016-05-10,591685.25,4/5,male,42,Pune,Full-time,EMP5335,Terminated,aarav.khan@company.com,NA
+EMP5364,Isha Reddy, Support,Manager,"Jan 25, 2016","₹552,434.75",3,Other,38,Delhi,Full-time,EMP5234,Active,isha.reddy@company.com,NA
+EMP5308,Aarav Verma,Support,Senior Manager,11/12/2024,"₹424,153",N/A,male,52,mumbai ,Full-time,EMP5395,Terminated,aarav.verma@company.com,20
+EMP5447,Mei Reddy,OPERATIONS, Executive,2023-06-10,654969.22,Meets Expectations,F,47,Bengaluru,FT,EMP5059,Resigned,mei.reddy@company.com,12
+EMP5037,David Garcia,Finance,INTERN,"Sunday, 22 July 2018",728834.64,2,male,62,,FT,EMP5273,Resigned,david.garcia@company.com,NA
+EMP5034,Vikram Chen,Operations,Intern,"Jul 30, 2016","₹367,503.76",Good,female,22,Bengaluru,Full-time,?,On Leave,vikram.chen@company.com,8
+EMP5008,Aarav Brown,HR,Lead,2012-12-19,"594,203.03",Good,Other,,Mumbai,Contract,?,Active,aarav.brown@company.com,5
+EMP5342,Michael Das,MARKETING,MANAGER,01-23-2026,₹ 682591,4,Other,31,mumbai ,Full-time,EMP5282,-,null,2
+EMP5036,David Nair,Sales,Director,06-27-2023,711670.6,NULL,Male,22,Remote,Intern,EMP5220,Terminated,david.nair@company.com,8
+EMP5394,Olivia Joshi  ,HR,Manager,29/08/2023,,4,Prefer not to say,25,BLR,Contract,EMP5444,On Leave,olivia.joshi@company.com,2
+EMP5397,Vikram Garcia,Operations, Senior Manager,2018/08/21,767039.55,N/A,male,0,Remote,FT,EMP5172,NULL,vikram.garcia@company.com,5
+EMP5160,Anjali Khan,Support,Manager,2025/05/15,391505.6,Excellent,Female,150,BLR,Full-time,EMP5148,RESIGNED,anjali.khan@company.com,12
+EMP5268,John Smith,Operations,Analyst,N/A,330152.96,Excellent,Prefer not to say,34,Remote,Full-time,EMP5149,active,NULL,0
+EMP5230,Amit Nair,Operations,Manager,09-14-2016,"₹603,872.66",Needs Improvement,M,58,Bengaluru,Contract,EMP5456,RESIGNED,amit.nair@company.com,NA
+EMP5098,Sneha Reddy,Support  ,Analyst,23/07/2012,n/a,N/A,Prefer not to say,150,Pune,-,EMP5181,active,sneha.reddy@company.com,25
+5017,David Nair,operations,Manager,06.04.21,577885.94,3.5,male,47,BLR,Contract,EMP5190,Terminated,david.nair@company.com,12
+EMP5454,Neha Verma,Operations,Analyst,12/01/2024,438625.16,2,Prefer not to say,34,Pune,full time,EMP5237,On Leave,neha.verma@company.com,20
+EMP5393,Divya Verma,Marketing,Manager,"Wednesday, 27 June 2012",1113707.5,5,Other,52,mumbai ,full time,EMP5062,Resigned,divya.verma@company.com,
+EMP5045,PRIYA LEE,finance,Senior Manager,"Tuesday, 17 April 2018",₹ 638929,3,Female,-1,Delhi,n/a,EMP5373,Resigned,priya.lee@company.com,30
+EMP5135,Carlos Reddy,Sales,Associate,2018-04-14,1258905.47,3.5,Other,0,Bengaluru,FT, ,On Leave,carlos.reddy@company.com,5
+EMP5055,Emily Patel,Support,Director,26-Jun-2019,436269.17,1,Male,34,Hyderabad,Full-time,EMP5050,On Leave,emily.patel@company.com,2
+EMP5419,John Verma,Legal,Lead,"Feb 04, 2014","1,164,877.38",2,Male,31,BLR,Intern, ,Terminated,john.verma@company.com,0
+EMP5310,Sneha_Reddy,Operations,Director,23.06.18,624256.43,5,Non-binary,38,Hyderabad,Part-time,EMP5326,Terminated,sneha.reddy@company.com,2
+EMP5492,Aarav Verma,Finance,Analyst,"Jul 05, 2014",554535.87,Needs Improvement,F,0,BLR,Part-time,EMP5483,On Leave,aarav.verma@company.com,NA
+EMP5377,Priya D'Souza,HR,Intern,"Dec 23, 2021",844256.65 USD,Good,male,150,Hyderabad,Full-time,null,Active,priya.d'souza@company.com,15
+EMP5286,Carlos Iyer,HR,Executive  ,2013/08/07,482749.05,N/A,Non-binary,28,Delhi,full time,EMP5261,Terminated,carlos.iyer@company.com,0
+EMP5388,Emily Sharma,Sales,Intern,28-May-2022,598649.71,1,Male,28, ,Part-time,EMP5306,RESIGNED,emily.sharma@company.com,NULL
+EMP5537,Aarav Khan,Marketing,Executive,03.12.24,"₹866,610",4,M,42,Delhi,full time,EMP5103,active,aarav.khan@company.com,8
+EMP5027,Isha Das,Finance,Associate,25.12.23,1014935.04, ,Other,38,Bengaluru,Contract,EMP5088,RESIGNED,isha.das@company.com,20
+EMP5442,Sneha Brown,Operations,Executive,0000-00-00,673373.76,1,Prefer not to say,58,Mumbai,FT,EMP5144,active,sneha.brown@company.com,NA
+EMP5298,Divya Khan,HR,Associate,06/12/2015,702658.98,Good,Non-binary,25,mumbai ,FT,EMP5459,Terminated,divya.khan@company.com,15
+EMP5121,Priya_Khan,Legal,Director,2026-01-23,,3,NULL,thirty,Pune,full time,EMP5132,?,priya.khan@company.com,8
+EMP5334,Sarah Gupta,hr,Analyst  ,"Dec 19, 2020","₹744,089.92",4,male,150,NULL,FT,EMP5399,active,sarah.gupta@company.com,25
+EMP5101,Divya Lee,Engineering,Analyst,"Monday, 26 August 2013",1886636.03,4/5,,52,Delhi,Full-time,n/a,RESIGNED,divya.lee@company.com,25
+EMP5112,Emily Mehta,Finance,Executive  ,2022-09-14,1208993.15,3,M,150,Remote,FT,n/a,Active,emily.mehta@company.com,30
+EMP5311,Neha Khan,Sales,Lead,2018-06-24,1367897.24,5,male,150,Mumbai,Intern,EMP5196,On Leave,neha.khan@company.com,2
+EMP5546,Sneha Das,Engineering  ,Senior_Manager,01-Sep-2025,2149630.12,3,Male,31,mumbai ,Contract,EMP5100,active,NULL,25
+EMP5380,Sarah Lee,Legal,Senior Manager,N/A,1442706.26,Needs Improvement,Female,38,Bengaluru,Part-time, ,RESIGNED,sarah.lee@company.com,30
+EMP5221,Arjun Chen,Marketing,Intern,"Jun 03, 2026",1189651.19,4,F,31,Hyderabad,full time,EMP5309,Terminated,arjun.chen@company.com,30
+EMP5527,Emily Verma,Operations,Executive,N/A,319728.08,n/a,F,thirty,Delhi,NaN,EMP5128,Terminated,emily.verma@company.com,12
+EMP5467,Isha Brown,Legal  ,Director,"Apr 16, 2012",1508234.57,Meets Expectations,Female,39,Delhi,Full-time,EMP5075,On Leave,isha.brown@company.com,20
+EMP5372,Arjun Smith,Finance,Director,"Jun 30, 2023",1477917.61,4,Female,-1,Delhi,Contract,EMP5441,Resigned,arjun.smith@company.com,0
+EMP5132,Rahul Patel,Finance,Associate,"Saturday, 22 September 2012",515098.18,3,Other,34,Bengaluru,Part-time,EMP5348,Active,rahul.patel@company.com,2
+EMP5073,Michael Joshi,Marketing,intern,2017-11-14,543619.59,Meets Expectations,Male,58,Pune,Contract,,active,michael.joshi@company.com,12
+EMP5547, Neha Lee,Engineering,Lead,N/A,"₹1,406,675.70",3,Prefer not to say,150,mumbai ,Full-time,EMP5014,Terminated,neha.lee@company.com,25
+EMP5097,Liam Khan,HR,Associate,02-06-2018,"713,361.99",Good,,-1,Hyderabad,Full-time,EMP5166,active,liam.khan@company.com,30
+EMP5322,Anjali Smith,Operations  ,Analyst,14/09/2015,"₹370,784.35",Needs Improvement,M,47,Pune,Contract,EMP5228,On Leave,anjali.smith@company.com,15
+EMP5345, Isha Sharma,Support,Director,26-Nov-2018,361168.69,2,Non-binary,150,Pune,FT,,Resigned,isha.sharma@company.com,25
+EMP5284,Vikram Reddy,Sales,Senior Manager,"Jun 23, 2012",710958.76,4/5,Non-binary,150,mumbai ,FT,EMP5082,On Leave,vikram.reddy@company.com,NA
+EMP5400,Manish Verma,Legal,Lead,03-02-2021,₹ 650538,4,M,38,Delhi,full time,EMP5454,Terminated,manish.verma@company.com,8
+EMP5498,Arjun Sharma,Legal,Associate  ,21.03.23,1175469.67,4,Male,0,BLR,Intern,EMP5538,active,arjun.sharma@company.com,25
+EMP5315,Amit Lee,support,Associate,0000-00-00,"₹498,392",3.5,M,22,Remote,Contract,EMP5235,active,amit.lee@company.com,8
+5090,Michael Sharma  ,Marketing,Senior Manager,2018-09-26,"₹489,350",Meets Expectations,F,47,mumbai ,Full-time,EMP5108,RESIGNED,michael.sharma@company.com,12
+EMP5175, Amit Das,engineering,Executive,03-24-2019,1701127.1,3.5,male,0,Remote,FT,EMP5270,Terminated,amit.das@company.com,5
+EMP5219,Divya_Patel,Legal,Senior Manager,17.09.16,1332766.19,Meets Expectations,female,34,BLR,Contract,EMP5116,RESIGNED,divya.patel@company.com,15
+EMP5191,Priya Das,Engineering,Senior Manager,"Dec 23, 2017",908395.93,Excellent,Other,25,Hyderabad,null,EMP5436,active,priya.das@company.com,15
+EMP5539,Emily Joshi,SALES,Analyst,2026/06/14,1342355.05,1,Prefer not to say,47,BLR,Contract,EMP5293,RESIGNED,emily.joshi@company.com,15
+EMP5525,Michael Joshi,legal,Senior Manager,12-07-2024,1645163.34,Good,Non-binary,35,mumbai ,Part-time,EMP5237,Terminated,michael.joshi@company.com,25
+EMP5044,Emma Johnson,Finance,Manager,10-31-2025,1422081.18,1,Non-binary,55,BLR,Part-time,,active,emma.johnson@company.com,20
+EMP5436,Olivia Patel,legal,Lead,04.08.24,776188.33,N/A,Male,0,Bengaluru,Full-time,NaN,Active,olivia.patel@company.com,15
+EMP5341,Karan Brown,Engineering,Associate,19/01/2024,1672926.64,2,Prefer not to say,thirty,Remote,FT,EMP5182,Active,karan.brown@company.com,15
+5309,Anjali Reddy,Legal,Director,null,"₹1,744,812.22",3,M,N/A,Pune,Part-time,EMP5307,Resigned,anjali.reddy@company.com,2
+EMP5043,Emily Brown,Finance,Associate,18.09.16,979680.53,3.5,female,NaN,Delhi,FT,NaN,active,emily.brown@company.com,n/a
+EMP5355,Aarav D'Souza,HR,Intern,19/02/2017,332299.24,Good,F,22,?,Full-time,EMP5222,On Leave,aarav.d'souza@company.com,30
+EMP5039,Sneha Gupta,Operations,Associate,"Saturday, 21 May 2022",787407.95 USD,N/A,Non-binary,28,Remote,FT,EMP5297,Active,NaN,30
+EMP5306,Karan Chen,Marketing,Analyst,13.01.21,658610.75,3,M,,Bengaluru,Intern,,Active,karan.chen@company.com,25
+EMP5329,LIAM GARCIA,Engineering,Executive,2016-01-24,1758827.84,3,Male,31,Remote,Intern,EMP5518,active,liam.garcia@company.com,5
+EMP5402,Karan Brown,Operations,Manager,07-29-2012,"₹899,044.19",N/A,M,42,Hyderabad,FT,EMP5057,RESIGNED,?,25
+5015,Sarah Iyer,Support,analyst,"Saturday, 20 October 2018",617185.58,Good,female,22,Remote,Full-time,EMP5364,active,sarah.iyer@company.com,2
+EMP5518,Liam Sharma,Support  ,Executive  ,2012/04/07,445253.94,Needs Improvement,Non-binary,,Hyderabad,Part-time,-,Terminated,liam.sharma@company.com,5
+EMP5317,Rohan Kulkarni,sales,Intern,2020-06-14,1216717.58,3,,28,mumbai ,full time,EMP5329,On Leave,rohan.kulkarni@company.com,15
+EMP5359,Sana Das,Engineering,Associate,"Monday, 20 December 2021",1943250.78,?,Male,34,Remote,Part-time,EMP5137,On Leave,sana.das@company.com,2
+EMP5506,Pooja Gupta,FINANCE,Manager,null,749156.19,5,female,34,mumbai ,Intern,EMP5046,Terminated,pooja.gupta@company.com,0
+EMP5129,Olivia Khan,Finance,Analyst,11-03-2021,639640.21,Excellent,Non-binary,22,Delhi,NaN,EMP5070,RESIGNED,olivia.khan@company.com,8
+5453,Isha_Patel,Finance,Director,"Feb 06, 2018",1040821.6,N/A,n/a,26,Mumbai,FT,EMP5185,Resigned,isha.patel@company.com,20
+EMP5246,Rohan Verma,Sales,Analyst,08-23-2026,1320445.1,N/A,female,34,mumbai ,Intern,EMP5556,Active,rohan.verma@company.com,8
+EMP5429,Divya Nair,Finance,Executive,11-27-2024,900221.13,5,male,31,Bengaluru,Full-time,EMP5098,Terminated,divya.nair@company.com,12
+EMP5544,Manish Sharma,Marketing,Senior Manager,"Sunday, 19 November 2023","1,066,480.58",3,female,28,Delhi,Full-time,EMP5250,active,manish.sharma@company.com,8
+EMP5252,David Gupta,Support  ,Associate,"Friday, 11 July 2025","454,552.19",N/A,Non-binary,43,Pune,FT,null,Terminated,david.gupta@company.com,20
+EMP5318,Rohan Garcia,marketing, Executive,25.10.16,"482,673.72",5,F,58,,Full-time,,Resigned,rohan.garcia@company.com,NA
+EMP5428,Karan Lee,marketing,Lead,"Jul 12, 2014",?,4/5,Non-binary,58,Hyderabad,Intern,NULL,Terminated,karan.lee@company.com,15
+EMP5417,Isha Das, HR,Associate,28.02.18,466367.54,Excellent,Other,thirty,Mumbai,Part-time,EMP5028,N/A,isha.das@company.com,?
+EMP5002,Divya Das,Finance,lead,"Apr 23, 2020",1292919.5,4/5,M,51,BLR,FT,EMP5284,Terminated,divya.das@company.com,5
+EMP5093,Sana Smith,Operations,Lead  ,25.07.15,785685.75,4,Female,?,Mumbai,Intern,EMP5345,active,sana.smith@company.com,5
+EMP5061,Aarav Das,Sales,Associate,2013/07/17,"₹561,688",1,female,52,Delhi,Full-time,EMP5478,On Leave, ,NA
+EMP5424,Rohan Verma,Finance,Manager,,913147.54,4,Female,22,Hyderabad,full time,EMP5039,Resigned,rohan.verma@company.com,20
+EMP5281,Amit Kulkarni,Sales, Senior Manager,22.06.20,681727.73,3,male,42,Pune,Contract,EMP5408,Active,amit.kulkarni@company.com,20
+EMP5500,Sana Kulkarni,Legal, Senior Manager,08-Jul-2015,"1,056,224.85",3,male,47,mumbai ,Intern,EMP5446,active,sana.kulkarni@company.com,0
+EMP5126,Emily Nair,Marketing,Executive,01/04/2026,754964.90 USD,3,M,22,Delhi,full time,EMP5384,Active,emily.nair@company.com,20
+EMP5344,Rohan Iyer,Finance,Executive,2020-06-04,956891.8,3,Male,34,Hyderabad,Part-time,EMP5413,Active,rohan.iyer@company.com,20
+EMP5208,Arjun Patel,Engineering,Executive,"May 31, 2017",1534258.75,Good,male,thirty,mumbai ,FT,EMP5445,Terminated,arjun.patel@company.com,25
+5461,Carlos Johnson,Finance,LEAD,29-Sep-2015,1268191.37,4,Non-binary,22,Bengaluru,Full-time,EMP5466,active,carlos.johnson@company.com,0
+EMP5291,Liam Sharma,Finance,Analyst,07/04/2023,548076.16,3.5,Prefer not to say,NULL,Pune,FT,EMP5084,N/A,liam.sharma@company.com,NA
+EMP5030,Carlos Iyer,Legal,Executive,2014-05-16,782972.28,N/A,Female,-1,Hyderabad,Intern,EMP5330,active,carlos.iyer@company.com,30
+EMP5073,Michael Joshi,Marketing,intern,2017-11-14,543619.59,Meets Expectations,Male,58,Pune,Contract,,active,michael.joshi@company.com,12
+EMP5541,Amit Gupta,Legal,Manager,"Aug 25, 2020",NaN,1,Other,47,Bengaluru,Part-time,NULL,RESIGNED,amit.gupta@company.com,15
+EMP5118,Liam Reddy,HR,Manager,28-Feb-2024,"₹388,361.98",3,Non-binary,52,mumbai ,Intern,NULL,active,liam.reddy@company.com,20
+EMP5458,Neha Sharma,Marketing,Associate,27/03/2022,997693.91,Excellent,M,30,Bengaluru,Part-time,EMP5504,Resigned,neha.sharma@company.com,8
+EMP5382,Arjun Lee,HR,Intern,2025/05/15,580131.64,3,Non-binary,34,BLR,Contract,EMP5466,Resigned,arjun.lee@company.com,
+EMP5194,Emily Sharma,HR,Director,31/02/2025,"₹670,365.71",3,Other,38,Remote,Full-time,EMP5277,Resigned,emily.sharma@company.com,0
+EMP5379,Priya D'Souza,Finance,Analyst,2026-04-01,1275477.91,Excellent,male,22,BLR,Contract,n/a,Resigned,priya.d'souza@company.com,8
+EMP5226,Olivia Iyer,Engineering,Analyst,2018-01-08,1485771.84,Needs Improvement,Prefer not to say,58,Remote,full time,EMP5407,RESIGNED,olivia.iyer@company.com,30
+EMP5434,Aarav_Lee,Engineering,Manager,06.09.15,1771844.99,3,Female,thirty,Bengaluru,Part-time,EMP5523,Resigned,aarav.lee@company.com,5
+EMP5138,Sarah Chen,HR,Executive,12-02-2014,"787,657.80",1,Other,56,mumbai ,Full-time,NULL,Resigned,sarah.chen@company.com,30
+5354,Manish Joshi,Operations  ,Analyst,"Sep 08, 2024",362121.51 USD,4,M,34,Pune,Contract,EMP5186,Terminated,manish.joshi@company.com,30
+EMP5151, Priya Joshi,Marketing,Intern,2012/06/08,₹ 719581,4/5,Non-binary,43,mumbai ,full time,EMP5018,Active,priya.joshi@company.com,0
+EMP5545,Priya_Smith,Legal,Director,"Oct 05, 2023",765824.05,4/5,female,47,Remote,Part-time,n/a,On Leave, ,12
+EMP5116,Carlos Mehta,Legal,Intern,2014/03/27,1571773.88,?,F,thirty,Mumbai,Contract,n/a,Resigned,carlos.mehta@company.com,15
+EMP5553,Isha Mehta,Support,Intern,01-19-2020,543814.94,Good,male,34,BLR,FT,NULL,Active,isha.mehta@company.com,
+EMP5105,Rahul Singh,HR,Director,"Feb 15, 2021",793755.41,3.5,Prefer not to say,0,Mumbai,Intern,EMP5521,Active,rahul.singh@company.com,0
+EMP5353,Manish Mehta,SUPPORT,Director,21.06.23,₹ 550521,Good,Non-binary,28,mumbai ,Part-time,NULL,active,manish.mehta@company.com,n/a
+EMP5041,Karan Sharma,Marketing,Senior Manager,04-10-2019,₹ 661295,Excellent,male,42,Delhi,Contract,EMP5003,Terminated,karan.sharma@company.com,8
+EMP5267,Rohan Brown,Sales,Director,03-Oct-2016,"₹387,391.23",4/5,M,52,Remote,Part-time,EMP5332,Terminated,rohan.brown@company.com,15
+EMP5178,Neha Reddy,Sales, Manager,2014/06/27,1154389.5,5,,52,BLR,Contract,EMP5179,active,neha.reddy@company.com,NA
+EMP5233,Amit Das,Operations,manager,0000-00-00,675155.63,Excellent,female,58,,Intern,EMP5530,Active,amit.das@company.com,5
+EMP5387,Olivia Joshi,SALES,Intern,"Wednesday, 30 December 2015",₹ 608211,Excellent,Female,47,Hyderabad,Intern,EMP5048,Active,olivia.joshi@company.com,0
+EMP5407, Michael Das,Legal,Executive,"Oct 19, 2014",1678868.58,4,Other,28,Pune,FT,EMP5445,Active,michael.das@company.com,8
+EMP5220,Michael Kulkarni,HR,Intern  ,26-Jan-2019,657883.68,4/5,Male,34,mumbai ,Contract,EMP5475,Terminated,michael.kulkarni@company.com,2
+EMP5433,Emily Iyer,Marketing,Executive,23/04/2021,1156031.02,Meets Expectations,M,22,Hyderabad,Contract,EMP5416,Active,emily.iyer@company.com,8
+EMP5551,Anjali Gupta,Legal,Executive,2019-08-25,1285909.13,5,M,22,mumbai ,Intern,N/A,Active,anjali.gupta@company.com,25
+EMP5183,Emma Reddy,Operations,Analyst,21/11/2021,488631.0,2,Non-binary,0,BLR,full time,EMP5534,RESIGNED,emma.reddy@company.com,2
+EMP5202,Arjun Das  ,HR,Analyst,27-Jan-2017,876262.96,5,male,150,Bengaluru,Part-time,EMP5464,Resigned,arjun.das@company.com,0
+EMP5228,Sneha Joshi,Engineering,Director,TBD,1781530.66,4,Other,52,Delhi,Contract,EMP5344,active,sneha.joshi@company.com,2
+EMP5006,Aarav Sharma,HR,Director,14-May-2014,"₹578,496",Needs Improvement,Male,22,Delhi,Part-time,null,On Leave,aarav.sharma@company.com,25
+EMP5077,Divya Singh,Sales,Lead  ,02-Apr-2014,₹ 550387,NaN,Male,0,Pune,Contract,EMP5350,RESIGNED,divya.singh@company.com,12
+EMP5335,Mei Chen,Marketing,EXECUTIVE,31.01.15,"1,101,762.03",Good,female,25,BLR,Intern,EMP5075,Active, ,8
+EMP5078,Anjali D'Souza,Finance,Senior Manager,2015/10/14,761570.39,Meets Expectations,F,42,BLR,full time,EMP5226,Active,anjali.d'souza@company.com,20
+EMP5446,Manish Reddy,Legal,Lead,08-May-2025,₹ 8194722, ,Female,25,Hyderabad,Full-time,EMP5060,Resigned,manish.reddy@company.com,25
+EMP5150,Amit Reddy,sales,Analyst,06/07/2024,357586.75,3,M,55,Pune,FT,EMP5100,Active,amit.reddy@company.com,12
+EMP5348,Olivia Garcia,Marketing,Lead,yesterday,₹ 455122,5,Prefer not to say,0,mumbai ,Intern,EMP5524,Resigned,olivia.garcia@company.com,5
+EMP5211,Arjun Kulkarni,Legal,Senior Manager,22/04/2014,1479162.22,-,Female,-1,null,full time,EMP5125,On Leave,arjun.kulkarni@company.com,2
+EMP5133,Neha D'Souza,Support,Analyst,24-Jun-2016,₹ 432778,NaN,Female,34,mumbai ,full time,EMP5491,RESIGNED,neha.d'souza@company.com,12
+EMP5039,Sneha Gupta,Operations,Associate,"Saturday, 21 May 2022",787407.95 USD,N/A,Non-binary,28,Remote,FT,EMP5297,Active,NaN,30
+EMP5524,Sarah Reddy,HR,Executive,"Thursday, 17 April 2025","₹587,386.26",N/A,Other,46,Mumbai,FT,EMP5194,On Leave,sarah.reddy@company.com,0
+EMP5421,Mei Garcia,Engineering,Manager  ,24.02.15,1828691.65,3,Prefer not to say,42,NULL,Part-time,EMP5522,Active,N/A,20
+EMP5068,Michael Smith  ,Engineering,senior manager,"Sep 13, 2016","859,735.78",4,F,150,Remote,Part-time,EMP5108,Active,michael.smith@company.com,25
+EMP5243,Emma Joshi,Legal,Analyst,04.08.23,"₹983,567.76",4/5,Prefer not to say,42,Remote,FT,EMP5191,active,emma.joshi@company.com,8
+EMP5155,Rahul Nair,HR,Senior Manager,05-02-2022,"870,553.69",Good,Other,50,mumbai ,Intern,EMP5048,Resigned,rahul.nair@company.com,
+EMP5517, Rahul Joshi,Marketing,Manager,04-20-2014,null,4,Female,28,BLR,Part-time,EMP5516,Terminated,rahul.joshi@company.com,2
+EMP5088,Rahul Verma, Support,Analyst,09-Aug-2017,"270,538.90",4,Other,25,Bengaluru,Intern,EMP5281,active,rahul.verma@company.com,30
+5019,Arjun_Iyer,Marketing,Intern  ,2026/08/09,672873.56,2,Male,58,mumbai ,Intern,EMP5180,Resigned,arjun.iyer@company.com,N/A
+EMP5165,Sarah Reddy,Operations,MANAGER,"Sep 03, 2023",913197.64,1,-,31,Bengaluru,FT,EMP5459,RESIGNED,sarah.reddy@company.com,25
+EMP5180,Priya Gupta,Operations,Lead,TBD,997073.69,3,Other,31,Pune,Intern,EMP5472,On Leave,priya.gupta@company.com,15
+EMP5491,Vikram Gupta,HR  ,Associate,2013-08-21,"412,993.67",N/A,male,0,Mumbai,full time,EMP5124,On Leave,vikram.gupta@company.com,2
+EMP5435,Anjali Lee,Engineering,Executive,08-13-2015,"₹969,459",4,Other,22,Delhi,Contract,,active,anjali.lee@company.com,8
+EMP5262,Emma Chen,Legal,Director,02-21-2024,1303258.85,4,Male,47,BLR,,EMP5258,Terminated,emma.chen@company.com,20
+EMP5234,Rohan Das,Legal,Senior Manager,"Oct 10, 2012","889,998.21",N/A,male,38,BLR,Full-time,EMP5133,RESIGNED,,2
+EMP5053,Michael Reddy,Legal,Senior Manager,2022-09-06,1199174.61,Excellent,Other,?,mumbai ,Contract,EMP5315,RESIGNED,michael.reddy@company.com,0
+EMP5237,Divya Joshi, Engineering,Director,2012-07-20,2176385.47,null,Non-binary,52,BLR,Part-time,EMP5164,RESIGNED,divya.joshi@company.com,8
+EMP5151, Priya Joshi,Marketing,Intern,2012/06/08,₹ 719581,4/5,Non-binary,43,mumbai ,full time,EMP5018,Active,priya.joshi@company.com,0
+EMP5063,Sarah Smith,Legal,Intern,2021-07-27,"738,346.93",1,M,0,Remote,Full-time,EMP5352,active,sarah.smith@company.com,15
+EMP5425,Rohan Patel,sales,Executive,"Tuesday, 18 March 2025",1322557.35,3,Female,,Bengaluru,Full-time,EMP5416,RESIGNED,rohan.patel@company.com,20
+EMP5235,Carlos Verma, Sales,Associate,"Dec 21, 2021","₹361,131.15",Needs Improvement,F,31,Remote,Full-time,EMP5479,On Leave,carlos.verma@company.com,20
+EMP5381,Emma Singh,HR,executive,2012-05-31,"₹879,791",2,Non-binary,34,Pune,Intern,NULL,RESIGNED,emma.singh@company.com,12
+EMP5352,Rohan Das,Finance,Executive,2021/11/17,560730.73,4/5,M,42,BLR,full time,EMP5210,On Leave,rohan.das@company.com,20
+5356,Liam Lee,Support,Lead,"May 05, 2013",593181.95,3,male,58,Delhi,Full-time,EMP5149,On Leave,liam.lee@company.com,5
+EMP5173,Mei Joshi,Operations, Associate,03-10-2025,780581.07 USD,N/A,Male,28,Hyderabad,Intern,EMP5295,Terminated,mei.joshi@company.com,5
+EMP5158,Rahul Iyer,Legal,Senior Manager,"Tuesday, 16 July 2013",1314946.59,,Female,150,Delhi,Full-time,null,On Leave,rahul.iyer@company.com,0
+EMP5559,LIAM GARCIA,Sales,Lead,12-08-2014,1304857.34,Meets Expectations,M,25,Bengaluru,Intern,EMP5238,Active,liam.garcia@company.com,20
+5461,Carlos Johnson,Finance,LEAD,29-Sep-2015,1268191.37,4,Non-binary,22,Bengaluru,Full-time,EMP5466,active,carlos.johnson@company.com,0
+EMP5404,Rahul Chen,Marketing,Analyst,31/02/2025,"₹1,109,887.01",3.5,n/a,0,Mumbai,Contract,EMP5548,RESIGNED,rahul.chen@company.com,5
+EMP5012,Sarah Lee,Engineering,Intern,17.09.18,N/A,3,Other,58,Mumbai,Intern,EMP5424,active,sarah.lee@company.com,15
+EMP5275,Manish Joshi, Engineering,Manager,12.06.25,"896,647.10",5,Male,22,Mumbai,Contract,EMP5402,NULL,manish.joshi@company.com,8
+EMP5521,Sneha Garcia,Sales,Executive,2021-07-28,"₹1,294,282",4,F,38,Bengaluru,,EMP5455,active,sneha.garcia@company.com,2
+EMP5206, Rohan Garcia,Finance,Analyst,2019-06-27,1441687.54,N/A,F,31,BLR,Contract,EMP5239,On Leave,rohan.garcia@company.com,0
+EMP5222,Amit Patel,Finance,Director,12-03-2022,"₹1,330,470",4,male,47,mumbai ,Intern,EMP5521,Terminated,amit.patel@company.com,12
+EMP5531,Karan Verma,Operations,Analyst,"Friday, 31 May 2024",936075.51,Good,Female,34,Remote,FT,EMP5361,On Leave,karan.verma@company.com,5
+EMP5328,David Patel,Marketing,Senior Manager,"Jan 28, 2018",680259.66,3,-,28,mumbai ,full time,EMP5154,active,david.patel@company.com,20
+EMP5162,vikram smith,Operations,Analyst,"Sunday, 19 April 2026",525799.32,Needs Improvement,Non-binary,58,Delhi,full time,EMP5052,Terminated,vikram.smith@company.com,2
+EMP5255,David Lee,HR,Intern,03-18-2017,641705.01,?,female,0,Pune,full time,EMP5512,Active,david.lee@company.com,30
+EMP5488,Liam Smith,Sales,Director,09-Sep-2017,409501.43,4/5,male,25,mumbai ,Part-time,?,Resigned,liam.smith@company.com,15
+EMP5282,Aarav Singh,Engineering,Associate,"Thursday, 13 May 2021",1192098.13 USD,5,Male,150,Bengaluru,FT,EMP5114,active,aarav.singh@company.com,20
+EMP5086,Mei Gupta,Support,Director,28.02.21,"288,911.30",3,Male,47,Remote,Part-time,EMP5162,RESIGNED,mei.gupta@company.com,5
+EMP5489,Emma Garcia,Engineering  ,Manager,"Apr 10, 2012",1429009.52,5,female,25,Mumbai,FT,EMP5454,Resigned,emma.garcia@company.com,NA
+EMP5401,Isha Brown, Engineering,Analyst,13/07/2021,785235.81,Meets Expectations,female,52,Mumbai,FT,EMP5319,active,isha.brown@company.com,NA
+EMP5251,Sneha Brown,Finance,Executive,23-Mar-2015,835390.27,1,Other,58,Hyderabad,Intern,EMP5344,Resigned,sneha.brown@company.com,20
+EMP5232,Sana Kulkarni,HR,Senior Manager,,623133.52,Excellent,F,50,Delhi,FT,EMP5063,RESIGNED,sana.kulkarni@company.com,20
+EMP5326,Emily Johnson,Operations, Analyst,"Jul 07, 2016",382773.24,3,Male,52,Pune,Intern,EMP5389,On Leave,emily.johnson@company.com,30
+EMP5115,Aarav Patel,SALES,Director,2022-07-30,1255144.67,1,Other,58,Remote,Full-time,EMP5119,Active,aarav.patel@company.com,5
+EMP5304,Pooja Chen,OPERATIONS,Lead,15/01/2013,821561.25,N/A,female,31,Delhi,N/A,EMP5228,RESIGNED,pooja.chen@company.com,5
+EMP5035,CARLOS VERMA,Marketing,Manager,2026-02-20,₹ 920180,4,Prefer not to say,150,BLR,FT,EMP5200,RESIGNED,carlos.verma@company.com,8
+EMP5005,Isha D'Souza,HR,Intern,02-14-2025,778357.52,4,Female,thirty,BLR,full time,NaN,Resigned,isha.d'souza@company.com,20
+EMP5199,Vikram Johnson,Finance,Manager,08-06-2026,649409.35,4/5,Other,47,,Full-time,EMP5549,Active,vikram.johnson@company.com,20
+EMP5312,Michael Smith, Operations,Manager,2016/07/13,"₹-50,000.00",3.5,Non-binary,22,Hyderabad,FT,,active,michael.smith@company.com,NA
+EMP5271,Aarav Das,Legal,intern,03-11-2017,"₹1,129,984.29",Good,null,27,BLR,FT,EMP5210,Terminated,NULL,0
+EMP5466,Isha D'Souza,Sales,Manager,"Thursday, 12 June 2025",355970.13,3,F,58,Hyderabad,full time,n/a,On Leave,isha.d'souza@company.com,2
+EMP5443,Sana Brown,Support,Analyst,02-05-2018,674893.51,Good,Prefer not to say,47,,Contract,EMP5027,Terminated,sana.brown@company.com,2
+EMP5335,Mei Chen,Marketing,EXECUTIVE,31.01.15,"1,101,762.03",Good,female,25,BLR,Intern,EMP5075,Active, ,8
+EMP5172,Sana Reddy,Support,ANALYST,31/02/2025,484969.15,3,Female,-1,Pune,Full-time,EMP5046,RESIGNED,sana.reddy@company.com,30
+EMP5487,Olivia Reddy,Support,Analyst,19-Feb-2023,"₹615,402.08",Good,NaN,27,Bengaluru,Contract,,NULL,olivia.reddy@company.com,NA
+EMP5189,Sarah Khan,Engineering,Manager,15-Aug-2021,1689656.67,4/5,Non-binary,28,Pune,Full-time,EMP5415,RESIGNED,sarah.khan@company.com,-
+EMP5433,Emily Iyer,Marketing,Executive,23/04/2021,1156031.02,Meets Expectations,M,22,Hyderabad,Contract,EMP5416,Active,emily.iyer@company.com,8
+EMP5009,PRIYA SMITH,Sales,Associate,"Oct 09, 2025",527737.75,2,Non-binary,47,Mumbai,Full-time,-,Resigned,priya.smith@company.com,15
+EMP5464,Pooja Joshi,Sales,Senior Manager,"Saturday, 22 August 2020",1379842.68, ,?,28,Mumbai,full time,EMP5544,RESIGNED,pooja.joshi@company.com,12
+EMP5057,Anjali Reddy,Operations,Associate,08.01.13,723143.35,3,Female,34,Bengaluru,Part-time,EMP5343,Active,anjali.reddy@company.com,15
+EMP5128,David Reddy,operations,Lead,23/04/2016,323795.63,Meets Expectations,Prefer not to say,47,Delhi,full time,EMP5376,NULL,david.reddy@company.com,8
+EMP5003, Divya Kulkarni,OPERATIONS,Intern,"Tuesday, 21 April 2015",718160.23,Excellent,Male,38,Hyderabad,Full-time,EMP5325,Resigned,divya.kulkarni@company.com,NA
+EMP5107,Rohan Joshi,Sales,Director,"Wednesday, 18 March 2015",575028.51,Excellent,F,58,Bengaluru,Intern,EMP5246,active,rohan.joshi@company.com,8
+EMP5287,Divya Gupta, Sales,Director,27.10.20,8625056.72,3.5,M,150,Mumbai,Contract,EMP5489,Terminated,divya.gupta@company.com,0
+EMP5153,Mei Chen,Sales,Intern,,457591.0,5,Other,58,Hyderabad,?,EMP5458,On Leave,mei.chen@company.com,8
+EMP5499,Neha Nair,Sales  ,Senior Manager,"May 08, 2023",₹ 1371210,Needs Improvement,M,22,Pune,full time,EMP5490,On Leave,neha.nair@company.com,30
+EMP5157,Emma Iyer,Finance,Executive,"Friday, 03 October 2014",₹ 852074,1,M,28,Bengaluru,FT,EMP5394,Resigned,emma.iyer@company.com,15
+EMP5468,Isha Johnson,ENGINEERING,Executive,02-Feb-2019,2082401.34,3.5,Male,47,Bengaluru,Intern,EMP5237,Terminated,isha.johnson@company.com,5
+EMP5448,Priya D'Souza,Operations,Intern,"Tuesday, 26 November 2013",781457.34,5,Prefer not to say,52,n/a,full time,EMP5402,Terminated,,20
+EMP5113,Mei Kulkarni,Finance,Lead,2020/09/06,528827.94,4,Male,0,BLR,Part-time,EMP5484,Resigned,N/A,5
+EMP5209,Manish Kulkarni,Sales,Manager  ,null,"₹983,153",Excellent,Prefer not to say,28,Delhi,FT,EMP5460,Active,NaN,20
+EMP5080,Karan Brown,Support,Intern,"Tuesday, 22 May 2018",676242.65,5,Prefer not to say,-1,Delhi,Part-time,EMP5138,-,karan.brown@company.com,20
+EMP5396,Priya Joshi,Legal,Lead,10-02-2019,NULL,N/A,female,28,Delhi,Full-time,EMP5291,active,priya.joshi@company.com,30
+EMP5507,rohan singh, Engineering,Analyst  ,2018/10/24,1732856.57,4/5,Non-binary,0,Remote,Full-time, ,active,rohan.singh@company.com,NaN
+5392,David Sharma,Support, Executive,11-Jul-2026,368065.01,Good,M,41,mumbai ,FT,EMP5096,On Leave,david.sharma@company.com,5
+EMP5386,Emma Smith,Finance,Lead,2026-06-14,1200108.69,1,male,22,Bengaluru,Part-time,EMP5096,Resigned,emma.smith@company.com,30
+EMP5197,POOJA CHEN,Legal,Director,07-May-2022,₹ 1792351,N/A,F,150,Pune,Full-time,EMP5329,Resigned,,15
+EMP5072,Pooja Das,Sales,Intern,"Nov 21, 2013",412341.44,3,Non-binary,31,Bengaluru,full time,EMP5558,Terminated,pooja.das@company.com,15
+EMP5130,Sarah Singh,Sales,Analyst,"Aug 02, 2018",713084.82,Excellent,Non-binary,58,Hyderabad,FT,EMP5206,RESIGNED,sarah.singh@company.com,20
+EMP5408,Rahul Garcia,OPERATIONS,Director,24-Mar-2026,"₹577,196.32",1,M,28,Delhi,Part-time,N/A,Active,rahul.garcia@company.com,5
+EMP5102,Karan Iyer,Finance,Director,"Aug 19, 2025",567922.94,3,F,-1,Remote,Intern,EMP5520,RESIGNED,karan.iyer@company.com,12
+EMP5441,Neha Verma,Marketing  ,Manager,2018/11/09,"₹1,266,622",3,Prefer not to say,34,Remote,Contract,EMP5184,active,neha.verma@company.com,25
+EMP5486,Sarah Garcia,HR, Associate,2024-05-14,"₹842,917.04",4,Non-binary,150,Hyderabad,FT,EMP5344,Terminated,sarah.garcia@company.com,2
+EMP5426,Neha Kulkarni,HR,Executive,31/02/2025,836811.39,3,Prefer not to say,31,mumbai ,full time,EMP5373,Resigned,neha.kulkarni@company.com,20
+EMP5302,Sana Smith,Marketing,Manager,N/A,484631.0,4,Other,34,-,full time,n/a,Resigned,sana.smith@company.com,
+EMP5029,ARJUN KHAN,Finance,Senior Manager,2019/05/25,"1,055,752.48",?,male,0,BLR,Contract,EMP5302,Terminated,arjun.khan@company.com,30
+EMP5299,Karan_Iyer,Sales,Associate,"Tuesday, 07 April 2020",₹ 1131907,3,F,25,Hyderabad,Full-time,EMP5117,Active,karan.iyer@company.com,15
+EMP5542,Priya Johnson,Support,Senior_Manager,"Sunday, 04 March 2012",650652.8,4,F,0,Mumbai,Contract,EMP5219,active,priya.johnson@company.com,30
+EMP5373,Sneha Reddy,Sales,Intern,2013-09-30,1197482.34,5,F,0,Bengaluru,Full-time,EMP5528,active,sneha.reddy@company.com,NA
+EMP5104,Carlos Nair,Legal,Analyst,02-20-2021,1364679.99,Excellent,Male,52,mumbai ,Intern,EMP5178,Terminated,NULL,12
+EMP5260,Rahul Lee,HR,Director,09-25-2020,497605.57,Needs Improvement,Non-binary,30,Delhi,Full-time,EMP5201,On Leave,rahul.lee@company.com,30
+EMP5136,Aarav Sharma,Sales,Senior Manager,10-01-2016,"₹496,997.91",4,Non-binary,150,Mumbai,Full-time,EMP5144,Resigned,aarav.sharma@company.com,2
+EMP5190,Sarah Nair,HR,Lead,04-16-2014,402281.85,,M,n/a,,full time,EMP5120,On Leave,sarah.nair@company.com,25
+EMP5288,Emma Khan  ,Engineering,Intern,2020-06-28,937414.07,5,Prefer not to say,42,Pune,FT,-,RESIGNED,emma.khan@company.com,15
+EMP5503,Sneha Johnson,Support,Lead,"Wednesday, 07 November 2018",387587.1,3.5,female,38,mumbai ,full time,EMP5253,active,sneha.johnson@company.com,20
+EMP5270,Mei Joshi,FINANCE, Intern,03/06/2023,"₹553,892.44",Meets Expectations,female,0,null,FT,EMP5018,Active,mei.joshi@company.com,25
+EMP5218,Manish Joshi,Finance,Lead,"Wednesday, 12 January 2022",770311.5,Good,Non-binary,28,Bengaluru,null,EMP5012,Resigned,manish.joshi@company.com,0
+EMP5399,Karan Smith,Marketing,Intern,"Wednesday, 08 December 2021",1156859.53,Excellent,Other,42,Hyderabad,FT,EMP5474,Active,karan.smith@company.com,30
+EMP5366,Aarav Johnson,HR,Director,11-07-2020,370059.43,4/5,Non-binary,N/A,Remote,Full-time, ,RESIGNED,aarav.johnson@company.com,20
+EMP5227,Michael Brown,Marketing  ,Analyst,04-26-2018,"422,070.87",1,F,thirty,BLR,Contract,EMP5442,active,michael.brown@company.com,12
+EMP5548,Olivia Joshi,Marketing,Associate,2023/05/21,n/a,4,male,0, ,Full-time,EMP5482,active,olivia.joshi@company.com,20
+EMP5550,Karan Khan,Sales, Associate,2013/06/02,₹ 1331687,4/5,F,-1,Delhi,Intern,EMP5346,On Leave,karan.khan@company.com,0
+EMP5445,Aarav Chen,Legal,Intern,11/09/2012,"628,815.96",3,Female,42,-,Intern,EMP5373,On Leave,aarav.chen@company.com,30
+EMP5103,Amit Kulkarni,operations,Executive,05-03-2020,670758.85,4,female,28,BLR,Part-time,EMP5088,On Leave,amit.kulkarni@company.com,2
+EMP5177,Neha Kulkarni  ,HR,Senior Manager,22/03/2015,"₹730,136",3,Prefer not to say,0,Delhi,full time,EMP5308,On Leave,neha.kulkarni@company.com,0
+EMP5347,Liam_Sharma,Legal,Intern,2021/05/30,862193.4,4/5,male,0,mumbai ,Contract,EMP5133,Active,liam.sharma@company.com,2
+EMP5512,Emma Lee,HR,Analyst,2026-01-01,465809.95,3.5,N/A,58,BLR,Contract,EMP5539,Active,emma.lee@company.com,NA
+EMP5374,Karan_D'Souza,Finance,Intern,,1373583.93,Meets Expectations,Prefer not to say,0,Pune,Contract,EMP5325,RESIGNED,karan.d'souza@company.com,30
+EMP5125,Priya Gupta,Engineering,Lead,31/02/2025,1802665.13,Needs Improvement,M,52,Pune,FT,EMP5150,Resigned,priya.gupta@company.com,15
+EMP5248,Emily Singh,ENGINEERING,INTERN,16.01.14,"1,538,066.02",Needs Improvement,F,-1,Hyderabad,Intern,EMP5297,Active,emily.singh@company.com,15
+EMP5416,rahul brown,Marketing,Intern,09-02-2012,1266603.74,4,Non-binary,thirty,BLR,FT,EMP5218,Active,rahul.brown@company.com,NA
+EMP5395,Neha Nair,Sales,Manager,22-Jan-2020,"₹679,297.65",3.5,Male,22,mumbai ,full time,EMP5193,Active,neha.nair@company.com,15
+EMP5170,Sarah Verma,Operations,Senior Manager,2020-12-25,892971.64,4/5,Male,42,NaN,Intern,EMP5317,RESIGNED,sarah.verma@company.com,5
+EMP5473,Anjali Reddy,Sales,Director,17.05.16,486680.61,3.5,Male,52,Remote,Full-time,EMP5460,On Leave,anjali.reddy@company.com,0
+EMP5051,Emma Mehta,Operations,Director,03.04.16,"₹333,134",Excellent,male,thirty,mumbai ,Contract,EMP5191,RESIGNED,NULL,25
+EMP5154,Manish Sharma,Support,Manager,01-23-2015,294364.75,NULL,-,?,Pune,Intern,EMP5225,Active,manish.sharma@company.com,15
+EMP5410,Sana Mehta,Finance,Senior Manager,31/02/2025,,4/5,M,22,mumbai ,FT,EMP5451,Active,sana.mehta@company.com,8
+5455,Neha Chen,Marketing,director,20/11/2020,815889.69,4/5,Other,38,Mumbai,FT,EMP5174,Active,?,0
+5338,carlos joshi,Sales  ,Lead,02-06-2025,580727.77,N/A,M,NaN,Delhi,full time,EMP5054,active,carlos.joshi@company.com,20
+EMP5025,Karan Patel,Finance,Intern,,-,4,Male,0,Hyderabad,FT,EMP5048,active,karan.patel@company.com,8
+EMP5203,Karan Johnson,Marketing,Associate,07/04/2021,"₹1,010,997",4,female,57,Mumbai,full time,EMP5278,On Leave,karan.johnson@company.com,12
+EMP5149,Aarav Smith,Engineering,Director,"Mar 13, 2014",1520358.86,Excellent,F,thirty,mumbai ,Contract,EMP5251,On Leave,aarav.smith@company.com,20
+EMP5406,Aarav Smith,Engineering,Executive,"Aug 08, 2024",1065192.26,4/5,F,31,Bengaluru,Intern,EMP5288,Terminated,aarav.smith@company.com,0
+EMP5254,MANISH REDDY,HR,Executive,15.09.22,529854.47,NaN,male,47,Bengaluru,Intern,EMP5101,On Leave,manish.reddy@company.com,0
+EMP5556,Sarah Das,Marketing,Senior Manager,2026/06/16,₹ 799625,4,F,47,Remote,Part-time,EMP5496,RESIGNED,sarah.das@company.com,5
+EMP5240,Carlos Reddy,Marketing,Senior Manager,2017/08/22,"₹931,641",5,M,n/a,Remote,Intern,EMP5156,Terminated,carlos.reddy@company.com,12
+EMP5207,Neha Sharma,Finance  ,Director,26-Jan-2015,734487.24,2,male,38,Mumbai,FT,EMP5044,Active,null,0
+EMP5378,Anjali Gupta,Support,Analyst,22-Nov-2019,255176.6,N/A,Prefer not to say,0,mumbai ,Full-time,EMP5507,On Leave,anjali.gupta@company.com,5
+EMP5538,Sana Gupta,HR,Director  ,11/05/2015,"₹532,768",1,F,28,BLR,Intern,EMP5408,Resigned,sana.gupta@company.com,25
+EMP5145,Liam Patel,Legal,Director,"Saturday, 13 June 2026",NULL,3,Female,150,mumbai ,Full-time,EMP5278,active,liam.patel@company.com,NA
+EMP5249,Arjun Verma,Legal,Senior Manager,2022/02/04,₹ 1363400,3,Female,thirty,BLR,Intern,EMP5382,active,arjun.verma@company.com,0
+EMP5186,Mei Verma,Finance,Lead,"Mar 12, 2020",996353.73,5,Non-binary,22,Delhi,Intern,EMP5447,active,mei.verma@company.com,20
+EMP5485,Vikram Garcia,Support,Director,13/03/2022,557237.14,5,Female,25,Bengaluru,Full-time,EMP5184,Resigned,null,12
+EMP5022,Olivia Khan,Engineering,Executive,08-Jun-2021,1630588.31,Good,Non-binary,-,mumbai ,Full-time,EMP5131,active,olivia.khan@company.com,15
+EMP5297,Sarah Lee,Engineering,Analyst,2022/04/17,"622,478.15",3,Female,thirty,Pune,Intern,EMP5267,RESIGNED,sarah.lee@company.com,15
+EMP5558,Sneha Garcia,Legal,executive,2015-04-06,1111689.05,3.5,Other,150,Bengaluru,full time,EMP5548,Active,sneha.garcia@company.com,NA
+EMP5274,Pooja Sharma,HR,Lead,02-06-2015,662671.59,N/A,female,38,Bengaluru,FT,EMP5097,Resigned,pooja.sharma@company.com,5
+EMP5495,Carlos Mehta,Marketing,Executive,"Jan 10, 2013",1122589.02,3.5,M,25,Bengaluru,n/a,n/a,Resigned,-,5
+EMP5099, Neha Patel,HR,Lead,"Feb 04, 2017",429397.49,3.5,Female,23,Hyderabad,full time,?,RESIGNED,?,0
+EMP5508,Vikram Brown,Engineering,Director,09.03.19,"₹1,732,536.67",1,Prefer not to say,31,Remote,FT,EMP5425,Active,vikram.brown@company.com,30
+EMP5087, Isha D'Souza,Finance,Lead,"Jan 23, 2019",979025.41,2,Male,22,Pune,full time,EMP5349,Active,isha.d'souza@company.com,0
+EMP5225,Michael Nair,hr,Director,31/03/2023,614312.15,null,M,-1,Bengaluru,Contract,EMP5468,On Leave,michael.nair@company.com,0
+EMP5023,Karan Mehta  ,Marketing,Director,TBD,626743.97,Meets Expectations,Other,22,mumbai ,Part-time,EMP5125,Resigned,karan.mehta@company.com,15
+EMP5497,Priya Garcia,HR,Manager,12-02-2012,₹ 544197,3,Non-binary,59,Bengaluru,Full-time,EMP5486,Terminated,priya.garcia@company.com,12
+EMP5528,Neha Reddy,Support,Executive,05.09.23,NaN,4,Non-binary,-1,Mumbai,FT,n/a,Active,neha.reddy@company.com,20
+EMP5293,David Gupta,Support,Intern,12.11.24,"666,850.69",Needs Improvement,female,58,Delhi,Full-time,EMP5494,Terminated,NULL,NA
+EMP5265,Mei Smith,HR,Manager,04-22-2014,"99,999,999.00",N/A,male,22,mumbai ,FT,EMP5305,On Leave,mei.smith@company.com,15
+EMP5496,Liam Verma,Finance,Associate,27-May-2026,"826,006.68",Meets Expectations,Other,47,mumbai ,full time,EMP5068,On Leave,liam.verma@company.com,20
+EMP5383,Emma Mehta,HR,Senior Manager,"Thursday, 02 April 2015",448662.3,,male,52,mumbai ,FT,EMP5154,active,emma.mehta@company.com,NA
+EMP5011,Karan Reddy  ,Marketing,Lead,24/05/2021,484568.33,4,,58,,full time,EMP5435,On Leave,karan.reddy@company.com,30
+EMP5278,Arjun Mehta,Support,Intern,"Wednesday, 17 July 2019",651656.78 USD,4,M,28,Delhi,FT,EMP5409,Resigned,?,15
+EMP5361,Carlos Joshi,Support,Analyst,10-02-2013,605067.61,Excellent,Female,23,BLR,Full-time,EMP5174,Terminated,carlos.joshi@company.com,15
+EMP5357,Sneha Iyer,Sales,Intern,2024/05/20,420057.7,4,F,58,Hyderabad,Intern,EMP5274,On Leave,sneha.iyer@company.com,8
+5555,Rohan Khan,HR,Intern,11-20-2018,"₹340,497",Meets Expectations,male,38,Delhi,Contract,EMP5497,active,rohan.khan@company.com,30
+EMP5085,Liam Garcia, Marketing,Analyst,"Sep 10, 2013",1203507.15,Excellent,male,47,Bengaluru,Intern,EMP5145,Terminated,liam.garcia@company.com,2
