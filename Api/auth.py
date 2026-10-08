@@ -47,6 +47,8 @@ JWT_EXPIRATION_HOURS = 24
 RESET_OTP_EXPIRATION_MINUTES = 10
 RESET_OTP_MAX_ATTEMPTS = 5
 
+ADMIN_EMAILS = {email.strip().lower() for email in (os.getenv("ADMIN_EMAILS") or "").split(",") if email.strip()}
+
 RESEND_API_KEY = (os.getenv("RESEND_API_KEY") or "").strip()
 RESEND_FROM_EMAIL = (
     os.getenv("RESEND_FROM_EMAIL") or "onboarding@resend.dev"
@@ -323,6 +325,9 @@ def get_current_user(
             detail="User account no longer exists.",
         )
 
+    email = str(user[2]).strip().lower()
+    is_admin = email in ADMIN_EMAILS
+
     return {
         "user_id": user[0],
         "name": user[1],
@@ -332,6 +337,7 @@ def get_current_user(
         "ai_questions_used": user[6],
         "subscription_status": user[7],
         "razorpay_subscription_id": user[8],
+        "is_admin": is_admin,
     }
 
 
@@ -504,6 +510,7 @@ def login(request: LoginRequest):
             "ai_questions_used": user[6],
             "subscription_status": user[7],
             "razorpay_subscription_id": user[8],
+            "is_admin": str(user[2]).strip().lower() in ADMIN_EMAILS,
         },
     }
 
@@ -1021,3 +1028,14 @@ def verify_reset_otp(
             "Please log in with your new password."
         ),
     }
+
+
+# ============================================================
+# DEVELOPER / ADMIN ACCESS
+# ============================================================
+
+@router.get("/admin/me")
+def get_admin_status(current_user: dict = Depends(get_current_user)):
+    if not current_user.get("is_admin"):
+        raise HTTPException(status_code=403, detail="Developer/admin access required.")
+    return {"success": True, "is_admin": True, "user": current_user}

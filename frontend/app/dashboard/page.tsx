@@ -30,7 +30,7 @@
 
 
 
-import { useRef, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ChangeEvent, type FormEvent, type ReactNode } from "react";
 
 
 
@@ -291,15 +291,20 @@ type DatasetIntelligence = {
 
   role_counts?: Record<string, number>;
 
-  columns?: Array<{
-
-    name?: string;
-
-    role?: string;
-
-    semantic_tags?: string[];
-
-  }>;
+  columns?:
+    | Array<{
+        name?: string;
+        role?: string;
+        semantic_tags?: string[];
+      }>
+    | Record<
+        string,
+        {
+          role?: string;
+          semantic_tags?: string[];
+          [key: string]: unknown;
+        }
+      >;
 
   metric_candidates?: Array<{
 
@@ -583,6 +588,132 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
 
+type BillingUser = {
+  user_id?: string;
+  name?: string;
+  email?: string;
+  plan?: "free" | "pro" | string;
+  ai_questions_used?: number;
+  subscription_status?: string;
+  razorpay_subscription_id?: string | null;
+  is_admin?: boolean;
+};
+
+type RazorpayCheckoutResponse = {
+  razorpay_payment_id: string;
+  razorpay_subscription_id: string;
+  razorpay_signature: string;
+};
+
+
+
+type SuggestedQuestionColumn = {
+  name?: string;
+  role?: string;
+  semantic_tags?: string[];
+};
+
+function humanizeColumnName(value: string): string {
+  return value
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
+function buildSuggestedQuestions(
+  intelligence: DatasetIntelligence | null
+): string[] {
+  if (!intelligence) return [];
+
+  // The backend returns `columns` as an object keyed by column name,
+  // while older responses may return it as an array. Normalize both shapes
+  // before using Array methods such as .find().
+  const rawColumns = intelligence.columns ?? [];
+  const columns: SuggestedQuestionColumn[] = Array.isArray(rawColumns)
+    ? rawColumns
+    : Object.entries(rawColumns).map(([name, info]) => ({
+        name,
+        ...(info ?? {}),
+      }));
+
+  const metrics = Array.isArray(intelligence.metric_candidates)
+    ? intelligence.metric_candidates
+    : [];
+  const questions: string[] = [];
+
+  const findColumnByTag = (tag: string) =>
+    columns.find((column) => (column.semantic_tags ?? []).includes(tag));
+
+  const findColumnByKeywords = (keywords: string[]) =>
+    columns.find((column) => {
+      const name = (column.name ?? "").toLowerCase();
+      return keywords.some((keyword) => name.includes(keyword));
+    });
+
+  const findMetricByKeywords = (keywords: string[]) =>
+    metrics.find((metric) => {
+      const value = `${metric.column ?? ""} ${metric.name ?? ""}`.toLowerCase();
+      return keywords.some((keyword) => value.includes(keyword));
+    });
+
+  const personColumn =
+    findColumnByTag("person") ??
+    findColumnByKeywords(["employee", "customer", "student", "patient", "user", "member"]);
+
+  const categoryColumn =
+    findColumnByTag("category") ??
+    columns.find((column) => column.role === "categorical");
+
+  const locationColumn = findColumnByTag("location");
+  const dateColumn = columns.find((column) => column.role === "datetime");
+
+  const amountMetric =
+    findMetricByKeywords([
+      "salary", "revenue", "sales", "profit", "amount", "price", "cost", "income", "expense",
+    ]) ?? metrics[0];
+
+  const quantityMetric = findMetricByKeywords([
+    "quantity", "qty", "units", "count", "age", "days", "hours", "score", "rating",
+  ]);
+
+  if (personColumn?.name) {
+    questions.push(`How many unique ${humanizeColumnName(personColumn.name)} are there?`);
+  }
+
+  if (amountMetric?.column) {
+    questions.push(`What is the average ${humanizeColumnName(amountMetric.column)}?`);
+  }
+
+  if (categoryColumn?.name && amountMetric?.column) {
+    questions.push(
+      `Which ${humanizeColumnName(categoryColumn.name)} has the highest average ${humanizeColumnName(amountMetric.column)}?`
+    );
+  }
+
+  if (categoryColumn?.name) {
+    questions.push(`Which ${humanizeColumnName(categoryColumn.name)} has the most records?`);
+  }
+
+  if (locationColumn?.name && amountMetric?.column) {
+    questions.push(
+      `Which ${humanizeColumnName(locationColumn.name)} has the highest ${humanizeColumnName(amountMetric.column)}?`
+    );
+  }
+
+  if (dateColumn?.name && amountMetric?.column) {
+    questions.push(
+      `How does ${humanizeColumnName(amountMetric.column)} change over ${humanizeColumnName(dateColumn.name)}?`
+    );
+  }
+
+  if (quantityMetric?.column && quantityMetric.column !== amountMetric?.column) {
+    questions.push(`What is the average ${humanizeColumnName(quantityMetric.column)}?`);
+  }
+
+  return Array.from(new Set(questions)).slice(0, 4);
+}
+
 export default function Dashboard() {
 
 
@@ -775,6 +906,8 @@ export default function Dashboard() {
 
   const [intelligenceError, setIntelligenceError] = useState("");
 
+  const suggestedQuestions = buildSuggestedQuestions(intelligence);
+
 
 
 
@@ -841,6 +974,8 @@ export default function Dashboard() {
 
   const [cleaningApplied, setCleaningApplied] = useState(false);
 
+  const [downloadingCleaned, setDownloadingCleaned] = useState(false);
+
 
 
 
@@ -904,6 +1039,15 @@ export default function Dashboard() {
 
 
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>([]);
+
+  // ==========================================================
+  // BILLING / PLAN
+  // ==========================================================
+
+  const [billingUser, setBillingUser] = useState<BillingUser | null>(null);
+  const [billingLoading, setBillingLoading] = useState(false);
+  const [billingError, setBillingError] = useState("");
+  const [billingSuccess, setBillingSuccess] = useState("");
 
 
 
@@ -1350,6 +1494,198 @@ export default function Dashboard() {
 
 
 
+
+  useEffect(() => {
+    async function loadBillingUser() {
+      const token = getToken();
+
+      if (!token) return;
+
+      try {
+        const apiUrl = getApiUrl();
+        const response = await fetch(`${apiUrl}/auth/me`, {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.status === 401) {
+          localStorage.removeItem("access_token");
+          router.push("/login");
+          return;
+        }
+
+        if (!response.ok) {
+          throw new Error(data.detail || "Unable to load account information.");
+        }
+
+        setBillingUser(data.user ?? data);
+      } catch (err) {
+        setBillingError(
+          err instanceof Error
+            ? err.message
+            : "Unable to load account information."
+        );
+      }
+    }
+
+    void loadBillingUser();
+  }, []);
+
+  async function loadRazorpayScript(): Promise<boolean> {
+    if (typeof window === "undefined") return false;
+
+    if ((window as any).Razorpay) return true;
+
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = "https://checkout.razorpay.com/v1/checkout.js";
+      script.async = true;
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  }
+
+  async function upgradeToPro() {
+    const token = getToken();
+
+    if (!token) {
+      router.push("/login");
+      return;
+    }
+
+    if (billingUser?.plan === "pro") return;
+
+    setBillingLoading(true);
+    setBillingError("");
+    setBillingSuccess("");
+
+    try {
+      const apiUrl = getApiUrl();
+
+      const razorpayLoaded = await loadRazorpayScript();
+
+      if (!razorpayLoaded) {
+        throw new Error("Unable to load Razorpay Checkout. Please try again.");
+      }
+
+      const subscriptionResponse = await fetch(
+        `${apiUrl}/billing/create-subscription`,
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      const subscriptionData = await subscriptionResponse
+        .json()
+        .catch(() => ({}));
+
+      if (subscriptionResponse.status === 401) {
+        localStorage.removeItem("access_token");
+        router.push("/login");
+        return;
+      }
+
+      if (!subscriptionResponse.ok) {
+        throw new Error(
+          subscriptionData.detail || "Unable to create Pro subscription."
+        );
+      }
+
+      const razorpay = new (window as any).Razorpay({
+        key: subscriptionData.razorpay_key_id,
+        subscription_id: subscriptionData.subscription_id,
+        name: "DataFlow AI",
+        description: "DataFlow AI Pro — ₹499/month",
+        prefill: {
+          name: billingUser?.name || "",
+          email: billingUser?.email || "",
+        },
+        notes: {
+          plan: "pro",
+          user_id: billingUser?.user_id || "",
+        },
+        theme: {
+          color: "#7c3aed",
+        },
+        handler: async (response: RazorpayCheckoutResponse) => {
+          try {
+            setBillingError("");
+            setBillingSuccess("");
+
+            const verifyResponse = await fetch(
+              `${apiUrl}/billing/verify-subscription`,
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(response),
+              }
+            );
+
+            const verifyData = await verifyResponse
+              .json()
+              .catch(() => ({}));
+
+            if (verifyResponse.status === 401) {
+              localStorage.removeItem("access_token");
+              router.push("/login");
+              return;
+            }
+
+            if (!verifyResponse.ok) {
+              throw new Error(
+                verifyData.detail || "Payment verification failed."
+              );
+            }
+
+            setBillingUser((previous) => ({
+              ...(previous ?? {}),
+              plan: "pro",
+              subscription_status: "active",
+              razorpay_subscription_id:
+                response.razorpay_subscription_id,
+            }));
+
+            setBillingSuccess(
+              "Payment successful. DataFlow AI Pro is now active."
+            );
+          } catch (err) {
+            setBillingError(
+              err instanceof Error
+                ? err.message
+                : "Payment verification failed."
+            );
+          } finally {
+            setBillingLoading(false);
+          }
+        },
+        modal: {
+          ondismiss: () => {
+            setBillingLoading(false);
+          },
+        },
+      });
+
+      razorpay.open();
+    } catch (err) {
+      setBillingLoading(false);
+      setBillingError(
+        err instanceof Error
+          ? err.message
+          : "Unable to start the Pro subscription."
+      );
+    }
+  }
 
   function logout() {
 
@@ -3668,6 +4004,102 @@ export default function Dashboard() {
 
 
 
+  async function downloadCleanedDataset() {
+    if (!datasetFile || !profile || !cleaningPreview || !cleaningApplied) {
+      setError("Please apply the cleaning before downloading the cleaned dataset.");
+      return;
+    }
+
+    const token = getToken();
+
+    if (!token) {
+      setError("Your session has expired. Please log in again.");
+      return;
+    }
+
+    let decisions;
+
+    try {
+      decisions = buildCleaningDecisions();
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Invalid cleaning decisions.");
+      return;
+    }
+
+    const invalidFill = decisions.columns.find(
+      (item) => item.action === "fill" && !item.fill_value?.trim()
+    );
+
+    if (invalidFill) {
+      setError(`Enter a fill value for ${invalidFill.column}.`);
+      return;
+    }
+
+    setDownloadingCleaned(true);
+    setError("");
+
+    try {
+      const apiUrl = getApiUrl();
+      const formData = new FormData();
+
+      formData.append("file", datasetFile);
+      formData.append("decisions", JSON.stringify(decisions));
+
+      const response = await fetch(`${apiUrl}/datasets/download-cleaned`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
+      if (response.status === 401) {
+        localStorage.removeItem("access_token");
+        router.push("/login");
+        return;
+      }
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(
+          errorData.detail || "Unable to download the cleaned dataset."
+        );
+      }
+
+      const blob = await response.blob();
+
+      if (!blob.size) {
+        throw new Error("The cleaned dataset download was empty.");
+      }
+
+      const contentDisposition = response.headers.get("Content-Disposition");
+      const fileMatch = contentDisposition?.match(/filename="?([^"]+)"?/i);
+      const downloadName =
+        fileMatch?.[1] ||
+        `cleaned_${datasetFile.name.replace(/\.csv$/i, "")}.csv`;
+
+      const downloadUrl = window.URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = downloadUrl;
+      link.download = downloadName;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      window.URL.revokeObjectURL(downloadUrl);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Unable to download the cleaned dataset."
+      );
+    } finally {
+      setDownloadingCleaned(false);
+    }
+  }
+
+
   function setColumnAction(column: string, action: ColumnAction) {
 
 
@@ -4035,6 +4467,18 @@ export default function Dashboard() {
 
 
 
+
+    // Free users get exactly one AI Analyst question.
+    // Pro users have unlimited AI access.
+    if (
+      billingUser?.plan !== "pro" &&
+      (billingUser?.ai_questions_used ?? 0) >= 1
+    ) {
+      setAiError(
+        "Your free AI Analyst question has been used. Upgrade to Pro for unlimited AI access."
+      );
+      return;
+    }
 
     setAsking(true);
 
@@ -4549,6 +4993,15 @@ export default function Dashboard() {
 
 
       const newAnswer = data.answer;
+
+      if (billingUser?.plan !== "pro") {
+        setBillingUser((previous) => ({
+          ...(previous ?? {}),
+          ai_questions_used: (previous?.ai_questions_used ?? 0) + 1,
+        }));
+      }
+
+
 
 
 
@@ -6276,103 +6729,48 @@ export default function Dashboard() {
 
 
 
-          <button
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            onClick={openFilePicker}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            disabled={uploading}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            className="rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-purple-900/20 transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            {uploading ? "Inspecting..." : "+ Add Data"}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          </button>
+          <div className="flex flex-col items-stretch gap-3 sm:items-end">
+            {billingUser?.is_admin ? (
+              <div className="rounded-xl border border-amber-400/20 bg-amber-500/[0.06] px-4 py-3 text-right">
+                <p className="text-xs font-medium text-amber-200">
+                  Developer access
+                </p>
+                <p className="mt-1 text-[11px] text-white/35">
+                  Unlimited AI · No payment required
+                </p>
+              </div>
+            ) : billingUser?.plan === "pro" ? (
+              <div className="rounded-xl border border-emerald-400/15 bg-emerald-500/[0.05] px-4 py-3 text-right">
+                <p className="text-xs font-medium text-emerald-200">
+                  Pro plan active
+                </p>
+                <p className="mt-1 text-[11px] text-white/35">
+                  Unlimited AI Analyst access
+                </p>
+              </div>
+            ) : (
+              <div className="rounded-xl border border-purple-400/15 bg-purple-500/[0.05] px-4 py-3 text-right">
+                <p className="text-xs font-medium text-purple-200">
+                  Free plan
+                </p>
+                <p className="mt-1 text-[11px] text-white/35">
+                  {Math.max(
+                    0,
+                    1 - (billingUser?.ai_questions_used ?? 0)
+                  )}{" "}
+                  free AI question remaining
+                </p>
+              </div>
+            )}
+
+            <button
+              onClick={openFilePicker}
+              disabled={uploading}
+              className="rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-5 py-3 text-sm font-semibold shadow-lg shadow-purple-900/20 transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
+            >
+              {uploading ? "Inspecting..." : "+ Add Data"}
+            </button>
+          </div>
 
 
 
@@ -6435,6 +6833,21 @@ export default function Dashboard() {
 
 
 
+
+        {(billingError || billingSuccess) && (
+          <div className="mt-5 space-y-2">
+            {billingError && (
+              <div className="rounded-xl border border-red-400/20 bg-red-500/10 px-4 py-3 text-sm text-red-300">
+                {billingError}
+              </div>
+            )}
+            {billingSuccess && (
+              <div className="rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-300">
+                {billingSuccess}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* =================================================
 
@@ -8428,27 +8841,94 @@ export default function Dashboard() {
 
 
 
-                          <p className="text-sm font-semibold text-emerald-300">
+
+                          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
 
 
-                            ✓ Cleaning applied successfully
+
+                            <div>
 
 
 
-                          </p>
+
+                              <p className="text-sm font-semibold text-emerald-300">
 
 
 
-                          <p className="mt-1 text-xs text-white/40">
+
+                                ✓ Cleaning applied successfully
 
 
 
-                            Your cleaned dataset has been stored and is ready for analysis.
+
+                              </p>
 
 
 
-                          </p>
+
+                              <p className="mt-1 text-xs text-white/40">
+
+
+
+
+                                Your cleaned dataset has been stored and is ready for analysis.
+
+
+
+
+                              </p>
+
+
+
+
+                            </div>
+
+
+
+
+                            <button
+
+
+
+
+                              type="button"
+
+
+
+
+                              onClick={downloadCleanedDataset}
+
+
+
+
+                              disabled={downloadingCleaned}
+
+
+
+
+                              className="shrink-0 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-50"
+
+
+
+
+                            >
+
+
+
+
+                              {downloadingCleaned ? "Preparing CSV..." : "↓ Download Cleaned Data"}
+
+
+
+
+                            </button>
+
+
+
+
+                          </div>
+
 
 
 
@@ -9251,39 +9731,22 @@ export default function Dashboard() {
 
 
               <p className="text-xs text-white/30">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 Ask questions about your data in plain English
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
               </p>
 
+              {billingUser?.is_admin ? (
+                <span className="mt-2 inline-flex rounded-full border border-amber-400/15 bg-amber-500/10 px-2.5 py-1 text-[10px] font-medium text-amber-300">
+                  DEVELOPER · Unlimited AI
+                </span>
+              ) : billingUser?.plan === "pro" ? (
+                <span className="mt-2 inline-flex rounded-full border border-emerald-400/15 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-medium text-emerald-300">
+                  PRO · Unlimited AI
+                </span>
+              ) : (
+                <span className="mt-2 inline-flex rounded-full border border-purple-400/15 bg-purple-500/10 px-2.5 py-1 text-[10px] font-medium text-purple-200">
+                  FREE · {Math.max(0, 1 - (billingUser?.ai_questions_used ?? 0))} question remaining
+                </span>
+              )}
 
 
 
@@ -9298,6 +9761,17 @@ export default function Dashboard() {
 
 
 
+
+            {billingUser?.plan !== "pro" && (
+              <button
+                type="button"
+                onClick={upgradeToPro}
+                disabled={billingLoading}
+                className="ml-auto rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-4 py-2.5 text-xs font-semibold shadow-lg shadow-purple-900/20 transition hover:from-purple-500 hover:to-violet-500 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {billingLoading ? "Opening..." : "Upgrade to Pro · ₹499/month"}
+              </button>
+            )}
             </div>
 
 
@@ -9794,87 +10268,7 @@ export default function Dashboard() {
 
 
 
-                {[
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  "What are the top 5 products by sales?",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  "Which category has the highest profit?",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  "What is my total profit?",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                  "Which region generated the most sales?",
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                ].map((item) => (
+                {suggestedQuestions.map((item) => (
 
 
 
@@ -10354,7 +10748,11 @@ export default function Dashboard() {
 
 
 
-                    disabled={asking}
+                    disabled={
+                      asking ||
+                      (billingUser?.plan !== "pro" &&
+                        (billingUser?.ai_questions_used ?? 0) >= 1)
+                    }
 
 
 
@@ -10451,53 +10849,10 @@ export default function Dashboard() {
 
 
                     disabled={
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                       asking ||
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                      !question.trim()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                      !question.trim() ||
+                      (billingUser?.plan !== "pro" &&
+                        (billingUser?.ai_questions_used ?? 0) >= 1)
                     }
 
 
@@ -10657,6 +11012,31 @@ export default function Dashboard() {
 
 
 
+
+              {billingUser?.plan !== "pro" &&
+                (billingUser?.ai_questions_used ?? 0) >= 1 &&
+                !asking && (
+                  <div className="mt-5 flex flex-col gap-3 rounded-2xl border border-purple-400/15 bg-purple-500/[0.05] p-5 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                      <p className="text-sm font-medium text-purple-200">
+                        Free AI question used
+                      </p>
+                      <p className="mt-1 text-xs text-white/35">
+                        Upgrade to Pro for unlimited AI Analyst questions.
+                      </p>
+                    </div>
+
+                    <button
+                      onClick={upgradeToPro}
+                      disabled={billingLoading}
+                      className="rounded-xl bg-purple-600 px-5 py-2.5 text-xs font-semibold transition hover:bg-purple-500 disabled:cursor-not-allowed disabled:opacity-50"
+                    >
+                      {billingLoading
+                        ? "Processing..."
+                        : "Upgrade to Pro · ₹499/month"}
+                    </button>
+                  </div>
+                )}
 
               {/* Loading */}
 

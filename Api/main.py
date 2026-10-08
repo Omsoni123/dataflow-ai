@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from Api.auth import router as auth_router
 from Api.datasets import router as datasets_router
+from Api.billing import router as billing_router
 
 
 app = FastAPI(
@@ -44,7 +45,7 @@ app.add_middleware(
 
 app.include_router(auth_router)
 app.include_router(datasets_router)
-
+app.include_router(billing_router)
 
 # ==========================================================
 # HEALTH CHECK
