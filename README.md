@@ -10,8 +10,6 @@ DataFlow AI is an AI-powered analytics SaaS. It takes a raw CSV/Excel file, clea
 
 ## Demo
 
-> Add your screenshots to a `docs/screenshots/` folder and keep the file names below (or edit the paths).
-
 ### 1. Upload and auto-clean
 <img width="1851" height="831" alt="image" src="https://github.com/user-attachments/assets/ce9a435d-2705-47f0-b323-653c6c04b60d" />
 
