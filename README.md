@@ -23,7 +23,7 @@ DataFlow AI is an AI-powered analytics SaaS. It takes a raw CSV/Excel file, clea
 <img width="1885" height="733" alt="image" src="https://github.com/user-attachments/assets/ed5cd99c-f8a2-42c1-a899-de33a3b9ef7b" />
 
 
-> Optional: a short demo GIF or Loom video link goes here.
+
 
 ---
 
