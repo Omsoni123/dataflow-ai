@@ -1,303 +1,172 @@
 import os
+import re
+import time
 
 from dotenv import load_dotenv
 from groq import Groq
 
-
-# ============================================================
-# LOAD ENVIRONMENT VARIABLES
-# ============================================================
-
 load_dotenv()
 
 api_key = os.getenv("GROQ_API_KEY")
-
 if not api_key:
     raise ValueError("GROQ_API_KEY not found in .env")
 
-
-# ============================================================
-# GROQ CLIENT
-# ============================================================
-
-client = Groq(
-    api_key=api_key
-)
-
-GROQ_MODEL = "openai/gpt-oss-120b"
+client = Groq(api_key=api_key.strip())
+GROQ_MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
+MAX_SQL_ATTEMPTS = 2
 
 
-# ============================================================
-# GENERATE SQL
-# ============================================================
+def _clean_sql_response(content: str) -> str:
+    """Extract one SELECT statement from the model response."""
+    if not content:
+        raise ValueError("Groq returned an empty SQL response.")
 
-def generate_sql(question, table_name, schema):
-    """
-    Convert a natural-language question into a PostgreSQL
-    SELECT query.
+    sql = content.strip()
+    sql = re.sub(r"^```(?:sql|postgresql)?\s*", "", sql, flags=re.IGNORECASE)
+    sql = re.sub(r"\s*```$", "", sql)
+    match = re.search(r"\bSELECT\b", sql, flags=re.IGNORECASE)
+    if not match:
+        raise ValueError("Groq did not generate a SELECT query.")
+    sql = sql[match.start():].strip()
 
-    The dataset/table is selected by the backend.
-    Groq only generates SQL for the provided table.
-    """
+    # A trailing semicolon is fine; multiple statements are not.
+    if ";" in sql.rstrip().rstrip(";"):
+        raise ValueError("Groq returned multiple SQL statements.")
+    return sql.rstrip().rstrip(";").strip()
 
-    schema_text = "\n".join(
-        f"- {column} ({data_type})"
-        for column, data_type in schema.items()
-    )
 
-    prompt = f"""
-You are an SQL analytics assistant.
-
-Your job is to convert the user's natural-language
-question into ONE PostgreSQL SELECT query.
-
-DATABASE TABLE:
-{table_name}
-
-AVAILABLE COLUMNS:
-{schema_text}
-
-USER QUESTION:
-{question}
-
-STRICT RULES:
-
-1. Generate ONLY one SELECT statement.
-2. Use ONLY the provided table.
-3. Use ONLY columns that exist in the provided schema.
-4. Never create, modify, update, or delete data.
-5. Never use DROP, DELETE, UPDATE, INSERT, ALTER,
-   CREATE, TRUNCATE, REPLACE, ATTACH, DETACH, or PRAGMA.
-6. Do not reference any other table.
-7. Do not invent columns.
-8. Do not invent tables.
-9. Return ONLY the SQL query.
-10. Do not use markdown code fences.
-11. Use PostgreSQL-compatible SQL.
-12. For aggregations use appropriate functions such as
-    SUM, AVG, COUNT, MAX, MIN, GROUP BY and ORDER BY.
-13. For "top" results use ORDER BY and LIMIT.
-14. For date analysis use the available date column.
-15. Never access information outside the provided table.
-16. Never attempt to determine or select another dataset.
-17. Do not use multiple SQL statements.
-
-SQL:
+def generate_sql(question, table_name, schema, previous_sql=None, error_feedback=None):
+    """Generate one PostgreSQL SELECT query using only the supplied schema."""
+    schema_text = "\n".join(f"- {column} ({data_type})" for column, data_type in schema.items())
+    retry_context = ""
+    if previous_sql or error_feedback:
+        retry_context = f"""
+The previous SQL attempt failed.
+Previous SQL: {previous_sql or "(not available)"}
+Validation/execution feedback: {error_feedback or "(not available)"}
+Correct the issue. Do not repeat the same mistake.
 """
 
+    prompt = f"""
+You are a careful PostgreSQL analytics assistant. Convert the user's question into exactly one SELECT query.
+
+Dataset table: {table_name}
+Available columns:
+{schema_text}
+
+User question: {question}
+{retry_context}
+
+Rules:
+- Use only the one supplied table: {table_name}.
+- Use only the listed columns.
+- Never use joins, CTEs, subqueries, other tables, or multiple statements.
+- Only read data. No INSERT, UPDATE, DELETE, DDL, or database administration.
+- Use PostgreSQL syntax.
+- Use aggregation/grouping only when appropriate.
+- For top/bottom questions, use ORDER BY and a reasonable LIMIT.
+- If the question cannot be answered from these columns, still return a safe SELECT that best matches the available data; do not invent columns.
+- Return only SQL, without markdown fences or explanations.
+SQL:
+"""
     response = client.chat.completions.create(
         model=GROQ_MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
     )
-
-    sql = response.choices[0].message.content.strip()
-
-    # --------------------------------------------------------
-    # REMOVE MARKDOWN CODE FENCES
-    # --------------------------------------------------------
-
-    if sql.startswith("```"):
-        sql = (
-            sql
-            .replace("```sql", "")
-            .replace("```postgresql", "")
-            .replace("```", "")
-            .strip()
-        )
-
-    # --------------------------------------------------------
-    # REMOVE ACCIDENTAL TEXT BEFORE SELECT
-    # --------------------------------------------------------
-
-    select_position = sql.upper().find("SELECT")
-
-    if select_position == -1:
-        raise ValueError(
-            "Groq did not generate a valid SELECT query."
-        )
-
-    sql = sql[select_position:].strip()
-
-    return sql
+    return _clean_sql_response(response.choices[0].message.content or "")
 
 
-# ============================================================
-# ASK DATASET
-# ============================================================
+def _result_context(result, max_rows=100):
+    """Serialize results with explicit truncation metadata for answer generation."""
+    if result is None:
+        return "No results were returned."
+    if result.empty:
+        return "No results were returned."
+    total_rows = len(result)
+    visible = result.head(max_rows)
+    context = visible.to_string(index=False)
+    if total_rows > max_rows:
+        context += f"\n[Showing {max_rows} of {total_rows} rows. Do not claim the displayed rows are the full result.]"
+    return context
+
+
+def generate_answer(question, sql, result):
+    """Generate a concise answer grounded in executed query results."""
+    result_text = _result_context(result)
+    prompt = f"""
+You are a professional data analyst. Answer the user's question using only the executed database result below.
+
+Question: {question}
+Executed SQL (for context only; do not show it to the user):
+{sql}
+Database result:
+{result_text}
+
+Rules:
+- Treat the database result as the only source of facts.
+- Do not invent, estimate, or silently alter numbers.
+- If no rows were returned, say that no matching results were found.
+- If the result is truncated, do not describe the visible rows as the complete dataset.
+- Keep the answer concise and useful.
+- Format currency as ₹ only when the result/context supports Indian currency; otherwise preserve the source units.
+- Use lakh/crore only for clearly Indian financial values.
+- Do not expose SQL, table names, or database internals.
+- Return only the answer.
+"""
+    response = client.chat.completions.create(
+        model=GROQ_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0,
+    )
+    return (response.choices[0].message.content or "").strip()
+
 
 def ask_dataset(dataset_id, question):
     """
-    Ask a natural-language question about a stored dataset.
-
-    IMPORTANT:
-    dataset_id is supplied by the backend.
-    The user and Groq do not select the dataset.
-
-    Flow:
-
-        Authenticated User
-              ↓
-        Backend selects dataset
-              ↓
-        Dataset Metadata
-              ↓
-        Groq generates SQL
-              ↓
-        SQL validation
-              ↓
-        PostgreSQL execution
-              ↓
-        Groq generates answer
+    Run the bounded AI-analytics flow:
+    metadata -> SQL generation -> validation -> execution -> grounded answer.
+    Keeps the existing return contract expected by Api/datasets.py.
     """
-
-    from SRC.database import (
-        get_dataset_metadata,
-        validate_sql,
-        query_dataset
-    )
-
-    # --------------------------------------------------------
-    # GET DATASET METADATA
-    # --------------------------------------------------------
+    from SRC.database import get_dataset_metadata, validate_sql, query_dataset
 
     metadata = get_dataset_metadata(dataset_id)
-
     if metadata is None:
-        raise ValueError(
-            "Dataset not found."
-        )
+        raise ValueError("Dataset not found.")
 
     table_name = metadata["table_name"]
     schema = metadata["schema"]
+    last_error = None
+    last_sql = None
 
-    # --------------------------------------------------------
-    # GENERATE SQL
-    # --------------------------------------------------------
+    for attempt in range(MAX_SQL_ATTEMPTS):
+        try:
+            sql = generate_sql(
+                question=question,
+                table_name=table_name,
+                schema=schema,
+                previous_sql=last_sql if attempt else None,
+                error_feedback=last_error if attempt else None,
+            )
+            last_sql = sql
 
-    sql = generate_sql(
-        question=question,
-        table_name=table_name,
-        schema=schema
-    )
+            is_valid, message = validate_sql(dataset_id, sql)
+            if not is_valid:
+                raise ValueError(f"SQL validation failed: {message}")
 
-    print("\n===== GENERATED SQL =====")
-    print(sql)
+            result = query_dataset(dataset_id, sql)
+            answer = generate_answer(question, sql, result)
 
-    # --------------------------------------------------------
-    # VALIDATE SQL
-    # --------------------------------------------------------
-
-    is_valid, message = validate_sql(
-        dataset_id,
-        sql
-    )
-
-    if not is_valid:
-        raise ValueError(
-            f"SQL validation failed: {message}"
-        )
-
-    print("\n===== SQL VALIDATION =====")
-    print(message)
-
-    # --------------------------------------------------------
-    # EXECUTE SQL
-    # --------------------------------------------------------
-
-    result = query_dataset(
-        dataset_id,
-        sql
-    )
-
-    print("\n===== QUERY RESULT =====")
-    print(result)
-
-    # --------------------------------------------------------
-    # GENERATE NATURAL LANGUAGE ANSWER
-    # --------------------------------------------------------
-
-    answer = generate_answer(
-        question,
-        sql,
-        result
-    )
-
-    # --------------------------------------------------------
-    # RETURN INTERNAL RESULT
-    # --------------------------------------------------------
-
-    return {
-        "question": question,
-        "sql": sql,
-        "result": result,
-        "answer": answer
-    }
-
-
-# ============================================================
-# GENERATE NATURAL-LANGUAGE ANSWER
-# ============================================================
-
-def generate_answer(question, sql, result):
-    """
-    Convert the database result into a concise
-    natural-language answer.
-    """
-
-    if result is None or result.empty:
-        result_text = "No results were returned."
-    else:
-        # Limit the amount of database output sent to Groq.
-        result_text = result.head(100).to_string(index=False)
-
-    prompt = f"""
-You are a professional data analytics assistant.
-
-Answer the user's question using ONLY the database
-result provided below.
-
-USER QUESTION:
-{question}
-
-DATABASE RESULT:
-{result_text}
-
-RULES:
-
-1. Use ONLY facts present in the database result.
-2. Do NOT invent information.
-3. Do NOT estimate numbers.
-4. Do NOT change numbers.
-5. Keep the answer concise and professional.
-6. Format financial values using ₹.
-7. For large Indian financial values, prefer lakh
-   or crore when appropriate.
-8. Avoid unnecessary decimal places.
-9. Format percentages with at most 2 decimal places.
-10. Clearly state the main result.
-11. Do not mention SQL.
-12. Do not mention table names.
-13. Do not mention database internals.
-14. Return ONLY the final answer.
-
-ANSWER:
-"""
-
-    response = client.chat.completions.create(
-        model=GROQ_MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
+            return {
+                "question": question,
+                "sql": sql,
+                "result": result,
+                "answer": answer,
             }
-        ],
-        temperature=0
-    )
+        except Exception as error:
+            last_error = str(error)
+            # Only one corrective retry; never loop indefinitely.
+            if attempt + 1 >= MAX_SQL_ATTEMPTS:
+                raise ValueError(f"AI analysis could not complete after {MAX_SQL_ATTEMPTS} attempts: {last_error}") from error
 
-    return response.choices[0].message.content.strip()
+    raise ValueError("AI analysis could not complete.")

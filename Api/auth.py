@@ -19,7 +19,13 @@ from pydantic import BaseModel, EmailStr
 from sqlalchemy import text
 
 from SRC.database import get_connection
+from fastapi import APIRouter, Depends, HTTPException
+from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
+security = HTTPBearer(
+    scheme_name="BearerAuth",
+    description="Enter your DataFlow AI access token."
+)
 
 # ============================================================
 # LOAD ENVIRONMENT
@@ -271,27 +277,9 @@ def get_user_by_id(user_id: str):
 # ============================================================
 
 def get_current_user(
-    authorization: str = Header(default=None),
+    credentials: HTTPAuthorizationCredentials = Depends(security),
 ):
-    if not authorization:
-        raise HTTPException(
-            status_code=401,
-            detail="Authentication required.",
-        )
-
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(
-            status_code=401,
-            detail="Invalid authentication format.",
-        )
-
-    token = authorization.replace("Bearer ", "", 1).strip()
-
-    if not token:
-        raise HTTPException(
-            status_code=401,
-            detail="Authentication token is missing.",
-        )
+    token = credentials.credentials
 
     try:
         payload = jwt.decode(
@@ -339,7 +327,6 @@ def get_current_user(
         "razorpay_subscription_id": user[8],
         "is_admin": is_admin,
     }
-
 
 # ============================================================
 # REQUEST MODELS

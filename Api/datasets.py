@@ -1,67 +1,26 @@
 from fastapi import (
 
 
-
-
-
-
-
     APIRouter,
-
-
-
-
-
 
 
     UploadFile,
 
 
-
-
-
-
-
     File,
-
-
-
-
-
 
 
     HTTPException,
 
 
-
-
-
-
-
     Depends,
-
-
-
-
-
 
 
     Form,
 
 
-
-
-
-
-
 )
 from fastapi.responses import StreamingResponse
-
-
-
-
-
-
 
 
 from pydantic import BaseModel
@@ -71,32 +30,11 @@ from sqlalchemy import text
 from SRC.database import get_connection
 
 
-
-
-
-
-
-
-
-
-
-
-
 import json
 import io
 
 
-
-
-
-
-
 import os
-
-
-
-
-
 
 
 import tempfile
@@ -106,850 +44,238 @@ import pandas as pd
 from dateutil import parser as date_parser
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 from SRC.data_cleaning import process_data, load_data
-
-
-
-
-
 
 
 from SRC.data_profiler import profile_data
 
 
-
-
-
-
-
 from SRC.cleaning_decisions import CleaningDecision
-
-
-
-
-
 
 
 from SRC.data_cleaning_engine import apply_cleaning_decisions
 
 
-
-
-
-
-
 from SRC.dataset_intelligence import analyze_dataset
-
-
-
-
-
 
 
 from SRC.dynamic_kpi import generate_dynamic_kpis
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 from SRC.database import (
-
-
-
-
-
 
 
     store_dataset,
 
 
-
-
-
-
-
     get_latest_dataset_for_user,
 
 
-
-
-
-
-
 )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 from SRC.analysis import calculate_kpis
 
 
-
-
-
-
-
 from SRC.groq_service import ask_dataset
-
-
-
-
-
 
 
 from Api.auth import get_current_user
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 router = APIRouter(
-
-
-
-
-
 
 
     prefix="/datasets",
 
 
-
-
-
-
-
     tags=["Datasets"],
-
-
-
-
-
 
 
 )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class AskRequest(BaseModel):
-
-
-
-
-
 
 
     question: str
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # HELPERS
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def parse_cleaning_decisions(decisions: str) -> CleaningDecision:
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Parse cleaning decisions sent from the frontend as JSON.
 
 
-
-
-
-
-
     """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     try:
-
-
-
-
-
 
 
         decision_data = json.loads(decisions)
 
 
-
-
-
-
-
     except json.JSONDecodeError as error:
-
-
-
-
-
 
 
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Invalid cleaning decisions JSON: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     try:
 
 
-
-
-
-
-
         return CleaningDecision(**decision_data)
-
-
-
-
-
 
 
     except Exception as error:
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Invalid cleaning decisions: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 async def save_upload_to_temp(file: UploadFile) -> str:
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Save an uploaded CSV to a temporary file and return its path.
 
 
-
-
-
-
-
     """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     if not file.filename:
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail="No file provided.",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     if not file.filename.lower().endswith(".csv"):
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail="Only CSV files are supported.",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     contents = await file.read()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     if not contents:
-
-
-
-
-
 
 
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail="The uploaded file is empty.",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     temp_dir = tempfile.gettempdir()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     temp_path = os.path.join(
-
-
-
-
-
 
 
         temp_dir,
 
 
-
-
-
-
-
         file.filename,
-
-
-
-
-
 
 
     )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     with open(temp_path, "wb") as output_file:
-
-
-
-
-
 
 
         output_file.write(contents)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     return temp_path
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def cleanup_temp_file(temp_path: str | None) -> None:
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Safely remove a temporary file.
 
 
-
-
-
-
-
     """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     if temp_path and os.path.exists(temp_path):
 
 
-
-
-
-
-
         try:
-
-
-
-
-
 
 
             os.remove(temp_path)
 
 
-
-
-
-
-
         except Exception:
-
-
-
-
-
 
 
             pass
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
 
 
 # ============================================================
@@ -1138,1517 +464,443 @@ def refresh_cleaning_summary(summary: dict, cleaned_data: pd.DataFrame) -> dict:
 # DATASET INSPECTION
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/inspect")
 
 
-
-
-
-
-
 async def inspect_dataset(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     current_user: dict = Depends(get_current_user),
-
-
-
-
-
 
 
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Inspect an uploaded CSV before cleaning or storing it.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     This endpoint does NOT modify or store the dataset.
-
-
-
-
-
 
 
     """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     temp_path = None
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     try:
 
 
-
-
-
-
-
         temp_path = await save_upload_to_temp(file)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         data = load_data(temp_path)
         data = normalize_cleaned_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         if data is None or data.empty:
-
-
-
-
-
 
 
             raise HTTPException(
 
 
-
-
-
-
-
                 status_code=400,
-
-
-
-
-
 
 
                 detail="The uploaded CSV contains no usable data.",
 
 
-
-
-
-
-
             )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         profile = profile_data(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Dataset inspected successfully.",
 
 
-
-
-
-
-
             "file_name": file.filename,
-
-
-
-
-
 
 
             "profile": profile,
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except HTTPException:
 
 
-
-
-
-
-
         raise
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except Exception as error:
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Dataset inspection failed: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # UNIVERSAL DATASET INTELLIGENCE
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/intelligence")
 
 
-
-
-
-
-
 async def dataset_intelligence(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     current_user: dict = Depends(get_current_user),
-
-
-
-
-
 
 
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Analyze an uploaded CSV using the universal dataset intelligence engine.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     This endpoint:
-
-
-
-
-
 
 
     - Does NOT store the dataset
 
 
-
-
-
-
-
     - Does NOT modify the dataset
-
-
-
-
-
 
 
     - Detects column roles
 
 
-
-
-
-
-
     - Detects optional dataset domain
-
-
-
-
-
 
 
     - Finds metric candidates
 
 
-
-
-
-
-
     - Finds analysis opportunities
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     It is designed to work with any structured CSV dataset.
 
 
-
-
-
-
-
     """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     temp_path = None
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     try:
 
 
-
-
-
-
-
         temp_path = await save_upload_to_temp(file)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         data = load_data(temp_path)
         data = normalize_cleaned_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         if data is None or data.empty:
-
-
-
-
-
 
 
             raise HTTPException(
 
 
-
-
-
-
-
                 status_code=400,
-
-
-
-
-
 
 
                 detail="The uploaded CSV contains no usable data.",
 
 
-
-
-
-
-
             )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         intelligence = analyze_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Dataset intelligence generated successfully.",
 
 
-
-
-
-
-
             "file_name": file.filename,
-
-
-
-
-
 
 
             "intelligence": intelligence,
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except HTTPException:
 
 
-
-
-
-
-
         raise
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except Exception as error:
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Dataset intelligence analysis failed: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/dynamic-kpis")
 
 
-
-
-
-
-
 async def dynamic_kpis(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     current_user: dict = Depends(get_current_user),
-
-
-
-
-
 
 
 ):
 
 
-
-
-
-
-
     temp_path = None
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     try:
 
 
-
-
-
-
-
         temp_path = await save_upload_to_temp(file)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         data = load_data(temp_path)
         data = normalize_cleaned_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         if data is None or data.empty:
-
-
-
-
-
 
 
             raise HTTPException(
 
 
-
-
-
-
-
                 status_code=400,
-
-
-
-
-
 
 
                 detail="The uploaded CSV contains no usable data.",
 
 
-
-
-
-
-
             )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         # Generate dataset intelligence first so the KPI engine
 
 
-
-
-
-
-
         # can use semantic information when available.
-
-
-
-
-
 
 
         intelligence = analyze_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         # Generate universal dynamic KPIs.
-
-
-
-
-
 
 
         kpi_result = generate_dynamic_kpis(
 
 
-
-
-
-
-
             df=data,
-
-
-
-
-
 
 
             intelligence=intelligence,
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Dynamic KPIs generated successfully.",
 
 
-
-
-
-
-
             "file_name": file.filename,
-
-
-
-
-
 
 
             "kpis": kpi_result.get("kpis", []),
 
 
-
-
-
-
-
             "summary": kpi_result.get("summary", {}),
-
-
-
-
-
 
 
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     except HTTPException:
-
-
-
-
-
 
 
         raise
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     except Exception as error:
-
-
-
-
-
 
 
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Dynamic KPI generation failed: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # CLEANING PREVIEW
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/clean")
 
 
-
-
-
-
-
 async def clean_dataset_preview(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     decisions: str = Form(...),
-
-
-
-
-
 
 
     current_user: dict = Depends(get_current_user),
 
 
-
-
-
-
-
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Apply the user's cleaning decisions in memory and return
 
 
-
-
-
-
-
     a preview.
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     IMPORTANT:
 
 
-
-
-
-
-
     This endpoint does NOT store the cleaned dataset.
-
-
-
-
-
 
 
     """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     temp_path = None
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     try:
 
 
-
-
-
-
-
         decision = parse_cleaning_decisions(decisions)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         temp_path = await save_upload_to_temp(file)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         data = load_data(temp_path)
         data = normalize_cleaned_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         if data is None or data.empty:
-
-
-
-
-
 
 
             raise HTTPException(
 
 
-
-
-
-
-
                 status_code=400,
-
-
-
-
-
 
 
                 detail="The uploaded CSV contains no usable data.",
 
 
-
-
-
-
-
             )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         cleaned_data, cleaning_summary = apply_cleaning_decisions(
 
 
-
-
-
-
-
             data,
 
 
-
-
-
-
-
             decision,
-
-
-
-
-
 
 
         )
@@ -2657,1506 +909,434 @@ async def clean_dataset_preview(
         cleaning_summary = refresh_cleaning_summary(cleaning_summary, cleaned_data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         cleaned_profile = profile_data(cleaned_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Dataset cleaned successfully.",
 
 
-
-
-
-
-
             "file_name": file.filename,
-
-
-
-
-
 
 
             "cleaning_summary": cleaning_summary,
 
 
-
-
-
-
-
             "cleaned_profile": cleaned_profile,
-
-
-
-
-
 
 
         }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     except HTTPException:
-
-
-
-
-
 
 
         raise
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     except Exception as error:
-
-
-
-
-
 
 
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Dataset cleaning preview failed: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # APPLY CLEANING AND STORE DATASET
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/apply-cleaning")
 
 
-
-
-
-
-
 async def apply_cleaning_and_store(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     decisions: str = Form(...),
-
-
-
-
-
 
 
     current_user: dict = Depends(get_current_user),
 
 
-
-
-
-
-
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Apply the user's confirmed cleaning decisions and store
 
 
-
-
-
-
-
     the cleaned dataset for the authenticated user.
-
-
-
-
-
 
 
     """
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     temp_path = None
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     try:
 
 
-
-
-
-
-
         decision = parse_cleaning_decisions(decisions)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         temp_path = await save_upload_to_temp(file)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         data = load_data(temp_path)
         data = normalize_cleaned_dataset(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         if data is None or data.empty:
-
-
-
-
-
 
 
             raise HTTPException(
 
 
-
-
-
-
-
                 status_code=400,
-
-
-
-
-
 
 
                 detail="The uploaded CSV contains no usable data.",
 
 
-
-
-
-
-
             )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         cleaned_data, cleaning_summary = apply_cleaning_decisions(
 
 
-
-
-
-
-
             data,
-
-
-
-
-
 
 
             decision,
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         dataset_info = store_dataset(
 
 
-
-
-
-
-
             cleaned_data,
-
-
-
-
-
 
 
             file.filename,
 
 
-
-
-
-
-
             current_user["user_id"],
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         cleaned_profile = profile_data(cleaned_data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         intelligence = analyze_dataset(cleaned_data)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         dynamic_kpis = generate_dynamic_kpis(
 
 
-
-
-
-
-
             cleaned_data,
-
-
-
-
-
 
 
             intelligence=intelligence,
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Cleaned dataset applied and stored successfully.",
 
 
-
-
-
-
-
             "file_name": file.filename,
 
 
-
-
-
-
-
             "dataset": dataset_info,
-
-
-
-
-
 
 
             "cleaning_summary": cleaning_summary,
 
 
-
-
-
-
-
             "cleaned_profile": cleaned_profile,
-
-
-
-
-
 
 
             "intelligence": intelligence,
 
 
-
-
-
-
-
             "dynamic_kpis": dynamic_kpis.get("kpis", []),
-
-
-
-
-
 
 
             "kpi_summary": dynamic_kpis.get("summary", {}),
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except HTTPException:
 
 
-
-
-
-
-
         raise
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except Exception as error:
 
 
-
-
-
-
-
         raise HTTPException(
 
 
-
-
-
-
-
             status_code=400,
-
-
-
-
-
 
 
             detail=f"Failed to apply cleaning: {str(error)}",
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # CLEANING DECISION VALIDATION
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/cleaning-preview")
 
 
-
-
-
-
-
 async def cleaning_preview(
-
-
-
-
-
 
 
     decision: CleaningDecision,
 
 
-
-
-
-
-
     current_user: dict = Depends(get_current_user),
-
-
-
-
-
 
 
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Validate the user's cleaning decisions.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     This endpoint does not modify or store a dataset.
 
 
-
-
-
-
-
     """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     return {
 
 
-
-
-
-
-
         "success": True,
-
-
-
-
-
 
 
         "message": "Cleaning decisions received successfully.",
 
 
-
-
-
-
-
         "decisions": (
-
-
-
-
-
 
 
             decision.model_dump()
 
 
-
-
-
-
-
             if hasattr(decision, "model_dump")
-
-
-
-
-
 
 
             else decision.dict()
 
 
-
-
-
-
-
         ),
-
-
-
-
-
 
 
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # ============================================================
-
-
-
-
-
 
 
 # EXISTING PRODUCTION DATASET UPLOAD
 
 
-
-
-
-
-
 # ============================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @router.post("/upload")
 
 
-
-
-
-
-
 async def upload_dataset(
-
-
-
-
-
 
 
     file: UploadFile = File(...),
 
 
-
-
-
-
-
     current_user: dict = Depends(get_current_user),
-
-
-
-
-
 
 
 ):
 
 
-
-
-
-
-
     """
-
-
-
-
-
 
 
     Existing production upload flow.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     Kept unchanged so the new V2 cleaning flow can be tested
-
-
-
-
-
 
 
     safely before replacing the old upload behavior.
 
 
-
-
-
-
-
     """
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     temp_path = None
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     try:
-
-
-
-
-
 
 
         temp_path = await save_upload_to_temp(file)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         data = process_data(temp_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         if data is None or data.empty:
 
 
-
-
-
-
-
             raise HTTPException(
-
-
-
-
-
 
 
                 status_code=400,
 
 
-
-
-
-
-
                 detail="The uploaded CSV contains no usable data.",
-
-
-
-
-
 
 
             )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         dataset_info = store_dataset(
-
-
-
-
-
 
 
             data,
 
 
-
-
-
-
-
             file.filename,
-
-
-
-
-
 
 
             current_user["user_id"],
 
 
-
-
-
-
-
         )
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         kpis = calculate_kpis(data)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
         kpis = {
-
-
-
-
-
 
 
             key: value.item() if hasattr(value, "item") else value
 
 
-
-
-
-
-
             for key, value in kpis.items()
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         return {
 
 
-
-
-
-
-
             "success": True,
-
-
-
-
-
 
 
             "message": "Dataset uploaded successfully.",
 
 
-
-
-
-
-
             "dataset": dataset_info,
-
-
-
-
-
 
 
             "kpis": kpis,
 
 
-
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except HTTPException:
 
 
-
-
-
-
-
         raise
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     except Exception as error:
 
 
-
-
-
-
-
         raise HTTPException(
-
-
-
-
-
 
 
             status_code=400,
 
 
-
-
-
-
-
             detail=str(error),
-
-
-
-
-
 
 
         )
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     finally:
 
 
-
-
-
-
-
         cleanup_temp_file(temp_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # ============================================================
@@ -4164,10 +1344,6 @@ async def upload_dataset(
 # AI ANALYST
 
 # ============================================================
-
-
-
-
 
 
 # ============================================================
@@ -4229,339 +1405,119 @@ async def download_cleaned_dataset(
         cleanup_temp_file(temp_path)
 
 @router.post("/ask")
-
 async def ask_ai(
-
     request: AskRequest,
-
     current_user: dict = Depends(get_current_user),
-
 ):
-
     """
+    Ask the AI Analyst a question about the authenticated user's latest dataset.
 
-    Ask the AI Analyst a question about the user's
-
-    latest uploaded dataset.
-
-
-
-    FREE users receive exactly one successful AI question.
-
-    PRO users have unlimited AI Analyst access.
-
-
-
-    The quota is enforced server-side so it cannot be
-
-    bypassed by calling the API directly.
-
+    Free non-admin users receive one successful AI question.
+    Pro users and admins have unlimited AI Analyst access.
     """
-
-
-
     question = request.question.strip()
-
-
-
     if not question:
-
         raise HTTPException(
-
             status_code=400,
-
             detail="Question cannot be empty.",
-
         )
 
-
-
     user_id = current_user["user_id"]
-
+    is_admin = bool(current_user.get("is_admin", False))
     is_pro = current_user.get("plan") == "pro"
-
-
-
-    # --------------------------------------------------------
-
-    # FREE PLAN QUOTA
-
-    # --------------------------------------------------------
-
-    # Claim the single free AI question atomically BEFORE
-
-    # calling Groq. If the AI request fails, the question
-
-    # is released again.
-
-    # --------------------------------------------------------
-
-
-
+    has_unlimited_ai = is_admin or is_pro
     quota_claimed = False
 
-
-
-    if not is_pro:
+    def release_free_question() -> None:
+        """Restore a claimed free question after a request that did not succeed."""
+        if not quota_claimed:
+            return
 
         with get_connection() as connection:
-
-            quota_result = connection.execute(
-
+            connection.execute(
                 text("""
-
                     UPDATE users
-
-                    SET ai_questions_used = ai_questions_used + 1
-
+                    SET ai_questions_used = 0
                     WHERE user_id = :user_id
-
                       AND plan = 'free'
-
-                      AND ai_questions_used < 1
-
+                      AND ai_questions_used = 1
                 """),
-
-                {
-
-                    "user_id": user_id,
-
-                },
-
+                {"user_id": user_id},
             )
-
-
-
             connection.commit()
 
-
+    # Enforce the free-plan quota server-side, except for admins and Pro users.
+    if not has_unlimited_ai:
+        with get_connection() as connection:
+            quota_result = connection.execute(
+                text("""
+                    UPDATE users
+                    SET ai_questions_used = ai_questions_used + 1
+                    WHERE user_id = :user_id
+                      AND plan = 'free'
+                      AND ai_questions_used < 1
+                """),
+                {"user_id": user_id},
+            )
+            connection.commit()
 
             if quota_result.rowcount != 1:
-
                 raise HTTPException(
-
                     status_code=402,
-
                     detail=(
-
                         "Your free AI Analyst question has been used. "
-
                         "Upgrade to DataFlow AI Pro for unlimited AI access."
-
                     ),
-
                 )
-
-
 
         quota_claimed = True
 
-
-
-    # --------------------------------------------------------
-
-    # Get the authenticated user's latest dataset
-
-    # --------------------------------------------------------
-
-
-
-    dataset = get_latest_dataset_for_user(user_id)
-
-
-
-    if dataset is None:
-
-        # Release the claimed free question because no AI
-
-        # analysis could actually be performed.
-
-        if quota_claimed:
-
-            with get_connection() as connection:
-
-                connection.execute(
-
-                    text("""
-
-                        UPDATE users
-
-                        SET ai_questions_used = 0
-
-                        WHERE user_id = :user_id
-
-                          AND plan = 'free'
-
-                          AND ai_questions_used = 1
-
-                    """),
-
-                    {
-
-                        "user_id": user_id,
-
-                    },
-
-                )
-
-                connection.commit()
-
-
-
-        raise HTTPException(
-
-            status_code=404,
-
-            detail="No dataset found. Please upload a CSV first.",
-
-        )
-
-
-
     try:
-
-        # ----------------------------------------------------
-
-        # Existing AI Analyst flow
-
-        # ----------------------------------------------------
-
-
-
-        result = ask_dataset(
-
-            dataset_id=dataset["dataset_id"],
-
-            question=question,
-
-        )
-
-
-
-        database_result = result.get("result")
-
-
-
-        if database_result is not None:
-
-            database_result = database_result.to_dict(
-
-                orient="records"
-
+        # This helper retrieves only the authenticated user's latest dataset.
+        dataset = get_latest_dataset_for_user(user_id)
+        if dataset is None:
+            raise HTTPException(
+                status_code=404,
+                detail="No dataset found. Please upload a CSV first.",
             )
 
+        result = ask_dataset(
+            dataset_id=dataset["dataset_id"],
+            question=question,
+        )
 
+        database_result = result.get("result")
+        if database_result is not None:
+            database_result = database_result.to_dict(orient="records")
 
         return {
-
             "success": True,
-
             "question": question,
-
             "answer": result["answer"],
-
             "data": database_result,
-
             "plan": "pro" if is_pro else "free",
-
-            "ai_questions_used": 1 if not is_pro else current_user.get(
-
-                "ai_questions_used", 0
-
+            "is_admin": is_admin,
+            "ai_questions_used": (
+                current_user.get("ai_questions_used", 0)
+                if has_unlimited_ai
+                else 1
             ),
-
-            "ai_questions_remaining": 0 if not is_pro else None,
-
+            "ai_questions_remaining": None if has_unlimited_ai else 0,
         }
 
-
-
+    except HTTPException:
+        # Keep intentional HTTP errors intact while restoring a claimed quota.
+        release_free_question()
+        raise
     except ValueError as error:
-
-        # AI failed, so restore the FREE user's question.
-
-        if quota_claimed:
-
-            with get_connection() as connection:
-
-                connection.execute(
-
-                    text("""
-
-                        UPDATE users
-
-                        SET ai_questions_used = 0
-
-                        WHERE user_id = :user_id
-
-                          AND plan = 'free'
-
-                          AND ai_questions_used = 1
-
-                    """),
-
-                    {
-
-                        "user_id": user_id,
-
-                    },
-
-                )
-
-                connection.commit()
-
-
-
+        release_free_question()
         raise HTTPException(
-
             status_code=400,
-
             detail=str(error),
-
-        )
-
-
-
+        ) from error
     except Exception as error:
-
-        # AI failed, so restore the FREE user's question.
-
-        if quota_claimed:
-
-            with get_connection() as connection:
-
-                connection.execute(
-
-                    text("""
-
-                        UPDATE users
-
-                        SET ai_questions_used = 0
-
-                        WHERE user_id = :user_id
-
-                          AND plan = 'free'
-
-                          AND ai_questions_used = 1
-
-                    """),
-
-                    {
-
-                        "user_id": user_id,
-
-                    },
-
-                )
-
-                connection.commit()
-
-
-
+        release_free_question()
         raise HTTPException(
-
             status_code=500,
-
             detail=f"AI analysis failed: {str(error)}",
-
-        )
+        ) from error
